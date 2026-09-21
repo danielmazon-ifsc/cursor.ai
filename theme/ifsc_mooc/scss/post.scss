@@ -1,0 +1,954 @@
+// IFSC MOOC — landing page and chrome, mapped from the Edufu-style layout
+// onto the official IF green (#2f9e41) and red (#cd191e).
+
+$ifsc-green: #2f9e41;
+$ifsc-green-dark: #247a32;
+$ifsc-green-soft: #e8f6ea;
+$ifsc-red: #cd191e;
+$ifsc-red-dark: #a31318;
+$ifsc-ink: #1d2125;
+$ifsc-muted: #5c636a;
+$ifsc-footer: #102318;
+$ifsc-radius: 1.25rem;
+$ifsc-radius-sm: 0.85rem;
+$ifsc-max: 1180px;
+
+body.theme_ifsc_mooc {
+    font-family: "Open Sans", $font-family-sans-serif;
+}
+
+// Navbar.
+.navbar.fixed-top.ifsc-navbar {
+    height: auto;
+    min-height: 72px;
+}
+
+.ifsc-navbar {
+    box-shadow: 0 1px 0 rgba(16, 35, 24, 0.06);
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+
+    .navbar-brand .logo,
+    .ifsc-navbar-logo {
+        height: 42px;
+        max-height: 42px;
+        width: auto;
+        max-width: 220px;
+        object-fit: contain;
+    }
+
+    .primary-navigation {
+        .nav-link {
+            font-weight: 600;
+            color: $ifsc-ink;
+
+            &:hover,
+            &.active {
+                color: $ifsc-green;
+            }
+        }
+    }
+}
+
+.ifsc-login-btn {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    margin-left: 0.5rem;
+    padding: 0.45rem 1.25rem;
+    border-radius: 999px;
+    background: $ifsc-red;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus {
+        background: $ifsc-red-dark;
+        color: #fff !important;
+        transform: translateY(-1px);
+    }
+}
+
+// Boost adds 3rem side padding on #page.drawers from 768px up (drawer toggles).
+@media (min-width: 768px) {
+    #page.drawers {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// Front page shell.
+body.pagelayout-frontpage {
+    background: #fff;
+
+    #page.drawers {
+        background: #fff;
+        padding-left: 0;
+        padding-right: 0;
+
+        .main-inner {
+            max-width: 100% !important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+        }
+    }
+
+    &:not(.editing) {
+        #page-header,
+        .secondary-navigation,
+        .ifsc-moodle-frontpage-content {
+            display: none;
+        }
+
+        .ifsc-frontpage-moodle {
+            min-height: 0;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &.editing .ifsc-moodle-frontpage-content {
+        display: block;
+        max-width: $ifsc-max;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+    }
+}
+
+.ifsc-landing {
+    background: #fff;
+    color: $ifsc-ink;
+}
+
+.ifsc-kicker {
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $ifsc-red;
+}
+
+.ifsc-kicker--green {
+    color: $ifsc-green;
+}
+
+.ifsc-highlight {
+    position: relative;
+    z-index: 0;
+    color: $ifsc-ink;
+    display: inline-block;
+    isolation: isolate;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0.08em;
+        height: 0.28em;
+        background: $ifsc-green;
+        border-radius: 999px;
+        opacity: 0.55;
+        z-index: -1;
+    }
+}
+
+.ifsc-highlight--red::after {
+    background: $ifsc-red;
+    opacity: 0.45;
+}
+
+.ifsc-section-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+}
+
+.ifsc-section-title--center {
+    text-align: center;
+}
+
+.ifsc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    line-height: 1.2;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-1px);
+    }
+}
+
+.ifsc-btn--accent {
+    background: $ifsc-red;
+    color: #fff !important;
+
+    &:hover,
+    &:focus {
+        background: $ifsc-red-dark;
+        color: #fff !important;
+    }
+}
+
+.ifsc-btn--light {
+    background: #fff;
+    color: $ifsc-green !important;
+
+    &:hover,
+    &:focus {
+        background: $ifsc-green-soft;
+        color: $ifsc-green-dark !important;
+    }
+}
+
+.ifsc-btn--outline {
+    background: transparent;
+    color: $ifsc-green !important;
+    box-shadow: inset 0 0 0 2px $ifsc-green;
+
+    &:hover,
+    &:focus {
+        background: $ifsc-green;
+        color: #fff !important;
+    }
+}
+
+// Hero.
+.ifsc-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 1.25rem 4rem;
+}
+
+.ifsc-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ifsc-blob--green {
+    width: 420px;
+    height: 420px;
+    background: rgba(47, 158, 65, 0.12);
+    top: -120px;
+    right: 18%;
+}
+
+.ifsc-blob--red {
+    width: 280px;
+    height: 280px;
+    background: rgba(205, 25, 30, 0.08);
+    bottom: -80px;
+    left: -40px;
+}
+
+.ifsc-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: $ifsc-max;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.ifsc-hero-title {
+    font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem;
+}
+
+.ifsc-hero-text {
+    font-size: 1.05rem;
+    color: $ifsc-muted;
+    max-width: 34rem;
+    margin: 0 0 1.75rem;
+    line-height: 1.6;
+}
+
+.ifsc-search {
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.35rem 0.35rem 0.35rem 1.1rem;
+    box-shadow: 0 10px 40px rgba(16, 35, 24, 0.1);
+    max-width: 32rem;
+
+    input {
+        flex: 1;
+        border: 0;
+        background: transparent;
+        outline: none;
+        font-size: 0.95rem;
+        min-width: 0;
+        color: $ifsc-ink;
+    }
+}
+
+.ifsc-hero-visual {
+    position: relative;
+    min-height: 420px;
+}
+
+.ifsc-hero-frame {
+    width: 78%;
+    margin-left: auto;
+    border-radius: 50% 50% 2rem 50%;
+    overflow: hidden;
+    background: $ifsc-green-soft;
+    box-shadow: 0 20px 50px rgba(16, 35, 24, 0.12);
+
+    img {
+        display: block;
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+    }
+}
+
+.ifsc-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 0.7rem 0.9rem;
+    box-shadow: 0 12px 30px rgba(16, 35, 24, 0.12);
+    z-index: 2;
+
+    strong,
+    small {
+        display: block;
+        line-height: 1.2;
+    }
+
+    strong {
+        font-size: 0.95rem;
+    }
+
+    small {
+        font-size: 0.72rem;
+        color: $ifsc-muted;
+        font-weight: 600;
+    }
+}
+
+.ifsc-badge--courses {
+    left: 0;
+    top: 18%;
+    color: $ifsc-green;
+}
+
+.ifsc-badge--cert {
+    right: 4%;
+    bottom: 12%;
+}
+
+.ifsc-badge-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $ifsc-green-soft;
+    color: $ifsc-green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ifsc-badge-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: $ifsc-red;
+    box-shadow: 0 0 0 6px rgba(205, 25, 30, 0.15);
+}
+
+// About.
+.ifsc-about {
+    padding: 2rem 1.25rem 5rem;
+}
+
+.ifsc-about-inner {
+    max-width: $ifsc-max;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.ifsc-about-collage {
+    position: relative;
+    min-height: 420px;
+}
+
+.ifsc-about-photo {
+    position: absolute;
+    object-fit: cover;
+    border-radius: $ifsc-radius;
+    box-shadow: 0 16px 40px rgba(16, 35, 24, 0.14);
+}
+
+.ifsc-about-photo--a {
+    width: 58%;
+    height: 250px;
+    top: 0;
+    left: 0;
+}
+
+.ifsc-about-photo--b {
+    width: 48%;
+    height: 210px;
+    top: 40px;
+    right: 0;
+}
+
+.ifsc-about-photo--c {
+    width: 54%;
+    height: 200px;
+    bottom: 0;
+    left: 18%;
+}
+
+.ifsc-about-text {
+    color: $ifsc-muted;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+}
+
+.ifsc-feature {
+    display: flex;
+    gap: 0.9rem;
+    margin-bottom: 1.15rem;
+
+    h3 {
+        font-size: 1.05rem;
+        margin: 0 0 0.2rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 0;
+        color: $ifsc-muted;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+}
+
+.ifsc-feature-icon {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $ifsc-green-soft;
+    color: $ifsc-green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Courses.
+.ifsc-courses {
+    padding: 1rem 1.25rem 4.5rem;
+}
+
+.ifsc-courses-inner {
+    max-width: $ifsc-max;
+    margin: 0 auto;
+}
+
+.ifsc-courses-head {
+    margin: 0 auto 2.25rem;
+}
+
+.ifsc-course-grid {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+.ifsc-course-card {
+    background: #fff;
+    border-radius: $ifsc-radius-sm;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(16, 35, 24, 0.07);
+    margin-bottom: 1.75rem;
+    height: calc(100% - 1.75rem);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(16, 35, 24, 0.12);
+    }
+}
+
+.ifsc-course-image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none !important;
+
+    img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.ifsc-course-tag {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: $ifsc-green;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+    z-index: 1;
+}
+
+.ifsc-course-body {
+    padding: 1.1rem 1.2rem 1.25rem;
+    flex: 1 1 auto;
+}
+
+.ifsc-course-price {
+    margin: 0 0 0.35rem;
+    color: $ifsc-green;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.ifsc-course-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
+    line-height: 1.35;
+
+    a {
+        color: $ifsc-ink;
+        text-decoration: none !important;
+
+        &:hover {
+            color: $ifsc-green;
+        }
+    }
+}
+
+.ifsc-course-meta {
+    margin: 0;
+    color: $ifsc-muted;
+    font-size: 0.82rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+.ifsc-customfield {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.45rem;
+    line-height: 1.35;
+}
+
+.ifsc-customfield-name {
+    font-weight: 700;
+    color: $ifsc-green;
+
+    &::after {
+        content: ":";
+    }
+}
+
+.ifsc-customfield-value {
+    color: $ifsc-muted;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    p {
+        margin: 0;
+        display: inline;
+    }
+}
+
+.ifsc-catalogue {
+    padding: 0.5rem 0 2rem;
+}
+
+.ifsc-cat-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0 0 1.75rem;
+}
+
+.ifsc-cat-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    background: $ifsc-green-soft;
+    color: $ifsc-green;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: none !important;
+
+    &:hover {
+        color: #fff !important;
+        background: $ifsc-red;
+        text-decoration: none !important;
+    }
+
+    &.is-active {
+        background: $ifsc-green;
+        color: #fff !important;
+    }
+}
+
+.ifsc-catalogue-empty {
+    color: $ifsc-muted;
+    padding: 1.5rem 0;
+}
+
+body.pagelayout-coursecategory.limitedwidth #page.drawers .main-inner {
+    max-width: $ifsc-max;
+}
+
+body.pagelayout-coursecategory {
+    #page.drawers .main-inner {
+        background: #f6faf6;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    #action_bar {
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.ifsc-courses-more {
+    text-align: center;
+    margin: 0.5rem 0 0;
+}
+
+// Newsletter.
+.ifsc-newsletter {
+    background: $ifsc-green;
+    color: #fff;
+    padding: 1.6rem 1.25rem;
+}
+
+.ifsc-newsletter-inner {
+    max-width: $ifsc-max;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.ifsc-newsletter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+
+    h2 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 700;
+    }
+}
+
+.ifsc-newsletter-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ifsc-newsletter-form {
+    display: flex;
+    gap: 0.6rem;
+    flex: 1;
+    max-width: 520px;
+
+    input {
+        flex: 1;
+        min-width: 0;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: transparent;
+        color: #fff;
+        border-radius: 999px;
+        padding: 0.8rem 1.1rem;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}
+
+// Footer.
+.ifsc-footer {
+    background: $ifsc-footer;
+    color: rgba(255, 255, 255, 0.82);
+    padding: 3.5rem 1.25rem 1.25rem;
+}
+
+.ifsc-footer-inner {
+    max-width: $ifsc-max;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+    gap: 2rem;
+
+    h3 {
+        color: #fff;
+        font-size: 1.05rem;
+        margin: 0 0 1rem;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: rgba(255, 255, 255, 0.78);
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    li {
+        margin-bottom: 0.45rem;
+    }
+}
+
+.ifsc-footer-logo {
+    height: 52px;
+    width: auto;
+    max-width: 240px;
+    margin-bottom: 1rem;
+    background: #fff;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.6rem;
+}
+
+.ifsc-footer-brand p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 0 1.1rem;
+}
+
+.ifsc-social {
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff !important;
+
+        &:hover {
+            background: $ifsc-green;
+        }
+    }
+}
+
+.ifsc-footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    input {
+        border: 0;
+        border-radius: 999px;
+        padding: 0.75rem 1rem;
+        background: #fff;
+    }
+}
+
+.ifsc-footer-bottom {
+    max-width: $ifsc-max;
+    margin: 0 auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+
+    p {
+        margin: 0;
+    }
+}
+
+.ifsc-backtotop {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $ifsc-red;
+    color: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    font-weight: 700;
+}
+
+// Buttons and links inside Moodle chrome.
+body.theme_ifsc_mooc {
+    .btn-primary,
+    .btn-primary:focus {
+        background-color: $ifsc-green;
+        border-color: $ifsc-green;
+    }
+
+    .btn-primary:hover {
+        background-color: $ifsc-green-dark;
+        border-color: $ifsc-green-dark;
+    }
+
+    a:not(.btn):not(.ifsc-btn):not(.nav-link):not(.dropdown-item):not(.ifsc-login-btn):not(.ifsc-course-image):not(.ifsc-cat-chip) {
+        color: $ifsc-green;
+    }
+
+    .ifsc-course-body h3 a {
+        color: $ifsc-ink;
+
+        &:hover {
+            color: $ifsc-green;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .ifsc-hero-inner,
+    .ifsc-about-inner,
+    .ifsc-footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .ifsc-hero-visual {
+        min-height: 0;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .ifsc-hero-frame {
+        width: 100%;
+        border-radius: $ifsc-radius;
+
+        img {
+            height: 320px;
+        }
+    }
+
+    .ifsc-about-collage {
+        min-height: 360px;
+    }
+
+    .ifsc-newsletter-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ifsc-newsletter-form {
+        max-width: none;
+        flex-direction: column;
+    }
+
+    .ifsc-search {
+        flex-direction: column;
+        border-radius: $ifsc-radius;
+        padding: 0.75rem;
+
+        .ifsc-btn {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .ifsc-navbar #usernavigation {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .ifsc-navbar .divider {
+        display: none;
+    }
+
+    .ifsc-login-btn {
+        padding: 0.35rem 0.85rem;
+        font-size: 0.8rem;
+        margin-left: 0.25rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ifsc-navbar-logo {
+        height: 30px !important;
+        max-width: 118px;
+    }
+
+    .ifsc-hero {
+        padding-top: 2rem;
+    }
+
+    .ifsc-badge--courses {
+        top: auto;
+        bottom: 8%;
+        left: 4%;
+    }
+}
+

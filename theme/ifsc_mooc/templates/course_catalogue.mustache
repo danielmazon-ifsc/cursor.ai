@@ -1,0 +1,25 @@
+{{!
+    @template theme_ifsc_mooc/course_catalogue
+
+    Course catalogue grid matching the homepage cards.
+}}
+<div class="ifsc-catalogue">
+    {{#hascategories}}
+        <nav class="ifsc-cat-filters" aria-label="{{#str}}filterbycategory, theme_ifsc_mooc{{/str}}">
+            {{#categories}}
+                <a class="ifsc-cat-chip {{#active}}is-active{{/active}}" href="{{url}}">{{{name}}}</a>
+            {{/categories}}
+        </nav>
+    {{/hascategories}}
+
+    {{#hascourses}}
+        <div class="row ifsc-course-grid">
+            {{#courses}}
+                {{> theme_ifsc_mooc/course_card }}
+            {{/courses}}
+        </div>
+    {{/hascourses}}
+    {{^hascourses}}
+        <p class="ifsc-catalogue-empty">{{#str}}nocoursesyet, theme_ifsc_mooc{{/str}}</p>
+    {{/hascourses}}
+</div>

@@ -1,0 +1,29 @@
+{{!
+    @template theme_ifsc_mooc/course_card
+
+    Course card used on the homepage and the course catalogue.
+}}
+<div class="col-md-6 col-lg-4">
+    <article class="ifsc-course-card coursebox" data-courseid="{{id}}" data-type="1">
+        <a class="ifsc-course-image" href="{{url}}">
+            {{#category}}
+                <span class="ifsc-course-tag">{{{category}}}</span>
+            {{/category}}
+            <img src="{{image}}" alt="">
+        </a>
+        <div class="ifsc-course-body">
+            <div class="ifsc-course-price">{{price}}</div>
+            <h3><a href="{{url}}">{{{title}}}</a></h3>
+            {{#hascustomfields}}
+                <div class="ifsc-course-meta">
+                    {{#customfields}}
+                        <div class="ifsc-customfield customfield_{{type}} customfield_{{shortname}}">
+                            <span class="ifsc-customfield-name">{{{name}}}</span>
+                            <span class="ifsc-customfield-value">{{{value}}}</span>
+                        </div>
+                    {{/customfields}}
+                </div>
+            {{/hascustomfields}}
+        </div>
+    </article>
+</div>

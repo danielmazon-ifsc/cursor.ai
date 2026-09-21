@@ -1,0 +1,195 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_ifsc_mooc/homepage
+
+    Public landing page: hero, about, course cards, newsletter and footer.
+}}
+<div class="ifsc-landing">
+
+    <section class="ifsc-hero" aria-labelledby="ifsc-hero-title">
+        <div class="ifsc-blob ifsc-blob--green" aria-hidden="true"></div>
+        <div class="ifsc-blob ifsc-blob--red" aria-hidden="true"></div>
+        <div class="ifsc-hero-inner">
+            <div class="ifsc-hero-copy">
+                <p class="ifsc-kicker">IFSC MOOC</p>
+                <h1 id="ifsc-hero-title" class="ifsc-hero-title">{{{ herotitlehtml }}}</h1>
+                <p class="ifsc-hero-text">{{ herotext }}</p>
+                <form class="ifsc-search" method="get" action="{{{ searchurl }}}" role="search">
+                    <label class="sr-only" for="ifsc-course-search">{{ searchplaceholder }}</label>
+                    <input id="ifsc-course-search" type="search" name="q" placeholder="{{ searchplaceholder }}" autocomplete="off">
+                    <button type="submit" class="ifsc-btn ifsc-btn--accent">{{ searchcourses }}</button>
+                </form>
+            </div>
+            <div class="ifsc-hero-visual">
+                <div class="ifsc-hero-frame">
+                    <img src="{{{ heroimage }}}" alt="Câmpus do Instituto Federal de Santa Catarina">
+                </div>
+                <div class="ifsc-badge ifsc-badge--courses" aria-hidden="true">
+                    <span class="ifsc-badge-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </span>
+                    <span>
+                        <strong>{{#hascourses}}{{statcourses}}+{{/hascourses}}{{^hascourses}}MOOC{{/hascourses}}</strong>
+                        <small>{{ herostats_courses }}</small>
+                    </span>
+                </div>
+                <div class="ifsc-badge ifsc-badge--cert" aria-hidden="true">
+                    <span class="ifsc-badge-dot"></span>
+                    <span>
+                        <strong>{{ herostats_certified }}</strong>
+                        <small>{{ certified }}</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ifsc-about" aria-labelledby="ifsc-about-title">
+        <div class="ifsc-about-inner">
+            <div class="ifsc-about-collage">
+                <img class="ifsc-about-photo ifsc-about-photo--a" src="{{{ aboutimage1 }}}" alt="Atividade de design no IFSC">
+                <img class="ifsc-about-photo ifsc-about-photo--b" src="{{{ aboutimage2 }}}" alt="Laboratório de formação profissional no IFSC">
+                <img class="ifsc-about-photo ifsc-about-photo--c" src="{{{ aboutimage3 }}}" alt="Câmpus do IFSC">
+            </div>
+            <div class="ifsc-about-copy">
+                <p class="ifsc-kicker ifsc-kicker--green">{{ aboutkicker }}</p>
+                <h2 id="ifsc-about-title" class="ifsc-section-title">
+                    {{ abouttitle }}
+                    <span class="ifsc-highlight ifsc-highlight--red">{{ aboutachieve }}</span>
+                </h2>
+                <p class="ifsc-about-text">{{ abouttext }}</p>
+                <div class="ifsc-feature">
+                    <span class="ifsc-feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <div>
+                        <h3>{{ ourmission }}</h3>
+                        <p>{{ missiontext }}</p>
+                    </div>
+                </div>
+                <div class="ifsc-feature">
+                    <span class="ifsc-feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </span>
+                    <div>
+                        <h3>{{ ourvision }}</h3>
+                        <p>{{ visiontext }}</p>
+                    </div>
+                </div>
+                <a class="ifsc-btn ifsc-btn--accent" href="{{{ readmoreurl }}}" target="_blank" rel="noopener">{{ readmore }}</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="ifsc-courses" id="cursos" aria-labelledby="ifsc-courses-title">
+        <div class="ifsc-courses-inner">
+            <div class="ifsc-courses-head">
+                <h2 id="ifsc-courses-title" class="ifsc-section-title ifsc-section-title--center">
+                    {{ choosecourses }}
+                    <span class="ifsc-highlight ifsc-highlight--red">{{ courseshighlight }}</span>
+                </h2>
+            </div>
+            <div class="row ifsc-course-grid">
+                {{#courses}}
+                    {{> theme_ifsc_mooc/course_card }}
+                {{/courses}}
+            </div>
+            <p class="ifsc-courses-more">
+                <a class="ifsc-btn ifsc-btn--outline" href="{{{ allcoursesurl }}}">{{ viewallcourses }}</a>
+            </p>
+        </div>
+    </section>
+
+    <section class="ifsc-newsletter" aria-labelledby="ifsc-news-title">
+        <div class="ifsc-newsletter-inner">
+            <div class="ifsc-newsletter-label">
+                <span class="ifsc-newsletter-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <h2 id="ifsc-news-title">{{ subscribenewsletter }}</h2>
+            </div>
+            <form class="ifsc-newsletter-form" method="get" action="{{{ newsletterurl }}}" target="_blank" rel="noopener">
+                <label class="sr-only" for="ifsc-newsletter-email">{{ emailplaceholder }}</label>
+                <input id="ifsc-newsletter-email" type="email" name="email" placeholder="{{ emailplaceholder }}" required>
+                <button type="submit" class="ifsc-btn ifsc-btn--light">{{ subscribenow }}</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="ifsc-footer">
+        <div class="ifsc-footer-inner">
+            <div class="ifsc-footer-brand">
+                <a href="{{{ homeurl }}}">
+                    <img src="{{{ logourl }}}" alt="Instituto Federal de Santa Catarina" class="ifsc-footer-logo">
+                </a>
+                <p>{{ footerabout }}</p>
+                <ul class="ifsc-social">
+                    <li>
+                        <a href="https://www.facebook.com/IFSCoficial" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4V10c0-.6.4-1 1-1z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/ifscoficial/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4zm10 2H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2zm-5 3.2A3.8 3.8 0 1112 16.8 3.8 3.8 0 0112 8.2zm0 2A1.8 1.8 0 1012 14.8 1.8 1.8 0 0012 10.2zM17.2 6.4a.9.9 0 11-1.8 0 .9.9 0 011.8 0z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/IFSCoficial" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M23 12.2s0-3.2-.4-4.6c-.2-.9-.9-1.6-1.8-1.8C19.2 5.4 12 5.4 12 5.4s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 9 1 12.2 1 12.2s0 3.2.4 4.6c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.4.4-4.6.4-4.6zM9.8 15.5V8.9l6.2 3.3-6.2 3.3z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/school/ifsc/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.5 9H4v11h2.5V9zM5.2 4C4.3 4 3.5 4.8 3.5 5.8S4.3 7.6 5.2 7.6 7 6.8 7 5.8 6.2 4 5.2 4zM20 20h-2.5v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H11V9h2.4v1.5h.1c.3-.6 1.2-1.8 2.9-1.8 3.1 0 3.6 2 3.6 4.7V20z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3>{{ footerlinks }}</h3>
+                <ul>
+                    <li><a href="{{{ homeurl }}}">{{ home }}</a></li>
+                    <li><a href="{{{ allcoursesurl }}}">{{ viewallcourses }}</a></li>
+                    <li><a href="{{{ aboutifscurl }}}" target="_blank" rel="noopener">{{ aboutifsc }}</a></li>
+                    <li><a href="{{{ contacturl }}}" target="_blank" rel="noopener">{{ contact }}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>{{ footerlegal }}</h3>
+                <ul>
+                    <li><a href="{{{ accessibilityurl }}}" target="_blank" rel="noopener">{{ accessibility }}</a></li>
+                    <li><a href="{{{ transparencyurl }}}" target="_blank" rel="noopener">{{ transparency }}</a></li>
+                    <li><a href="{{{ aboutifscurl }}}" target="_blank" rel="noopener">{{ ifscportal }}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>{{ subscribenewsletter }}</h3>
+                <form class="ifsc-footer-form" method="get" action="{{{ newsletterurl }}}" target="_blank" rel="noopener">
+                    <label class="sr-only" for="ifsc-footer-email">{{ emailplaceholder }}</label>
+                    <input id="ifsc-footer-email" type="email" name="email" placeholder="{{ emailplaceholder }}" required>
+                    <button type="submit" class="ifsc-btn ifsc-btn--accent">{{ subscribenow }}</button>
+                </form>
+            </div>
+        </div>
+        <div class="ifsc-footer-bottom">
+            <p>© {{ year }} {{ copyright }}</p>
+            <a class="ifsc-backtotop" href="#page-wrapper" aria-label="{{ backtotop }}">↑</a>
+        </div>
+    </footer>
+</div>
