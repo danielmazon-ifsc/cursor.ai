@@ -137,18 +137,15 @@ define(['jquery'], function($) {
             if($(this).attr('data-action') == 'cmDelete' ){
                 window.location.href = $(this).attr('href');
             }
-            if($(this).attr('data-action') == 'deleteSection' ){
-                if(moodleversionbranch >= '405'){
-                    location.reload();
-                }else{
-                    window.location.href = $(this).attr('href');
-                }
+            if ($(this).attr('data-action') == 'deleteSection') {
+                // Moodle 5.2+ always reloads after section delete (was gated on branch 405+).
+                location.reload();
             }
             return true;
         });
 
         // Handling addSubsection
-        $('body').on('click', '[data-action="addModule"]', function(event) {
+        $('body').on('click', '[data-action="addModule"]', function() {
             setTimeout(() => {
                 location.reload();
             }, 200);

@@ -50,8 +50,8 @@ atlassian-ide-plugin.xml
 /node_modules/
 /.vscode/
 moodle-plugin-ci.phar
-.eslintignore
-.stylelintignore
+/.eslintignore
+/.stylelintignore
 /jsdoc
 /public/admin/tool/componentlibrary/docs
 /public/admin/tool/componentlibrary/hugo/site/data/my-index.json
