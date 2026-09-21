@@ -1,0 +1,19 @@
+# Moodle version manifest for cursor.ai
+# Generated during upgrade to Moodle 5.2.2+ weekly line.
+
+release=5.2.3+ (Build: 20260916)
+version=2026042003.01
+branch=502
+maturity=stable
+
+upstream_repo=https://github.com/moodle/moodle
+upstream_branch=MOODLE_502_STABLE
+upstream_commit=3fef2ed3c955977e7759ff3d6924e3009a82d60e
+upstream_tag_baseline=v5.2.2
+
+upgraded_from_release=4.5.13 (Build: 20260810)
+upgraded_from_version=2024100713.00
+upgrade_path=direct (4.4+ -> 5.2, per Moodle 5.2 release notes)
+
+webroot=public/
+upgrade_date=2026-09-21
