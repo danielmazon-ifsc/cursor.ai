@@ -1,0 +1,441 @@
+/* Estilos gerais */
+
+#page-site-index .navbar.fixed-top,
+#page-site-index #page-footer {
+    display: none;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#page-site-index {
+    background-color: rgb(1,19,23);
+}
+
+#page-site-index .course-header {
+    display: none;
+}
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+.area{
+    background: #011317;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.areaeixo1 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+#page-site-index .avatar-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#page-site-index .avatar-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#page-site-index .avatar-xxl {
+    width: inherit !important;
+    height: inherit !important;
+    margin-right: 2rem !important;
+}
+
+.rotating-glow {
+    width: 200px;
+    height: 200px;
+    filter: blur(10px);
+    opacity: 0.8;
+    animation: rotate 20s linear infinite, glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        filter: blur(10px) brightness(1);
+
+    }
+    50% {
+        filter: blur(15px) brightness(1.3);
+
+    }
+    100% {
+        filter: blur(10px) brightness(1);
+
+    }
+}
+
+.avatar-background img {
+    width: 200px;
+    /* Ajuste conforme necessário */
+    height: 200px;
+    /* Ajuste conforme necessário */
+    opacity: 0.8;
+    /* Ajuste a opacidade conforme necessário */
+}
+
+@media (min-width: 768px) {
+    .avatar-xxl {
+        font-size: 2.66667rem;
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+#page-site-index .avatar-xxl {
+    font-size: 1.70833rem;
+    width: 5.125rem;
+    height: 5.125rem;
+}
+
+#page-site-index .avatar-xl {
+    font-size: 1.70833rem;
+    width: 5.125rem;
+    height: 5.125rem;
+}
+
+.containerhome {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 810px;
+  background: url([[pix:theme_pdi|home-background]]) no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .containerhome {
+    height: auto;
+    aspect-ratio: 16/9; /* Mantém a proporção da imagem */
+  }
+  
+  /* Se a tela ficar muito pequena, esconde as áreas interativas */
+  
+}
+
+@media (max-width: 800px) {
+    .containerhome {
+        background: url([[pix:theme_pdi|expand-screen]]) no-repeat center center;
+        background-size: contain;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Definindo áreas específicas com posições relativas */
+#eixo1 {
+    /* LT: 97,58 RT: 309,74 LB: 101,559 RB: 312,564 */
+    top: 4.0%; /* 4.0% = 58/1440 */
+    left: 3.8%; /* 3.8% = 97/2560 */
+    width: 8.4%; /*  8.4% = (312-97)/2560 */
+    height: 35.1%; /* 35.1% = (564-58)/1440 */
+    clip-path: polygon(0% 0%, 100% 3.2%, 100% 100%, 0% 99%);
+    /* 3.2% = (74-58)/(564-58) */
+    /* 99.0% = (559-58)/(564-58) */
+}
+
+#eixo2 {
+    /* LT: 441,83 RT: 636,98 LB: 442,564 RB: 635,568 */
+    top: 5.8%;
+    left: 17.2%;
+    width: 7.7%;
+    height: 33.7%;
+    clip-path: polygon(0% 0%, 100% 3.1%, 100% 100%, 0% 99.2%);
+}
+
+#eixo3 {
+    /* LT: 742,103 RT: 925,118 LB: 739,569 RB: 927,573 */
+    top: 7.2%;
+    left: 29.0%;
+    width: 7.3%;
+    height: 32.6%;
+    clip-path: polygon(0% 0%, 100% 3.2%, 100% 100%, 0% 99.1%);
+}
+
+#eixo4 {
+    /* LT: 97,714 RT: 308,713 LB: 98,1213 RB: 309,1202 */
+    top: 49.6%;
+    left: 3.8%;
+    width: 8.3%;
+    height: 34.7%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 97.8%, 0% 100%);
+}
+
+#eixo5 {
+    /* LT: 439,709 RT: 634,709 LB: 439,1193 RB: 637,1182 */
+    top: 49.2%;
+    left: 17.1%;
+    width: 7.7%;
+    height: 33.6%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 97.7%, 0% 100%);
+}
+
+#eixo6 {
+    /* LT: 740,709 RT: 925,709 LB: 741,1175 RB: 925,1164 */
+    top: 49.2%;
+    left: 28.9%;
+    width: 7.2%;
+    height: 32.4%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 97.6%, 0% 100%);
+}
+
+#saladeconferencias {
+    top: 6.2%; /* 89/1440 */
+    left: 77%; /* 1970/2560 */
+    width: 10.5%; /* (2240-1970)/2560 */
+    height: 32.6%; /* (558-89)/1440 */
+    clip-path: polygon(0 13%, 100% 0%, 100% 95.3%, 0 100%);
+    /* 13% = (150-89)/(558-89) */
+    /* 95.3% = (536-89)/(558-89) */
+}
+
+#cafeconsaber {
+    top: 50.4%; /* 726/1440 */
+    left: 77.4%; /* 1982/2560 */
+    width: 7.7%; /* (2179-1982)/2560 */
+    height: 31.0%; /* (1173-726)/1440 */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 91.1%);
+    /* 91.1% = (1133-726)/(1173-726) */
+}
+
+.custom-tooltip {
+    position: fixed;
+    display: none;
+    background-color: white;
+    color: rgba(116, 0, 183);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#page-site-index #block-region-side-post,
+#page-site-index .addresourcemodchooser,
+#page-site-index .sitetopic {
+    display: none;
+}
+
+#page-site-index #region-main {
+    width: 100%;
+}
+
+#page-site-index .main_content {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+}
+
+#page-site-index #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-site-index #topofscroll,
+#page-site-index #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-site-index #page-header,
+#page-site-index .secondary-navigation {
+    display: none;
+}
+
+#page-site-index #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-site-index h2 {
+    margin-bottom: 9px;
+    margin-top: 0;
+    color: #CDFEFD !important;
+    max-width: 616px;
+    font-size: 1.999rem;
+    font-family: 'Typo-Round-regular',sans-serif;
+    font-weight: 600;
+    /* Was 1rem — with ~2rem font-size, wrapped names stacked on top of each other. */
+    line-height: 1.2;
+    text-rendering: optimizelegibility;
+}
+
+#page-site-index .home-user-fullname {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#page-site-index small {
+    font-weight: 300;
+    color: hsla(0,0%,100%,.7) !important;
+    line-height: 1.5;
+    font-size: .8125rem;
+}
+
+/* Home user strip: fluid height so certificate copy + chips never clip into the doors. */
+#page-site-index .home-user-section {
+    height: auto !important;
+    min-height: 0;
+    padding-bottom: 1.5rem;
+    overflow: visible;
+}
+
+#page-site-index .home-user-row {
+    width: 100%;
+    gap: 1rem 1.5rem;
+}
+
+#page-site-index .home-user-main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+#page-site-index .home-user-certificate {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: large;
+    color: white;
+    flex-shrink: 0;
+}
+
+#page-site-index .home-minidashboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    #page-site-index .home-minidashboard {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 992px) {
+    #page-site-index .home-user-section {
+        padding-bottom: 0;
+    }
+
+    #page-site-index .home-user-main {
+        width: auto;
+        flex: 1 1 auto;
+        max-width: calc(100% - 14rem);
+    }
+
+    #page-site-index .home-user-certificate {
+        width: 12rem;
+        max-width: 22%;
+        text-align: center;
+    }
+}
+
+#page-site-index .home-certificate-button {
+    min-width: 170px;
+    text-shadow: none;
+}
+
+/* Not yet eligible: same outline button, white → gray (including hover). */
+#page-site-index .home-certificate-button--pending,
+#page-site-index a.home-certificate-button--pending {
+    color: #9aa0a6 !important;
+    background-color: transparent !important;
+    border-color: #9aa0a6 !important;
+}
+
+#page-site-index .home-certificate-button--pending:hover,
+#page-site-index .home-certificate-button--pending:focus,
+#page-site-index .home-certificate-button--pending:active,
+#page-site-index a.home-certificate-button--pending:hover,
+#page-site-index a.home-certificate-button--pending:focus,
+#page-site-index a.home-certificate-button--pending:active {
+    color: #1a1d21 !important;
+    background-color: #9aa0a6 !important;
+    border-color: #9aa0a6 !important;
+}
+
+#page-site-index .home-certificate-button.disabled,
+#page-site-index .home-certificate-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    color: white !important;
+    background-color: transparent !important;
+    border-color: white !important;
+    box-shadow: none !important;
+}
+
+/* Override .btn-outline-white:hover while the certificate CTA is locked. */
+#page-site-index .home-certificate-button.disabled:hover,
+#page-site-index .home-certificate-button.disabled:focus,
+#page-site-index .home-certificate-button.disabled:active,
+#page-site-index .home-certificate-button:disabled:hover,
+#page-site-index .home-certificate-button:disabled:focus,
+#page-site-index .home-certificate-button:disabled:active {
+    cursor: default;
+    color: white !important;
+    background-color: transparent !important;
+    border-color: white !important;
+    box-shadow: none !important;
+    opacity: 0.5;
+}
+
+#page-site-index .home-certificate-disabled-message,
+#page-site-index .home-certificate-congrats-message {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    line-height: 1.35;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#page-site-index .home-certificate-congrats-message {
+    color: #CDFEFD;
+    font-weight: 600;
+}

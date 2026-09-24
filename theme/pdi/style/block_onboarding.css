@@ -1,0 +1,262 @@
+#page-my-index:not(.context-1) .navbar,
+#page-my-index:not(.context-1) nav.navbar,
+#page-my-index:not(.context-1) #default-navbar,
+#page-my-index:not(.context-1) #page-header,
+#page-my-index:not(.context-1) .primary-navigation,
+#page-my-index:not(.context-1) .header-actions,
+#page-my-index:not(.context-1) .drawer-toggles,
+#page-my-index:not(.context-1) .editmode-switch-form,
+#page-my-index:not(.context-1) #page-footer,
+#page-my-index:not(.context-1) footer,
+#page-my-index:not(.context-1) .add_block_button,
+#page-my-index:not(.context-1) .drawer,
+#page-my-index:not(.context-1) .block-controls {
+    display: none !important;
+}
+
+#page-my-index.context-1 .navbar,
+#page-my-index.context-1 .block-controls {
+    display: flex;
+}
+
+#page-my-index.context-1 #page-footer {
+    display: block;
+}
+
+#page-my-index.context-1 .drawer,
+#page-my-index.context-1 .add_block_button,
+#page-my-index.context-1 .block-controls {
+    display: inherit;
+}
+
+#page-my-index #page {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+}
+
+#page-my-index.context-1 #page {
+    margin: auto !important;
+    padding: 10rem !important;
+    height: unset;
+}
+
+#page-my-index #topofscroll {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+}
+
+#page-my-index.context-1 #topofscroll {
+padding: unset;
+  margin: auto;
+  width: unset;
+  max-width: 837px;
+}
+
+#page-my-index #page-content {
+    padding: 0 !important;
+}
+
+#page-my-index.context-1 #page-content {
+    padding: unset !important;
+}
+
+.block_onboarding {
+    border: none !important;
+    background-image: url([[pix:block_onboarding|background]]) !important;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#page-my-index .block_onboarding {
+    border-radius: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh;
+}
+
+#page-my-index .block_onboarding > .card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#page-my-index #region-main {
+    padding: 0 !important;
+    max-width: none !important;
+}
+
+.block_onboarding .card-body {
+    background: transparent;
+}
+
+.block_onboarding h4 {
+    color: rgb(48, 56, 64);
+    line-height: 1;
+}
+
+.block_onboarding .js-player {
+    min-width: 40rem;
+}
+
+[dir] .block_onboarding label {
+  color: rgb(48, 56, 64) !important;
+}
+
+[dir] .block_onboarding .btn.btn-outline-primary {
+    border-color: rgb(0, 116, 123) !important;
+    color: rgb(0, 116, 123);
+    border-style: solid;
+}
+
+[dir] .block_onboarding .btn.btn-outline-primary:hover {
+    background-color: rgb(0, 116, 123);
+    color: white !important;
+}
+
+[dir] .block_onboarding .btn.btn-primary {
+    color: white !important;
+}
+
+[dir] .block_onboarding .btn.btn-primary:hover {
+    background-color: transparent !important;
+    color: rgb(0, 116, 123) !important;
+    border-color: rgb(0, 116, 123) !important;
+    border-style: solid;
+}
+
+.block_onboarding .carousel a {
+    background-color: #CDFEFD !important;
+}
+
+.block_onboarding .carousel span {
+    color: #37B6B5 !important;
+}
+
+.block_onboarding .chip {
+    font-size: 10px;
+    font-family: Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-weight: 700;
+}
+
+.block_onboarding .custom-range {
+    width: 100%;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    height: 3px !important;
+    background: linear-gradient(to right, #2196F3, #4CAF50, #9C27B0, #E91E63) !important;
+    border-radius: 5px !important;
+    outline: none !important;
+}
+
+.block_onboarding .custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #8230e6 !important;
+    border: 2px solid #b785f3 !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.block_onboarding .custom-range::-webkit-slider-thumb:hover {
+    transform: scale(1.2) !important;
+}
+
+.block_onboarding .slider-labels {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.block_onboarding .slider-label {
+    font-size: 14px !important;
+    color: #666 !important;
+    text-align: center !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: color 0.3s ease !important;
+}
+
+.block_onboarding .slider-label.active {
+    color: #8230e6 !important;
+    font-weight: bold !important;
+}
+
+.block_onboarding .carousel-control-prev,
+.block_onboarding .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.block_onboarding .carousel-control-prev:hover,
+.block_onboarding .carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.block_onboarding .carousel-control-prev {
+    left: 10px;
+}
+
+.block_onboarding .carousel-control-next {
+    right: 10px;
+}
+
+.block_onboarding .material-icons {
+    color: white;
+}
+
+.block_onboarding .avatar-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.block_onboarding .avatar-option {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.block_onboarding .avatar-option.center-avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.block_onboarding .avatar-option.selected {
+    border-color: #4CAF50;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+.block_onboarding .time-option {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.time-option.selected {
+    background-color: #8230e6;
+    color: white;
+    border-color: #8230e6;
+}
+
+#page-my-index .block_onboarding .card-title {
+    display: none !important;
+}

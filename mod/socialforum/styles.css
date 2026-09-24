@@ -1,0 +1,286 @@
+#page-mod-socialforum-view .course-header,
+#page-mod-socialforum-discuss .course-header {
+    margin-bottom: 0 !important;
+}
+
+#page-mod-socialforum-view .main_content,
+#page-mod-socialforum-discuss .main_content {
+    max-width: unset;
+    padding: 0 !important;
+}
+
+#page-mod-socialforum-view .search-form,
+#page-mod-socialforum-search .search-form{
+    border: 1px solid #e9edf2 !important;
+}
+
+#page-mod-socialforum-view .search-form .material-icons,
+#page-mod-socialforum-search .search-form .material-icons {
+    color: #949595 !important;
+}
+
+#page-mod-socialforum-view .search-form button,
+#page-mod-socialforum-search .search-form button {
+    margin: 0 !important;
+    border: none !important;
+}
+
+#page-mod-socialforum-view .search-form button:hover,
+#page-mod-socialforum-search .search-form button:hover {
+    background-color: transparent !important;
+}
+
+#page-mod-socialforum-view .search-form .form-control,
+#page-mod-socialforum-search .search-form .form-control{
+    color: inherit !important;
+}
+
+#page-mod-socialforum-view .socialforumaddnew {
+    margin-top: .4rem;
+}
+
+#page-mod-socialforum-discuss .posts {
+    padding-top: 2rem;
+}
+
+#page-mod-socialforum-discuss .forumpost {
+    margin-bottom: 0;
+}
+
+#page-mod-socialforum-discuss .associated-video .js-player {
+    border-radius: 10px 10px 0 0;
+}
+
+#page-mod-socialforum-post #fitem_id_discussionsubscribe,
+#page-mod-socialforum-post #fitem_id_attachments,
+#page-mod-socialforum-post #fitem_id_mailnow,
+#page-mod-socialforum-post #fitem_id_pinned,
+#page-mod-socialforum-post .fdescription.required,
+#page-mod-socialforum-post .ftoggler,
+#page-mod-socialforum-post .indent {
+    display: none;
+}
+
+#page-mod-socialforum-post #fgroup_id_buttonar {
+    border: none;
+}
+
+#page-mod-socialforum-post #fgroup_id_buttonar {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#mod-socialforum-view .page-name {
+    display: none;
+}
+
+#mod-socialforum-view .course-header,
+#mod-socialforum-discuss .course-header,
+#mod-socialforum-post .course-header {
+    display: none;
+}
+
+#mod-socialforum-view .container,
+#mod-socialforum-discuss .container,
+#mod-socialforum-post .container {
+    padding: 0 !important;
+}
+
+#mod-socialforum-view .main_content,
+#mod-socialforum-discuss .main_content {
+    background-color: rgb(14, 2, 22);    
+}
+
+#mod-socialforum-view .forumheaderlist {
+  border: none;
+  background-color: rgb(34, 36, 46);
+}
+
+#mod-socialforum-view .forumheaderlist tr {
+    border-color: #17141F;
+}
+
+#mod-socialforum-view .forumheaderlist .btn {
+  color: black !important;
+  border: none !important;
+}
+
+#mod-socialforum-view .forumheaderlist th div {
+  margin: 0 !important;
+}
+
+#mod-socialforum-view .forumheaderlist th, 
+#mod-socialforum-view .forumheaderlist td {
+  padding: 1rem !important;
+}
+
+#mod-socialforum-view .forumheaderlist strong {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#mod-socialforum-view .forumheaderlist .replies {
+  text-align: center !important;
+}
+
+#mod-socialforum-discuss .posts {
+  padding-left: 0 !important;
+}
+
+#mod-socialforum-discuss #user-notifications {
+    display: none;
+}
+
+#mod-socialforum-discuss .posts .post-text {
+  opacity: .7;
+}
+
+#mod-socialforum-discuss .posts a {
+  color: rgb(221, 192, 255) !important;
+  text-transform: uppercase;
+  font-size: smaller;
+}
+
+#mod-socialforum-discuss .posts .post,
+#mod-socialforum-post .post {
+  border-left-width: 4px !important;
+  border-left-color: red !important;
+}
+
+#mod-socialforum-discuss .posts .reply-post .post {
+  border-left-color: rgba(110, 10, 232, 0.44) !important;
+}
+
+#mod-socialforum-discuss .associated-video .card-body {
+  background-color: rgba(110, 10, 232, 0.44);
+}
+
+#mod-socialforum-post #mformforum .ftoggler,
+#mod-socialforum-post #mformforum #fitem_id_discussionsubscribe,
+#mod-socialforum-post #mformforum #fitem_id_attachments,
+#mod-socialforum-post #mformforum #fitem_id_mailnow,
+#mod-socialforum-post #mformforum .fdescription.required {
+  display: none;
+}
+
+#mod-socialforum-post .indent,
+#mod-socialforum-post #mformforum .req,
+#mod-socialforum-post #fitem_id_pinned {
+  display: none;
+}
+
+#mod-socialforum-post #mformforum .fitemtitle {
+  display: contents;
+}
+
+#mod-socialforum-post #mformforum .fitemtitle label,
+#mod-socialforum-post #mformforum #fitem_id_subject .ftext {
+  margin-left: 3.5rem;
+}
+
+#mod-socialforum-post #mformforum #id_subject {
+  width: 100%;
+}
+
+#mod-socialforum-post #mformforum .feditor {
+  margin-left: 3.5rem !important;
+}
+
+#mod-socialforum-post #mformforum .editor_atto_content_wrap {
+  background-color: rgb(34, 36, 46);
+  border-radius: 0px 0px 5px 5px;
+  border-width: 0;
+}
+
+#mod-socialforum-post #mformforum .editor_atto_toolbar {
+  border-radius: 5px 5px 0px 0px;
+}
+
+#mod-socialforum-post #mformforum #id_messageeditable {
+  resize: none;
+  color: white;
+}
+
+#mod-socialforum-post #mformforum .felement.fgroup {
+  margin-left: 3.5rem !important;
+}
+
+#mod-socialforum-post #mformforum #fgroup_id_buttonar input {
+  margin-right: 1rem !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#mod-socialforum-post #mformforum #id_cancel {
+    background-color: transparent !important;
+    border-color: rgb(134, 142, 150) !important;
+}
+
+#mod-socialforum-view .narrow-page.discussions.container {
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
+}
+
+#mod-socialforum-view #banner-background,
+#mod-socialforum-post #banner-background, 
+#mod-socialforum-discuss #banner-background {
+  background-image: url(/mod/socialforum/pix/banner-background.png);
+  transform: translate3d(0px, 0px, 0px);
+  will-change: opacity;
+  opacity: 1;
+  margin-top: -21.3416px;
+}
+
+#mod-socialforum-post .editor_atto_content img,
+#mod-socialforum-discuss .post.card img {
+    max-height: 500px;
+    max-width: 500px;
+}
+
+#mod-socialforum-post h2 {
+  color: [[setting:contrastcolor]] !important;
+}
+
+#page-mod-socialforum-view .mdk-box.mb-0.py-32pt {
+  display: none;
+}
+
+#page-mod-socialforum-view .narrow-page.discussions.container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#page-mod-socialforum-post .col-lg-3.page-nav {
+  display: none;
+}
+
+#page-mod-socialforum-post #banner .page-section,
+#page-mod-socialforum-discuss #banner .page-section {
+  background-color: transparent;
+  padding: 0 !important;
+  margin: 0;
+}
+
+#page-mod-socialforum-post h2 {
+  color: [[setting:maincolor]] !important;
+}
+
+#page-mod-socialforum-post #icon,
+#page-mod-socialforum-post #courselink,
+#page-mod-socialforum-discuss #icon,
+#page-mod-socialforum-discuss #courselink {
+  display: none;
+}
+
+#page-mod-socialforum-post #banner {
+  padding: 0 !important;
+}
+
+#page-mod-socialforum-discuss #discussionlink {
+  display: none;
+}
+
+#page-mod-socialforum-discuss .container.page__container.d-flex.flex-column.flex-md-row.align-items-center.text-center.text-md-left,
+#page-mod-socialforum-post .hero.container.page__container.text-center{
+  padding: 0;
+}

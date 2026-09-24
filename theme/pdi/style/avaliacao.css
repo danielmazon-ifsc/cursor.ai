@@ -1,0 +1,363 @@
+/*
+ * theme_pdi - avaliação de satisfação / reação
+ *
+ * Estilos das páginas "Avaliação de Reação" / "Avaliação de Satisfação"
+ * (mod_page, mod_survey, mod_questionnaire) e dos cartões "Mural de avisos"
+ * sobre os Eixos (format_specialization).
+ *
+ * As regras de conteúdo da atividade usam body.pdi-avaliacao-reacao, definida
+ * em theme_pdi_page_init() a partir do nome da atividade — não dependem de cmid
+ * fixo (89/100/… eram só da homologação).
+ */
+
+/* ===== Navbar / footer PDI (mesmo chrome dos Eixos) ===== */
+
+body.pdi-avaliacao-reacao .navbar.fixed-top,
+body.pdi-avaliacao-reacao #page-footer {
+    display: none !important;
+}
+
+body.pdi-avaliacao-reacao #default-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    width: 100%;
+}
+
+body.pdi-avaliacao-reacao #page {
+    padding-top: 72px;
+}
+
+/* ===== Página de avaliação de reação/satisfação (mod_page / mod_survey) ===== */
+
+body.pdi-avaliacao-reacao #page-mod-survey-view,
+body.pdi-avaliacao-reacao #page-mod-page-view,
+body.pdi-avaliacao-reacao #page-mod-page-view #page.drawers .main-inner,
+body.pdi-avaliacao-reacao #page-mod-page-view .moremenu .nav-tabs {
+    background-color: rgb(1, 19, 23);
+}
+
+body.pdi-avaliacao-reacao #page-mod-page-view #region-main h2 {
+    color: rgb(205, 254, 253) !important;
+}
+
+body.pdi-avaliacao-reacao #page-mod-page-view #page.drawers .main-inner {
+    background-color: #f5f7fa !important;
+}
+
+body.pdi-avaliacao-reacao .secondary-navigation,
+body.pdi-avaliacao-reacao #page-mod-page-view .secondary-navigation .navigation,
+body.pdi-avaliacao-reacao #page-mod-page-view .activity-navigation,
+body.pdi-avaliacao-reacao #region-main h2:first-of-type,
+body.pdi-avaliacao-reacao .activity-navigation {
+    display: none !important;
+}
+
+body.pdi-avaliacao-reacao #topofscroll {
+    max-width: 100% !important;
+    padding: 0 !important;
+    background-color: #f5f7fa !important;
+}
+
+body.pdi-avaliacao-reacao #page.drawers {
+    padding: 0px !important;
+    margin-top: 0 !important;
+}
+
+body.pdi-avaliacao-reacao #region-main,
+body.pdi-avaliacao-reacao #page-wrapper #page {
+    background-color: #f5f7fa !important;
+}
+
+body.pdi-avaliacao-reacao .py-3 {
+    padding: 0px !important;
+}
+
+body.pdi-avaliacao-reacao .pagelayout-standard #page.drawers .main-inner,
+body.pdi-avaliacao-reacao.limitedwidth #page.drawers .main-inner {
+    min-width: 100% !important;
+}
+
+/* Cabeçalho hero da página de avaliação */
+.topo-pdi-avr-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #2c3e50, #000000);
+    color: #ffffff;
+    padding: 36px 24px;
+}
+
+.topo-pdi-avr-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topo-pdi-avr-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.topo-pdi-avr-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.topo-pdi-avr-text p {
+    max-width: 700px;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.corpo-pdi-avr {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #2c3e50;
+}
+
+.card p {
+    margin-bottom: 16px;
+}
+
+.botao-pdi-avr {
+    display: inline-block;
+    background: #3498db;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 21px;
+    transition: 0.2s ease;
+    color: #836aab !important;
+    border: 1px solid #836aab;
+    width: 200px;
+    text-align: center;
+}
+
+.botao-pdi-avr:hover {
+    background-color: #836aab;
+    color: #ffffff !important;
+}
+
+.botao-pdi-avr-voltar {
+    display: inline-block;
+    background: #3498db;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 21px;
+    transition: 0.2s ease;
+    color: #ffffff !important;
+    border: 1px solid #ffffff;
+    width: 200px;
+    text-align: center;
+}
+
+.botao {
+    display: inline-block;
+    background: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.botao:hover {
+    filter: brightness(0.95);
+}
+
+.card-eixo {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.card-eixo-conteudo {
+    flex: 1;
+    min-width: 260px;
+}
+
+.card-eixo-conteudo h2 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.card-eixo-conteudo p {
+    margin-bottom: 0;
+    max-width: 700px;
+}
+
+.botao-eixo {
+    display: inline-block;
+    background: #ffffff;
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.botao-eixo:hover {
+    background: #f1f5f9;
+}
+
+.mod_questionnaire_viewpage {
+    margin-top: -108px !important;
+    margin-left: 22%;
+}
+
+@media (max-width: 768px) {
+    .topo-pdi-avr {
+        padding: 36px 20px;
+    }
+
+    .topo-pdi-avr h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-eixo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ===== Página de Enquete (mod_questionnaire) ===== */
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view #region-main h2:first-of-type,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete #region-main h2:first-of-type,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view .secondary-navigation,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view .completion-info,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete .completion-info,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete .secondary-navigation {
+    display: none !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view #topofscroll,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete #topofscroll {
+    max-width: 100% !important;
+    padding: 0 !important;
+    background-color: #f5f7fa !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view #page.drawers,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete #page-wrapper #page {
+    padding: 0px !important;
+    margin-top: 0 !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view #region-main {
+    background-color: #f5f7fa !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete .mod_questionnaire_completepage {
+    width: 80%;
+    margin: 0 auto !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view .activity-header,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete .activity-header {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+body.pdi-avaliacao-reacao#page-mod-questionnaire-view .activity-description,
+body.pdi-avaliacao-reacao#page-mod-questionnaire-complete .activity-description {
+    padding-top: 0px !important;
+}
+
+/* ===== Mural de avisos (overlay nos cards de Eixo) ===== */
+
+#page-course-view-specialization.editing .mural-aviso {
+    display: none !important;
+}
+
+.mural-aviso {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 27px 3px #FFFFFF;
+    box-shadow: 0px 0px 27px 3px #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+ .mural-aviso > img{
+    width: 100%;
+    height: 100%; 
+}
+
+.mural-aviso:hover {
+    -webkit-box-shadow: 0px 0px 39px 25px #ffffff;
+    box-shadow: 0px 0px 39px 25px #ffffff;
+}
+
+.mural-aviso-titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-left: 0px;
+    color: #ffffff;
+}
+
+.mural-aviso p {
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Hotspots reservados para o "Mural de avaliação" em cada Eixo */
+#course-1-window-5,
+#course-2-window-6,
+#course-3-window-5,
+#course-4-window-5,
+#course-5-window-5,
+#course-6-window-5 {
+    top: 3%;
+    left: 41.3%;
+    width: 20%;
+    height: 20.32%;
+}
+
+@media (min-width: 768px) {
+    body.pdi-avaliacao-reacao #page-mod-survey-view .pagelayout-standard #page.drawers .main-inner,
+    body.pdi-avaliacao-reacao.limitedwidth #page.drawers .main-inner {
+        min-width: 100%;
+        padding: 0px;
+    }
+}

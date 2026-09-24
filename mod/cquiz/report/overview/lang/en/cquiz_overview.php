@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Strings for component 'cquiz_overview', language 'en', branch 'MOODLE_20_STABLE'
+ *
+ * @package   cquiz_overview
+ * @copyright 2017 Viddia (http://viddia.com.br)
+ * @author     Ricardo Drummond
+ */
+$string['allattempts'] = 'Show all attempts';
+$string['allattemptscontributetograde'] = 'All attempts contribute to final grade for user.';
+$string['allstudents'] = 'Show all {$a}';
+$string['attemptsonly'] = 'Show {$a} with attempts only';
+$string['attemptsprepage'] = 'Attempts shown per page';
+$string['deleteselected'] = 'Delete selected attempts';
+$string['done'] = 'Done';
+$string['err_failedtodeleteregrades'] = 'Failed to delete calculated attempt grades';
+$string['err_failedtorecalculateattemptgrades'] = 'Failed to recalculate attempt grades';
+$string['highlightinggraded'] = 'The user attempt that contributes to final grade is highlighted.';
+$string['needed'] = 'Needed';
+$string['noattemptsonly'] = 'Show / download {$a} with no attempts only';
+$string['noattemptstoregrade'] = 'No attempts need regrading';
+$string['nogradepermission'] = 'You don\'t have permission to grade this cquiz.';
+$string['onlyoneattemptallowed'] = 'Only one attempt per user allowed on this cquiz.';
+$string['optallattempts'] = 'all attempts';
+$string['optallstudents'] = 'all {$a} who have or have not attempted the cquiz';
+$string['optattemptsonly'] = '{$a} who have attempted the cquiz';
+$string['optnoattemptsonly'] = '{$a} who have not attempted the cquiz';
+$string['optonlyregradedattempts'] = 'that have been regraded / are marked as needing regrading';
+$string['overview'] = 'Grades';
+$string['overviewdownload'] = 'Overview download';
+$string['overviewfilename'] = 'grades';
+$string['overviewreport'] = 'Grades report';
+$string['overviewreportgraph'] = 'Overall number of students achieving grade ranges';
+$string['overviewreportgraphgroup'] = 'Number of students in group \'{$a}\' achieving grade ranges';
+$string['pagesize'] = 'Page size';
+$string['pluginname'] = 'Grades';
+$string['preferencespage'] = 'Preferences just for this page';
+$string['preferencessave'] = 'Show report';
+$string['preferencesuser'] = 'Your preferences for this report';
+$string['regrade'] = 'Regrade';
+$string['regradeall'] = 'Regrade all';
+$string['regradealldry'] = 'Dry run a full regrade';
+$string['regradealldrydo'] = 'Regrade attempts marked as needing regrading ({$a})';
+$string['regradealldrydogroup'] = 'Regrade attempts ({$a->countregradeneeded}) marked as needing regrading in group \'{$a->groupname}\'';
+$string['regradealldrygroup'] = 'Dry run a full regrade for group \'{$a->groupname}\'';
+$string['regradeallgroup'] = 'Full regrade for group \'{$a->groupname}\'';
+$string['regradecomplete'] = 'Regrade completed successfully';
+$string['regradeheader'] = 'Regrading';
+$string['regradeselected'] = 'Regrade selected attempts';
+$string['regradingattemptxofy'] = 'Regrading attempt ({$a->done}/{$a->count})';
+$string['show'] = 'Show / download';
+$string['showattempts'] = 'Only show / download attempts';
+$string['showdetailedmarks'] = 'Marks for each question';
+$string['showinggraded'] = 'Showing only the attempt graded for each user.';
+$string['showinggradedandungraded'] = 'Showing graded and ungraded attempts for each user. The one attempt for each user that is graded is highlighted. The grading method for this cquiz is {$a}.';
+$string['studentingroup'] = '\'{$a->coursestudent}\' in group \'{$a->groupname}\'';
+$string['studentingrouplong'] = '\'{$a->coursestudent}\' in this group';

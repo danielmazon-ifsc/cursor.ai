@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * This page is the entry page into the cquiz UI. Displays information about the
+ * cquiz to students and teachers, and lets students see their previous attempts.
+ *
+ * @package   mod_cquiz
+ * @category  grade
+ * @copyright 2017 Viddia (http://viddia.com.br)
+ * @author     Ricardo Drummond
+ */
+require_once(dirname(__FILE__) . '/../../config.php');
+require_once($CFG->dirroot . '/mod/cquiz/locallib.php');
+require_once($CFG->dirroot . '/mod/cquiz/report/reportlib.php');
+
+
+$id = required_param('id', PARAM_INT);
+$userid = optional_param('userid', 0, PARAM_INT);
+
+$cm = get_coursemodule_from_id('cquiz', $id, 0, false, MUST_EXIST);
+$course = $DB->get_record('course', array('id' => $cm->course), '*', MUST_EXIST);
+$cquiz = $DB->get_record('cquiz', array('id' => $cm->instance), '*', MUST_EXIST);
+require_login($course, false, $cm);
+
+$reportlist = cquiz_report_list(context_module::instance($cm->id));
+if (empty($reportlist) || $userid == $USER->id) {
+    // If the user cannot see reports, or can see reports but is looking
+    // at their own grades, redirect them to the view.php page.
+    // (The looking at their own grades case is unlikely, since users who
+    // appear in the gradebook are unlikely to be able to see cquiz reports,
+    // but it is possible.)
+    redirect(new moodle_url('/mod/cquiz/view.php', array('id' => $cm->id)));
+}
+
+// Now we know the user is interested in reports. If they are interested in a
+// specific other user, try to send them to the most appropriate attempt review page.
+if ($userid) {
+
+    // Work out which attempt is most significant from a grading point of view.
+    $attempts = cquiz_get_user_attempts($cquiz->id, $userid, 'finished');
+    $attempt = null;
+    switch ($cquiz->grademethod) {
+        case CQUIZ_ATTEMPTFIRST:
+            $attempt = reset($attempts);
+            break;
+
+        case CQUIZ_ATTEMPTLAST:
+        case CQUIZ_GRADEAVERAGE:
+            $attempt = end($attempts);
+            break;
+
+        case CQUIZ_GRADEHIGHEST:
+            $maxmark = 0;
+            foreach ($attempts as $at) {
+                // Operator >=, since we want to most recent relevant attempt.
+                if ((float) $at->sumgrades >= $maxmark) {
+                    $maxmark = $at->sumgrades;
+                    $attempt = $at;
+                }
+            }
+            break;
+    }
+
+    // If the user can review the relevant attempt, redirect to it.
+    if ($attempt) {
+        $attemptobj = new cquiz_attempt($attempt, $cquiz, $cm, $course, false);
+        if ($attemptobj->is_review_allowed()) {
+            redirect($attemptobj->review_url());
+        }
+    }
+
+    // Otherwise, fall thorugh to the generic case.
+}
+
+// Send the user to the first report they can see.
+redirect(new moodle_url('/mod/cquiz/report.php', array(
+    'id' => $cm->id, 'mode' => reset($reportlist))));

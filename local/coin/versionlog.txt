@@ -1,0 +1,61 @@
+2026052645:
+    - Sala de Conferências: skip duplicate planned_completion awards when the
+      user already has keys for that course (volatile studypace row id in action).
+
+2025061401:
+    - error_log removed
+
+2025050102:
+    - First version in Moodle 4.1
+
+2024052101:
+    - Fixed defalt value to grant coins
+
+2024041502:
+    - Store separated ledgers and stacks by course
+
+2023041003:
+    - Changed to support subtraction of coins
+    - Changed to record causing event in log for coins awarding and cancelation
+    - Changed to allow admins to check coins ledger of other users
+    - Changed to display cons balance at top of coins ledger
+    - Changed to move coins related menu items to root of admin menu
+
+2023032003:
+    - Added reason to coin cancelation email
+    - Changed the default configuration for events which award and cancel coins
+    - Changed the current configuration for events which award and cancel coins
+
+2021111801:
+    - Added a coin ledger report
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2018101601
+    - Bug fix: default value for coin awarding events was mistyped
+
+2018092501:
+    - Changed to set standard awarding and cacellation events by default
+
+2018082701:
+    - Bug fix: it wasn't cancelling coins correctly
+    - Changed to allow cancellation of coins awarded in a different event
+
+2018031501:
+    - Bug fix: was generating runtime error to send message to a user who has
+        been deleted (e.g. coin expiration)
+
+2018031301:
+    - Bug fix: was generating runtime error to send message in case of null event
+        (e.g. coin deletion)
+
+2017081501:
+    - New icon
+
+2017051801:
+    - Changed to generate reason as an url in messages sent to inform coin
+        stack changes
+
+2017032401:
+    - First version

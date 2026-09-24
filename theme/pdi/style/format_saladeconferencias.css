@@ -1,0 +1,96 @@
+/* Page shell — Sala de Conferências format */
+#page-course-view-saladeconferencias .navbar.fixed-top,
+#page-course-view-saladeconferencias #page-footer {
+    display: none;
+}
+
+#maincontent{
+    height: unset!important;
+}
+#page-course-view-saladeconferencias #page {
+    background-color: #fff;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 0;
+}
+
+#page-course-view-saladeconferencias #page.drawers {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+#page-course-view-saladeconferencias #page.drawers .main-inner,
+#page-course-view-saladeconferencias #topofscroll.main-inner {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+#page-course-view-saladeconferencias #topofscroll,
+#page-course-view-saladeconferencias #region-main {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#page-course-view-saladeconferencias .secondary-navigation,
+#page-course-view-saladeconferencias .course-header {
+    display: none;
+}
+
+#page-course-view-saladeconferencias .helptooltip {
+    display: none;
+}
+
+#page-course-view-saladeconferencias .urlselect,
+#page-course-view-saladeconferencias .section-cm-edit-actions,
+#page-course-view-saladeconferencias .section_action_menu {
+    margin-left: 0 !important;
+    float: right;
+    background: white !important;
+    color: black;
+}
+
+#page-course-view-saladeconferencias .urlselect {
+    float: left;
+    border: 1px solid black;
+}
+
+#page-course-view-saladeconferencias .section_action_menu a,
+#page-course-view-saladeconferencias .section-cm-edit-actions a {
+    color: black !important;
+}
+
+#page-course-view-saladeconferencias [role="main"] .page-content {
+    padding: 0;
+    margin: 0;
+}
+
+#page-course-view-saladeconferencias .debuggingmessage {
+    display: none;
+}
+
+#page-course-view-saladeconferencias .saladeconferencias-section__controls {
+    min-width: 50%;
+}
+
+#page-course-view-saladeconferencias .saladeconferencias-video-card__editbar {
+    background: #fff !important;
+}
+
+#page-course-view-saladeconferencias .saladeconferencias-video-card__editbar .action-menu,
+#page-course-view-saladeconferencias .saladeconferencias-video-card__editbar .moodle-actionmenu {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#page-course-view-saladeconferencias .saladeconferencias-video-card__status--complete .icon {
+    display: inline-block !important;
+}

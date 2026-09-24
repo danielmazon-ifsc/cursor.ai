@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="course/format/specialization/db" VERSION="20181025" COMMENT="XMLDB file for Moodle course/format/specialization"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="format_specialization" COMMENT="Default comment for format_specialization, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Id of speecialization course"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="courseid" UNIQUE="true" FIELDS="courseid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="format_specialization_course" COMMENT="Courses components of a specialization">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="specializationid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Id of specialization course"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Id of couse which is component of specialization"/>
+        <FIELD NAME="sequence" TYPE="int" LENGTH="3" NOTNULL="true" SEQUENCE="false" COMMENT="Position of course in specialization starting from 1"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="specializationid" UNIQUE="false" FIELDS="specializationid"/>
+        <INDEX NAME="courseid" UNIQUE="false" FIELDS="courseid"/>
+        <INDEX NAME="sequence" UNIQUE="false" FIELDS="sequence"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

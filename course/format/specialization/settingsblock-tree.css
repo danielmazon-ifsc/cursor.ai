@@ -1,0 +1,19 @@
+/**
+ * Settings block in the right drawer (Eixo course pages).
+ *
+ * @package   format_specialization
+ * @copyright 2025 Viddia (http://viddia.com.br)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+.block_settings .block_tree ul[role="group"][aria-hidden="true"] {
+    display: none;
+}
+
+.block_settings .block_tree ul[role="group"]:not([aria-hidden="true"]) {
+    display: block;
+    visibility: visible;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+}

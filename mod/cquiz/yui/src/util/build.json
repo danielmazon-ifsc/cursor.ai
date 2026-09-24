@@ -1,0 +1,21 @@
+{
+  "name": "moodle-mod_cquiz-util",
+  "builds": {
+    "moodle-mod_cquiz-util-base": {
+      "jsfiles": [
+        "base.js"
+      ]
+    },
+    "moodle-mod_cquiz-util-slot": {
+      "jsfiles": [
+        "slot.js"
+      ]
+    }
+    ,
+    "moodle-mod_cquiz-util-page": {
+      "jsfiles": [
+        "page.js"
+      ]
+    }
+  }
+}

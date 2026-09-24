@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/studypace/db" VERSION="20250425" COMMENT="XMLDB file for Moodle local/studypace"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_studypace" COMMENT="Default comment for local_studypace, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="level" TYPE="int" LENGTH="5" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="target" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="targetid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="estimatedcompletion" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="actualcompletion" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="userid" UNIQUE="false" FIELDS="userid"/>
+        <INDEX NAME="courseid" UNIQUE="false" FIELDS="courseid"/>
+        <INDEX NAME="level" UNIQUE="false" FIELDS="level"/>
+        <INDEX NAME="target" UNIQUE="false" FIELDS="target"/>
+        <INDEX NAME="targetid" UNIQUE="false" FIELDS="targetid"/>
+        <INDEX NAME="actualcompletion" UNIQUE="false" FIELDS="actualcompletion"/>
+        <INDEX NAME="user_target" UNIQUE="true" FIELDS="userid,target,targetid"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

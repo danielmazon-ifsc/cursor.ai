@@ -1,0 +1,471 @@
+2026091501:
+    - Eixo progress section gate uses strict boolean true (aligned with
+      format_specialization 2026091502 / all graded activities per section).
+
+2026091304:
+    - Overall progress credits an Eixo only when course total >= 60% and
+      every graded section (cquiz disciplina, best of main/recovery) is
+      also >= 60%. Sala still uses course total only.
+
+2026091303:
+    - Dashboard expected progress is continuous: elapsed time since plan
+      anchor ÷ selected plan length (12/18/24 months), capped at 100%.
+      Changing the plan rescales the forecast immediately (no deadline steps).
+
+2026091302:
+    - Decoupled planned-completion medals/keys from dashboard study-plan
+      deadlines. Eixos only: on-time window is enrolment in that Eixo + 100
+      days. Sala never awards planned_completion medals or keys.
+      estimatedcompletion remains for course/CM pace rows (not expected %).
+
+2026091301:
+    - Study-plan deadlines are sequential along the full plan length.
+      Course i is due at plan_anchor + (i+1)*(months/N) (Eixos by sortorder,
+      then Sala). Expected dashboard progress no longer hits 100% after only
+      months/N of calendar time. Recalculate / enrolment refresh rewrites the
+      whole user chain.
+
+2026090401:
+    - Overall dashboard progress (current) credits each Eixo/Sala only when
+      mandatory activities are complete AND course total grade >= 60%.
+      Weights still come from configured workload hours (or legacy 90/10).
+      Expected progress uses course-level plan deadlines (same step weights).
+
+2026090101:
+    - Dashboard progress weighting reads per-course workload hours from
+      local_dashboard when configured (proportional split); legacy 90/10
+      fallback when none are set.
+
+2026052664:
+    - Recalcular Ritmo de Estudo: explicitly recomputes course + CM
+      estimatedcompletion from the student's selected study plan
+      (local_profile.nummonths), refreshing dashboard expected progress.
+      Per-user run now reports plan months, deadlines updated, and
+      current vs expected progress percentages.
+
+2026052657:
+    - Sala reset admin page: optional student ID to scope preview and reset to
+      one user (blank = all students).
+
+2026052656:
+    - Sala reset tool: keep per-video completion data; clear only aggregate
+      course completion (studypace course row + Moodle course_completions) and
+      remove Sala planned_completion keys.
+
+2026052655:
+    - Admin page "Reiniciar Sala de Conferências": removes Sala planned_completion
+      keys, clears studypace/Moodle completions so all students must finish the
+      Sala again (preview + two-step confirmation).
+
+2026052654:
+    - Sala de Conferências: block duplicate planned_completion key awards when
+      new mandatory videos are added after the student already received keys for
+      that course (sala_completion_coins_already_awarded()).
+
+2026052642:
+    - Hidden (Oculto) Sala de Conferências videos now count in dashboard progress
+      denominators via is_sala_conferencias_hidden_video_cm() but never as
+      completed while hidden; max Sala progress caps at visible/total ratio.
+    - Progress count queries include hidden cms in saladeconferencias courses.
+    - Upgrade re-backfills completion criteria for hidden Sala videos and
+      syncs enrolments so cm-level pace rows exist.
+
+2026052641:
+    - Dashboard progress (get_current_progress / get_expected_progress) now
+      uses the same monitorable-activity rules as is_cm_monitorable() for both
+      numerator and denominator, counting Moodle completion for current % and
+      studypace deadlines for expected %.
+    - sync_course_enrolments() + course_module_created observer seed cm pace
+      rows when new mandatory activities are added without a full-site
+      recalculate.
+    - Upgrade backfills Sala video completion criteria (when format plugin is
+      present) and syncs Sala enrolments.
+
+2026052630:
+    - Segurança operacional da reparação em lote de gamificação:
+        * Confirmação server-side em dois passos antes de enfileirar
+          reparação real (dry-run continua imediato).
+        * Bloqueio de nova fila enquanto existir tarefa adhoc
+          repair_gamification_batch pendente ou em execução
+          (has_pending_batch_repair()).
+        * get_repair_userids() deixa de chamar enrich() ao enfileirar —
+          evita timeout/OOM com milhares de lacunas na UI admin; a
+          validação fina permanece em repair_user() no cron.
+        * Lock local_studypace_repair por userid+courseid antes de
+          stack_coins(), com re-verificação do coin_ledger dentro do lock
+          (reduz risco de chaves duplicadas em filas paralelas).
+
+2026052629:
+    - Reparação em lote via fila adhoc (classes/task/repair_gamification_batch):
+        * Secção na página Lacunas de gamificação para enfileirar dry-run
+          ou reparação real (filtro de lacunas, repor chaves/medalhas/ambos,
+          lote 10–200 usuários por execução do cron, recalc e notify opcionais).
+        * Tarefa auto-reencadeia com offset até processar todos os userids.
+    - repair_coins.php reescrito como "Repor recompensas": escopo coins,
+      badges ou both; dry-run; preview + execução live com sesskey.
+    - Classe gamification_gaps: repair_user(), repair_user_coins(),
+      repair_user_badges(), queue_batch_repair(), run_user_studypace_repair().
+    - Correção do botão dry-run em lote (submit queuedryrun vs checkbox
+      batchdryrun conflitante).
+
+2026052628:
+    - Nova página admin repair_coins.php: recalcular studypace e repor
+      chaves em falta por ID de usuário (idempotente via coin_ledger).
+    - Menu Admin → PDI – Ritmo de estudo → Recalcular e repor chaves.
+    - Crédito retroactivo usa a mesma action string dos eventos
+      planned_completion / planned_completion_high_grade.
+
+2026052627:
+    - Correções de segurança/robustez no relatório Lacunas de gamificação:
+        * Paginação inclui sesskey (página 2+ deixava de mostrar dados).
+        * Mensagem explícita para sesskey inválida/expirada.
+        * Export CSV: proteção contra formula injection (Excel/Sheets).
+        * Scanner find() exclui usuários suspensos (u.suspended = 0).
+
+2026052626:
+    - Relatório admin Lacunas de gamificação (/local/studypace/gamification_gaps.php):
+        * Lista alunos com Eixo concluído NO PRAZO, CMs obrigatórias OK,
+          mas medalha e/ou chaves em falta (mesmas regras do diagnóstico
+          do Recalcular).
+        * Filtros (any/both/badge/coins), resumo, tabela paginada, CSV,
+          link para recalcular usuário. Somente leitura.
+    - Nova classe local_studypace\gamification_gaps (find, enrich, summarize,
+      build_csv, csv_cell).
+    - CLI equivalente: cli/gamification_gaps.php (--format=summary|table|csv).
+    - CLI diagnóstico: cli/gamification_diag.php.
+    - SQL de verificação manual: sql/verify_gamification.sql.
+    - settings.php: entrada "Lacunas de gamificação" na categoria studypace.
+
+2026052616:
+    - Correções críticas da revisão de plugins PDI:
+        * update_events(1) não apaga mais o site inteiro se userid <= 0.
+        * create_user_enrolment() delega para update_user_enrolment() quando
+          o curso já existe (evita duplicar linhas course-level).
+    - repair_pending_course_completions(): ORDER BY userid, targetid na
+      query agrupada (determinismo no reparo em lote).
+
+2026052615:
+    - Performance: repair_pending_course_completions() usa uma query
+      SQL agrupada (total/pending CMs + MAX(actualcompletion)) por curso
+      em vez de 3 queries por curso — acelera o Recalcular em sites grandes.
+
+2026052614:
+    - get_current_progress() e get_expected_progress() passam a usar o
+      mesmo conjunto de atividades obrigatórias nos formatos rastreados
+      visíveis (Eixos + Sala de Conferências), alinhado ao dashboard,
+      sem restringir o denominador só às matrículas do aluno.
+
+2026052613:
+    - Performance e confiabilidade operacional:
+        * Cache estático de CMs monitoráveis e cursos rastreados.
+        * preload_user_course_completions() para reduzir N+1 no dashboard.
+        * delete_user_enrolment() remove todas as linhas cm do curso
+          (não só targetid=0).
+        * Remetente de mensagem level_advanced com fallback seguro.
+        * Upgrade 2026052609 re-enfileirado como tarefa adhoc
+          (recalculate_estimated_completion) em vez de recálculo síncrono
+          no upgrade web (evita timeout).
+
+2026052612:
+    - Menu de administração: nova categoria raiz "PDI – Ritmo de estudo"
+      (settings.php), no mesmo padrão do local_coin — Recalcular deixa de
+      ficar só em Plugins → Plugins locais.
+
+2026052611:
+    - Recalcular (modo usuário): correções na seção "Chaves e medalhas":
+        * Saldo de chaves via SQL em {coin_stack} (evita fatal ao instanciar
+          coin_stack na página de diagnóstico).
+        * try/catch com mensagem visível; caixas HTML balanceadas.
+        * Tabela por Eixo renderiza mesmo quando g->valid ausente em
+          objetos legados; seção "Recompensas registradas" com fallback.
+
+2026052610:
+    - Diagnóstico de gamificação no Recalcular: chaves creditadas por
+      Eixo agora somam TODO o coin_ledger positivo do curso (não só
+      action LIKE planned_completion), alinhado ao que o dashboard
+      reflete. Medalhas por Eixo consideram shortname e shortname+master.
+    - Nova seção "Recompensas registradas (como no Dashboard)" com
+      tabelas do extrato coin_ledger e de badge_issued do usuário.
+
+2026052609:
+    - Bug fix: effective_enrolment_timestart() para matrículas com
+      user_enrolments.timestart = 0 (comum no Moodle = "a partir de agora").
+      Antes o studypace somava meses a zero e gravava prazos em 1970; todos
+      ficavam estimatedcompletion <= hoje → dashboard "esperado 100%" no
+      primeiro dia, mesmo com 28% concluído e um Eixo fechado hoje.
+      Usa timestart se > 0, senão timecreated da matrícula, senão time().
+    - Upgrade 2026052609: update_all_user_enrolments() para recalcular
+      prazos já gravados na base.
+
+2026052608:
+    - Bug fix: get_expected_progress() e numerador de
+      get_current_progress() agora usam o mesmo conjunto de atividades que
+      o dashboard considera "obrigatórias" (course_completion_criteria tipo
+      ACTIVITY nos Eixos em que o aluno está matriculado), em vez de
+      contar todas as linhas target=cm em local_studypace.
+        * Sintoma: "Seu progresso Geral: 9%" mas "o esperado seria 100%"
+          — o esperado dividia só pelas CMs rastreadas no studypace (às
+          vezes poucas e com prazo já vencido), enquanto o 9% dividia por
+          todas as obrigatórias de todos os Eixos matriculados.
+
+2026052607:
+    - Recalcular Study Pace (modo usuário único): nova seção "Chaves e
+      medalhas (gamificação)" com tabela por Eixo mostrando prazo
+      estimado, conclusão real, se foi no prazo, qual evento
+      planned_completion dispararia, nota, medalha esperada (nome =
+      shortname do curso / +master se nota ≥ 90), chaves esperadas vs
+      creditadas no coin_ledger, e situação consolidada.
+    - Novos helpers studypace::get_gamification_diagnostic() e
+      get_user_gamification_summary() para alimentar o diagnóstico sem
+      duplicar a lógica de mark_course_completed() / local_autobadge.
+    - Aviso quando triggersjson do local_coin não lista os eventos
+      planned_completion.
+
+2026052606:
+    - Restaurada a semântica original de get_current_level(): o valor
+      exibido em profileCard, chip "Em <curso> - Nível N" do header e
+      no tooltip da Sua Jornada de Aprendizado volta a contar TODAS
+      as atividades com completion habilitada que o aluno concluiu
+      (lendo direto de course_modules_completion, fonte de verdade do
+      Moodle), não só as marcadas em /course/completion.php.
+        * Motivação: o profileCard exibia números como "Nível 7 do
+          Eixo 3" considerando todo o engajamento do aluno no curso
+          (incluindo SCORMs e enquetes além das atividades estritas).
+          Esse número informativo foi achatado pelo purge da versão
+          anterior, que deletou cm-rows não estritas e renumerou os
+          'level' restantes para 1..M.
+        * Fix: get_current_level() não depende mais do campo
+          local_studypace.level — agora faz COUNT direto em
+          course_modules_completion (com cm.visible=1 e
+          cm.completion>0). Isso preserva a UX original sem desfazer
+          a correção dos gates (all_cms_completed e get_current_progress
+          continuam estritos, então a auto-progressão de Eixo segue
+          funcionando exatamente como na 2026052605).
+    - Renumeração de 'level' removida do purge_nonmandatory_cm_rows():
+      como get_current_level() não lê mais esse campo, não há razão
+      para reescrevê-lo após o purge. O purge continua deletando
+      cm-rows que não estão na lista estrita; só não toca mais nos
+      'level' das remanescentes.
+    - process_course_module_completion_data() agora dispara o
+      level_advanced event e a mensagem "Você avançou de nível N"
+      usando get_current_level() para 'N'. Antes usava
+      $cmrecord->level (dense 1..M estrito), o que ficava inconsistente
+      com o "Nível N" maior exibido no profileCard. Agora notificação,
+      profileCard e chip mostram o mesmo número.
+
+2026052605:
+    - Bug fix CRÍTICO em is_cm_monitorable(): a fonte de verdade para
+      "atividades que o aluno precisa concluir para fechar o curso"
+      passa a ser exclusivamente os checkboxes marcados em
+      /course/completion.php (course_completion_criteria com
+      criteriatype = COMPLETION_CRITERIA_TYPE_ACTIVITY).
+        * Sintoma anterior: a função tinha um fallback que retornava
+          TRUE para qualquer cm com course_modules.completion > 0,
+          mesmo quando o curso já tinha uma lista explícita de critérios
+          configurada. Resultado: SCORMs e enquetes com "Conclusão"
+          ligada mas SEM marcação em /course/completion.php entravam na
+          lista obrigatória do studypace, o curso nunca batia
+          "todas as cms monitoradas concluídas",
+          mark_course_completed() não disparava e o aluno ficava preso
+          "em andamento" sem auto-matrícula no próximo Eixo. Sintoma
+          típico em produção: "CMs rastreadas=10 / CMs concluídas=5"
+          com aluno relatando ter concluído tudo.
+        * Nova regra: se o curso tem QUALQUER linha em
+          course_completion_criteria com criteriatype 4, somente as cms
+          dessa lista são monitoráveis. O fallback antigo
+          (cm.completion > 0) só vale para cursos legados sem critérios
+          explícitos, para não zerar progresso desses cursos.
+    - Novo helper público purge_nonmandatory_cm_rows(int $userid = 0):
+      remove de {local_studypace} as cm-rows que apontam para cms
+      NÃO listadas como critério explícito no curso. Idempotente e
+      seguro para cursos sem critérios (não toca nessas linhas). Após
+      a remoção, renumera os 'level' das cm-rows restantes
+      (ORDER BY level ASC, id ASC → level = 1, 2, 3, ...) para que
+      MAX(level) consumido por get_current_level() volte a representar
+      a posição do aluno dentro da lista estrita (e não dentro da
+      antiga lista inflada pelo fallback). Isso corrige o chip
+      "Em <curso> - Nível N" que mostrava níveis maiores do que o
+      número total de atividades obrigatórias do Eixo.
+    - Pipeline do Recalcular Study Pace agora inclui um passo de
+      purge ANTES da sincronização e do repair_pending_course_completions:
+      isso garante que cursos com aluno "stuck" pelo fallback antigo
+      sejam finalmente marcados como concluídos (e disparem a
+      auto-progressão) sem ação manual do admin.
+    - Upgrade step 2026052605: roda purge_nonmandatory_cm_rows() seguido
+      de repair_pending_course_completions() para limpar e curar a base
+      automaticamente na atualização.
+    - Diagnóstico do Recalcular agora lista NOMINALMENTE as atividades
+      pendentes em cada Eixo (quando "CMs concluídas" < "CMs rastreadas"
+      na tabela). Cada atividade vem com link direto e tipo de módulo
+      (modname + cmid), para o admin enviar ao aluno exatamente o que
+      falta ou identificar atividades indevidamente rastreadas
+      (ex.: labels com completion ligado por engano).
+    - String recalculaterepairsummary estendida com o contador "purged".
+    - Novas strings: recalculatediagpendingheading,
+      recalculatediagpendingmissingcm.
+
+2026052604:
+    - Bug fix em get_current_course(): a função agora reflete a posição
+      REAL do aluno no caminho de Eixos, não a primeira lacuna de
+      actualcompletion encontrada.
+        * Sintoma anterior: aluno auto-matriculado no Eixo 1 que nunca
+          concluiu (actualcompletion = NULL) mas que depois se matriculou
+          (manualmente ou via progressão) no Eixo 3 e está progredindo
+          lá com Nível 7 via via studypace ficava preso no dashboard
+          "Sua Jornada de Aprendizado" com Eixo 1 "em andamento" e Eixo
+          3 sem marcação de current. O chip do header "Em <curso> -
+          nível N" mostrava o curso errado pela mesma razão.
+        * Causa: ORDER BY sp.id ASC + retorno do primeiro NULL fazia a
+          função sempre escolher o Eixo mais antigo com pendência, mesmo
+          que o aluno já tivesse migrado adiante.
+        * Fix: query agora filtra por user_enrolments active (ue.status
+          = 0 e timeend válido) e ORDER BY c.sortorder DESC, retornando
+          o ÚLTIMO (na ordem de progressão) Eixo que o aluno está
+          matriculado e ainda não concluiu. Se todos os Eixos em que o
+          aluno está matriculado já foram concluídos, retorna o de maior
+          sortorder (posição final). Eixos em que o aluno não está
+          matriculado são ignorados.
+    - Afeta tanto local_dashboard_print_specializations (widget "Sua
+      Jornada de Aprendizado") quanto theme/pdi/renderers.php (chip
+      "Em <curso> - nível N" no header).
+
+2026052603:
+    - Recalcular Study Pace agora também chama
+      local_profile_backfill_eixo_progression() (com filtro por usuário
+      quando o admin recalcula um único aluno). Isso fecha o caminho que
+      sobrava: quando mark_course_completed() já tinha gravado o
+      actualcompletion no curso numa rodada anterior, o gate de
+      idempotência impede o course_completed event de re-disparar, e o
+      observer do local_profile nunca tem chance de tentar de novo a
+      matrícula no próximo Eixo. Chamar o backfill direto bypassa esse
+      gate e usa o helper de auto-enrol permissivo introduzido em
+      local_profile 2026052605.
+    - Resultado da página Recalcular agora mostra uma tabela com o estado
+      do aluno (ordem do Eixo, matriculado?, concluído em) para
+      diagnóstico imediato de casos travados.
+    - String "recalculaterepairsummary" estendida com o contador de
+      matrículas geradas pelo backfill.
+
+2026052602:
+    - Bug fix: all_cms_completed() now correctly detects "course done"
+      regardless of the order the user completed the activities.
+        * Old check: count(pending cms) == 0 AND just-completed cm has
+          the HIGHEST id of all completed cms. The "highest id" gate
+          conflated "biggest id" with "most-recently completed" and
+          silently dropped mark_course_completed() whenever the user
+          completed the CMs out of id order (e.g. 100 → 300 → 200 instead
+          of 100 → 200 → 300). When the gate failed, the course pace row
+          never had actualcompletion written, the
+          \local_studypace\event\course_completed event never fired, and
+          the local_profile observer never advanced the user to the next
+          Eixo. Symptom in production: "aluno concluiu Eixo 1 mas continua
+          em Andamento, Nível 0, 0% de conclusão, não foi matriculado
+          no Eixo 2".
+        * New check: drops the highest-id gate (mark_course_completed()
+          is already idempotent against repeat invocations, so the
+          original optimization was unnecessary) and keeps only the
+          "no pending CMs + at least one tracked CM" precondition.
+    - New repair helpers, exposed both through the upgrade pipeline AND
+      through the existing "Recalcular Study Pace" admin page so admins
+      can rerun them ad hoc:
+        * sync_cm_completions(): for studypace cm rows whose
+          actualcompletion is NULL but whose underlying Moodle
+          {course_modules_completion} shows the CM as completed (state
+          COMPLETE / COMPLETE_PASS / COMPLETE_FAIL), copy the moodle
+          completion timestamp into the studypace shadow row. Closes
+          the gap left by lost CM completion events.
+        * repair_pending_course_completions(): for each course pace
+          whose cms are all done but whose own actualcompletion is
+          still NULL, call mark_course_completed() with the latest cm
+          completion timestamp. That fires course_completed (so the
+          local_profile observer advances the user to the next Eixo)
+          and only fires planned_completion / planned_completion_high_grade
+          when the timestamps say the user really finished on time, so
+          badges and messages aren't issued retroactively for users
+          who didn't earn them.
+    - The recalculate.php admin page now calls update_all_user_enrolments,
+      sync_cm_completions, and repair_pending_course_completions in
+      sequence and reports how many CM rows and courses were fixed.
+    - New db/upgrade.php step 2026052602 runs the full repair pass once
+      against existing site data so production gets the fix on the next
+      upgrade without an admin having to click "Recalcular".
+
+2026052601:
+    - Added new event \local_studypace\event\course_completed which fires
+      once per (user, course) the moment mark_course_completed() records
+      a new completion, regardless of timing.
+        * planned_completion / planned_completion_high_grade carry badge
+          and grade-band semantics and ONLY fire when the user finished on
+          time, which is exactly what local_autobadge wants.
+        * Downstream workflows that just need a generic "user finished
+          this course" signal (e.g. the Eixo auto-progression observer in
+          local_profile 2026052602) now subscribe to the new event
+          instead, so late completers also advance to the next Eixo.
+
+2025061714:
+    - Changed to support update of all enrolments for a specific user
+    - Reprocess all \core\event\course_module_completion_updated events during
+        upgrade to fix badges and coins issued
+
+2025061427:
+    - Reprocess all \core\event\course_module_completion_updated events during
+        upgrade to fix badges and coins issued
+
+2025061304:
+    - Added method get_num_courses_completed
+
+2025061303:
+    - Fixed calculation of the current course
+
+2025061302:
+    - Fixed calculation of estimated completion for courses and course modules
+    - Updated estimated completion for courses and course modules of all
+        enrolments
+
+2025060701:
+    - Fixed require once for local/profile/lib.php
+
+2025060401:
+    - Stopped enroling the user in the next specialization after he/she
+        completes one
+    - No longer requires enrolment end to calculate study pace: divide the
+        number of months by number of specializations
+    - Added public method get_first_not_enroled_course_id
+
+2025052701:
+    - Fixed calculation of total course modules to include only mandatory ones
+        in progress calculation
+
+2025050501:
+    - Changed to consider level as mandatory course module and no longer
+        sections
+
+2025050201:
+    - Fixed computation of student's progress
+
+2025050102:
+    - Stopped relying on the unreliable event \core\event\course_completed and
+        started to record course completion based on sections completed
+    - Event user_leveladvanced renamed to level_advanced
+    - Events planned_completion and planned_completion_high_grade introduced
+
+2025050101:
+    - Fixed calculation of student's current level in a course
+
+2025042902:
+    - Fixed calculation of student's current level in a course
+
+2025042901:
+    - Changed get_current_course to look only for courses with estimated
+        completion greater than 0
+    - Changed get_current_progress to protect it agains courses with no
+        sections
+
+2025042702:
+    - Added dependency on local_profile
+    - Changed to enrol student in the next specialization after one is
+        completed
+    - Methos to track completion and progress using stupace records added
+
+2025042701:
+    - First version

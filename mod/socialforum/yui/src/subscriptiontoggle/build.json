@@ -1,0 +1,10 @@
+{
+    "name": "moodle-mod_socialforum-subscriptiontoggle",
+    "builds": {
+        "moodle-mod_socialforum-subscriptiontoggle": {
+            "jsfiles": [
+                "toggle.js"
+            ]
+        }
+    }
+}

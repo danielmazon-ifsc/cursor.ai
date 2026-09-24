@@ -1,0 +1,8 @@
+{
+    "moodle-mod_cquiz-cquizbase": {
+        "requires": [
+            "base",
+            "node"
+        ]
+    }
+}

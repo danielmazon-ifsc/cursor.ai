@@ -1,0 +1,6 @@
+<?php
+
+define('BLOCK_FORMAT_VIMEO', 1024);
+define('BLOCK_FORMAT_YOUTUBE', 1025);
+define('BLOCK_FORMAT_EMBEDED', 1026);
+define('BLOCK_FORMAT_NONE', 1027);

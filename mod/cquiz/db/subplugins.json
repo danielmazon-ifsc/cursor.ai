@@ -1,0 +1,6 @@
+{
+    "plugintypes": {
+        "cquiz": "mod/cquiz/report",
+        "cquizaccess": "mod/cquiz/accessrule"
+    }
+}

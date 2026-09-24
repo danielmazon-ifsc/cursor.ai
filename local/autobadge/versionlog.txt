@@ -1,0 +1,15 @@
+2025050103:
+    - Added sequential number to retrived user's badges
+
+2025050102:
+    - Changed to process events \local_studypace\event\planned_completion and
+        \local_studypace\event\planned_completion_high_grade instead of
+        the unreliable \core\event\course_completed 
+
+2025050101:
+    - Changed to award a master degree badge to student in case its grade in
+        the course was 90 or higher
+    - Added dependency on format_specialization
+
+2025042901:
+    - First version

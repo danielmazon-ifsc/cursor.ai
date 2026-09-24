@@ -1,0 +1,53 @@
+{{!
+    @template mod_socialforum/socialforum_post_email_textemail
+
+    Template which defines a social forum post for sending in a single-post text email.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * coursename
+    * socialforumname
+    * showdiscussionname
+    * discussionname
+    * permalink
+    * subject
+    * authorfullname
+    * postdate
+    * message
+    * attachments
+    * canreply
+    * replylink
+    * unsubscribesocialforumlink
+    * unsubscribediscussionlink
+    * socialforumindexlink
+}}
+{{{ coursename }}} -> {{# str }} socialforums, socialforum {{/ str }} -> {{{ socialforumname }}}{{# showdiscussionname }} -> {{{ discussionname }}} {{/ showdiscussionname }}
+{{ permalink }}
+{{{ subject }}}
+{{# str }} bynameondate, socialforum, {
+        "name": {{# quote }}{{{ authorfullname }}}{{/ quote }},
+        "date": {{# quote}}{{ postdate }}{{/ quote }}
+    } {{/ str }}
+---------------------------------------------------------------------
+{{{ message }}}
+
+{{{ attachments }}}
+---------------------------------------------------------------------
+{{# canreply }}
+{{# str }} postmailinfolink, socialforum, {
+        "coursename": {{# quote }}{{{ coursename }}}{{/ quote }},
+        "replylink": {{# quote }}{{ replylink }}{{/ quote }}
+    } {{/ str }}
+{{/ canreply }}
+{{# unsubscribesocialforumlink }}
+{{# str }} unsubscribelink, socialforum, {{{ unsubscribesocialforumlink }}} {{/ str }}
+{{/ unsubscribesocialforumlink }}
+{{# unsubscribediscussionlink }}
+{{# str }} unsubscribediscussionlink, socialforum, {{{ unsubscribediscussionlink }}} {{/ str }}
+{{/ unsubscribediscussionlink }}
+{{# str }} digestmailpostlink, socialforum, {{{ socialforumindexlink }}} {{/ str }}

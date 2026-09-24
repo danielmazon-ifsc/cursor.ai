@@ -1,0 +1,158 @@
+/* Estilos gerais */
+
+#page-course-view-conferenceroom {
+    background-color: rgb(1,19,23);
+}
+
+#page-course-view-conferenceroom .navbar.fixed-top,
+#page-course-view-conferenceroom #page-footer {
+    display: none;
+}
+
+#page-course-view-conferenceroom #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-course-view-conferenceroom #topofscroll,
+#page-course-view-conferenceroom #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-course-view-conferenceroom .secondary-navigation {
+    display: none;
+}
+
+#page-course-view-conferenceroom #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-course-view-conferenceroom #block-region-side-post {
+    display: none;
+}
+
+#page-course-view-conferenceroom #region-main {
+    width: 100%;
+}
+
+#page-course-view-conferenceroom .helptooltip {
+    display: none;
+}
+
+#page-course-view-conferenceroom .urlselect,
+#page-course-view-conferenceroom .section-cm-edit-actions,
+#page-course-view-conferenceroom .section_action_menu {
+    margin-left: 0 !important;
+    float: right;
+    background: white !important;
+    color: black;
+}
+
+#page-course-view-conferenceroom .urlselect {
+    float: left;
+    border: 1px solid black;
+}
+
+#page-course-view-conferenceroom .section_action_menu a,
+#page-course-view-conferenceroom .section-cm-edit-actions a {
+    color: black !important;
+}
+
+#page-course-view-conferenceroom .course-module-name,
+#page-course-view-conferenceroom .section-name {
+    background: white;
+    color: black;
+    max-width: 5rem;
+    display: inline flow-root;
+    padding-left: 1rem;
+}
+
+#page-course-view-conferenceroom .icon.spacer {
+    display: none;
+}
+
+#page-course-view-conferenceroom .section-item {
+    border: 1px solid black;
+    background: white;
+}
+
+#page-course-view-conferenceroom #block-region-side-post,
+#page-course-view-conferenceroom .course-header {
+    display: none;
+}
+
+#page-course-view-conferenceroom #region-main {
+    width: 100%;
+}
+
+#page-course-view-conferenceroom .btn-primary {
+    background-color: #00747B !important;
+    border-color: #00747B !important;
+    background-image: none;
+    color: white !important;
+}
+
+#page-course-view-conferenceroom .btn-primary:hover {
+    background-color: #003538 !important;
+    border-color: #003538 !important;
+}
+
+#page-course-view-conferenceroom .btn-outline-white {
+    background-color: transparent !important;
+    background-image: none;
+}
+
+#page-course-view-conferenceroom .btn-outline-white:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #00747B !important;
+}
+
+#page-course-view-conferenceroom .btn.disabled {
+    opacity: 0.25;
+    background-color: gray !important;
+    cursor: not-allowed !important;
+}
+
+#page-course-view-conferenceroom #section-modal h3 {
+    color: #303840;
+}
+
+#page-course-view-conferenceroom [role="main"] .page-content {
+    padding-bottom: 7rem;
+}
+
+#page-course-view-conferenceroom #conferenceroom-summary {
+    color: inherit !important;
+}
+
+#page-course-view-conferenceroom .section-modchooser-link {
+    border-radius: unset !important;
+}
+
+#page-course-view-conferenceroom .section-modchooser span {
+    font-size: x-small;
+}
+
+#page-course-view-conferenceroom .debuggingmessage {
+    display: none;
+}
+
+#page-course-view-conferenceroom .page-num {
+    margin-right: .75rem;
+    border-radius: 100%;
+    border: 2px solid #e9edf2;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(205, 254, 253);
+}
+
+#page-course-view-conferenceroom .actions {
+    min-width: 50%;
+}

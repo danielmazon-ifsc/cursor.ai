@@ -1,0 +1,34 @@
+{{!
+    @template mod_socialforum/socialforum_post_emaildigestfull_textemail
+
+    Template which defines a social forum post for sending in a single-post text email.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * discussionlink
+    * subject
+    * permalink
+    * authorfullname
+    * postdate
+    * message
+    * attachments
+    * socialforumindexlink
+}}
+
+{{ discussionlink }}
+{{{ subject }}} ({{{ permalink }}})
+{{# str }} bynameondate, socialforum, {
+        "name": {{# quote }}{{{ authorfullname }}}{{/ quote }},
+        "date": {{# quote }}{{ postdate }}{{/ quote }}
+    } {{/ str }}
+---------------------------------------------------------------------
+{{{ message }}}
+
+{{{ attachments }}}
+---------------------------------------------------------------------
+{{# str }} digestmailpostlink, socialforum, {{{ socialforumindexlink }}} {{/ str }}

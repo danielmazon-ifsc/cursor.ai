@@ -1,0 +1,283 @@
+2026052649:
+    - Removed underline/strikethrough from the caption CC toggle.
+
+2026052648:
+    - Caption CC toggle moved to the top-right of the player.
+
+2026052647:
+    - Captions start disabled; the learner turns them on with the CC button.
+
+2026052646:
+    - Slightly smaller caption font size (native ::cue and overlay).
+
+2026052645:
+    - Reduced the reserved right-hand strip for captions to 16%.
+
+2026052644:
+    - Native captions are pushed further down (configurable vertical line) so they
+      sit lower over the video.
+
+2026052643:
+    - Native captions are constrained to a narrower left-shifted box (reserving a
+      strip on the right) so they no longer overlap the Libras interpreter.
+
+2026052642:
+    - Embedded videos pointing to a direct media file (mp4/webm/...) now render as
+      a native HTML5 <video> with a caption <track> when a caption was uploaded,
+      so captions display both on the module page and in the Sala de Conferências
+      (a raw media URL inside an iframe could not carry captions).
+
+2026052641:
+    - WebVTT caption upload (file area "caption") on the video activity form.
+    - Captions shown on HTML5 players via <track> and on Vimeo via synced overlay.
+    - Same caption used in Sala de Conferências featured player (captions.js).
+    - Backup/restore includes caption files.
+
+2025050101:
+    - Fixed format of video date
+
+2025040301:
+    - Fixed display of video launch date
+
+2025040101:
+    - Moodle required version updated to 2017051500
+    - Usage of function strftime() replaced by date()
+
+2025032601:
+    - Adapted to work in Moodle 4.1
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2025031101:
+    - Back button added to video details bar
+
+2025030801:
+    - Layout adapted to theme pdi
+
+2025030501:
+    - Changed the processing of thumbnails to return a default
+    - Moved the generation of string with the video duration from the theme to
+        here
+
+2024090401:
+    - Layout adapted for mobile
+
+2024061002:
+    - Adapted also to flexible theme
+
+2024042401:
+    - Change to set page layout as noheader (it needs to be supported in
+        flexible theme as well)
+
+2024042201:
+    - Completed layout and content of comments section
+
+2024041801:
+    - Fix video descrption below player to be dynamic
+    - Completed layout and content of completion section
+    - Completed layout and content of downloads section
+    - Almost completed layout (missing answers to comments) of comments section
+
+2024041001:
+    - Changed debugging to error_log
+
+2024040401:
+    - Field thumbnailurl added
+    - Changed to set and make video thumbnail URLs available to be displayed
+
+2023020601:
+    - Added configuration to set the number of seconds before the end of the
+        video that must be reached to a video be marked as completed
+    - Added configuration to a video be marked immediately as completed
+        regardless of being played
+
+2023012304:
+    - Removed UTF-8 encoding from strings to be sent to Vimeo API
+    - Added configuration of Vimeo account user id
+
+2023012303:
+    - Changed to encode in UTF-8 strings to be sent to Vimeo API
+    - Removed log of error data in case of failing to create an album in Vimeo
+
+2023012302:
+    - Changed to log error data in case of failing to create an album in Vimeo
+    - Changed to update video type even in case of creation/association with
+        an album fails
+
+2023012301:
+    - Added configuration of Vimeo account to plugin settings
+
+2023011801:
+    - Changed to only update to Vimeo the video type (and to delete the stored
+        video file) of videos uploaded to Vimeo after the transcoding process
+        in Vimeo is complete
+
+2023011702:
+    - Set completion tracking as automatic for new videos by default
+    - Set the social foram associated with the video as one of the existing
+        social forums in the course by default
+
+2023011701:
+    - Improved the handling of stored videos in video edit form to use a
+        file manager
+    - Changed contentformat of stored videos to new format FORMAT_STORED (1027)
+
+2023011602:
+    - Added a scheduled task to upload stored videos to Vimeo
+
+2023011201:
+    - Remove code to retrieve/save thumbnail url for Vimeo and YouTube videos
+    - Remove field thumbnailurl from db
+
+2022072701:
+    - Fixed font color for comments and download sections
+    - Allow video description to contain links
+
+2022060701:
+    - Added Javascript to prevent comment form to be resubmitted at page
+        refresh
+
+2022053102:
+    - Change reimplemented, now not reloading in case of player control error
+        (e.g. YouTube)
+
+2022053101:
+    - Reverted last change to reload page because Youtube videos were getting
+        reloaded indefinetly
+
+2022052701:
+    - Changed to reload the page after vimeo videos complete instead of
+      just add the completion mark to allow navigation bar to get
+      updated according to course module availability
+
+2022020701:
+    - Fixed a bug in processing Youtube video codes containing chars - or _
+
+2021083001:
+    - Fix color settings
+
+2021082501:
+    - Fix display of video editting page
+    - Fix display of video view page in editting mode
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2021011201:
+    - No longer sort comments according to relevancy but in descending creation
+        order
+
+2020113001:
+    - New comment dialog moved to right after video player
+
+2020071604:
+    - Fix pathnamehash for video download files during plugin upgrade
+
+2020071601:
+    - Fixed problem while generating and processing downloadable file links
+        which was causing files appear as blank pages in browser
+    - Fixed problem which was preventing removal of last downloadable file
+    - Fixed style of background color in downloadable file box
+
+2020071401:
+    - Changed to record video completion in video end. Previoulsy, only at
+        cuepoint completion was recorded. Player events console messages added
+        as well
+
+2020063001:
+    - Changed to support 4 types of video: Vimeo, YouTube, Embeded and
+        Stored
+    - Changed to request only id in case of Vimeo or YouTube type, only URL in
+        case of Embeded type. In case of Stored, a filed for upload is
+        presented
+    - Changed to store formating HTML in plugin configuration and no longer
+        in video content itself
+    - Changed to display stored videos similarly to others
+
+2019110801:
+    - Style added for text under video
+
+2019082101:
+    - Changed to set comment subject as "Comment from <user name>" instead of
+        comment content
+
+2019061101:
+    - Bug fix: string "comments" was not being translated to portuguese
+
+2018110501:
+    - Changed to load player.js again
+    - Changed to display vidoe control error message in console
+
+2018102401:
+    - Changed to no longer load player.js
+
+2018082902:
+    - Bug fix: it was displaying an error in case of a video with no comments
+        yet
+
+2018082901:
+    - Bug fix: second level comments were being displayed
+
+2018082801:
+    - String commentsaboutthisvideo changed
+    - Changed to display comments title as a link to social forum
+    - Changed to display relevancy votes along with every comments
+    - Changed to allow relevancy voting
+    - Changed to sort comments according to relevancy than to creation date, both descending
+    - Changed to trigger a post created event for every comment added
+
+2018082301:
+    - Bug fix: it was taken into consideration other logic than just course
+        module completion to consider itself completed
+
+2018081801:
+    - Bug fix: socialforumid and videothumbnail weren't being included in
+        backup
+    - Bug fix: socialforumid wasnt being updated in restore
+
+2018040301:
+    - Changed to display course's full name in window title
+
+2018032801:
+    - Changed to better align donwloads and comments sections
+
+2018030901:
+    - Bug fix: comments longer than 255 chars were generating runtime error.
+        Their subject in social forum have been trimmed to 255
+
+2018022001:
+    - Field thumbnailurl added
+    - Changed to set and make video thumbnail URLs available to be displayed
+
+2018021901:
+    - Icon changed
+
+2017082701:
+    - Changed to consider a video as immediately completed when video is not
+        hosted in Vimeo
+
+2017081501:
+    - New icon
+    - Changed to allow association with a social forum
+    - Changed to show comments section below video
+    - Changed to allow new comments about video, posted in associated social
+        forum
+    - Changed to render a different HTML structure
+
+2017072702:
+    - Changed to consider a video activity as completed a number of seconds
+        before its end, instead of a duration percentage
+
+2017072701:
+    - Reversed to Moodle 3.1.0
+    - Bug fixed: tooglecompletion.php wasn't requiring locallib.php
+
+2017071501:
+    - Adapted to Moodle 3.3.1
+
+2017070501:
+    - Changed to allow video content without files to be downloaded
+
+2017052401:
+    - First version

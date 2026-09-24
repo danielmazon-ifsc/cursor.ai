@@ -1,0 +1,15 @@
+2026090203:
+    - Observer never breaks video completion if the gradebook write fails.
+    - Adhoc sync retries instead of reporting success when another sync holds the lock.
+    - Do not create a grade item without obtaining the create lock.
+    - Grade 100 requires COMPLETE/COMPLETE_PASS only (not FAIL).
+
+2026090202:
+    - Production hardening for ~18k enrolments: bulk SQL (no per-user
+      get_fast_modinfo), skip already-graded users, lock around full sync
+      and grade-item create, cache course-format lookups.
+    - Grade uses visible videos only (hidden "em breve" no longer blocks 100).
+
+2026090201:
+    - New plugin: automatic grade 100 in Sala de Conferências when every
+      required video is complete. Live observer + daily/adhoc backfill.

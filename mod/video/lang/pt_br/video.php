@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Strings for component 'video', language 'pt_br'
+ *
+ * @package   mod_video
+ * @copyright 2017 Viddia (http://viddia.com.br)
+ * @author    Ricardo Drummond
+ */
+$string['configdisplayoptions'] = 'Selectione todas as opções que devem estar disponíveis, configurações prévias não serão alteradas. Segure a tecla CTRL para selecionar múltiplos campos.';
+$string['storedvideo'] = 'Arquivo de Vídeo';
+$string['contentheader'] = 'Vídeo';
+$string['downloads'] = 'Materiais desta aula';
+$string['download'] = 'Baixar';
+$string['downloadheader'] = 'Conteúdo baixável';
+$string['createvideo'] = 'Criar um novo conteúdo em vídeo';
+$string['displayoptions'] = 'Opções de exibição disponíveis';
+$string['displayselect'] = 'Exibição';
+$string['displayselectexplain'] = 'Selecione a forma de exibição.';
+$string['modulename'] = 'Vídeo';
+$string['modulename_help'] = 'O módulo Vídeo permite ao professor criar um conteúdo em vídeo utilizando código HTML incorporado do tipo iframe.';
+$string['modulename_link'] = 'mod/video/view';
+$string['modulenameplural'] = 'Vídeos';
+$string['optionsheader'] = 'Opções de exibição';
+$string['video-mod-video-x'] = 'Qualquer módulo do tipo vídeo';
+$string['video:addinstance'] = 'Adicionar um novo conteúdo em vídeo';
+$string['video:view'] = 'Exibir conteúdo em vídeo';
+$string['pluginadministration'] = 'Administração do módulo Vídeo';
+$string['pluginname'] = 'Vídeo';
+$string['popupheight'] = 'Altura da janela pop-up (em pixels)';
+$string['popupheightexplain'] = 'Especifica a altura padrão de janelas pop-up.';
+$string['popupwidth'] = 'Largura da janela pop-up (in pixels)';
+$string['popupwidthexplain'] = 'Espeficica a largura padrão de janelas pop-up.';
+$string['printheading'] = 'Exibir o nome do vídeo';
+$string['printheadingexplain'] = 'Exibir o nome do vídeo acima deste?';
+$string['printintro'] = 'Exibir a descrição do vídeo';
+$string['printintroexplain'] = 'Exibir a descrição do vídeo acima deste?';
+$string['search:activity'] = 'Vídeo';
+$string['secondstocomplete'] = 'Segundos para conclusão';
+$string['secondstocomplete_desc'] = 'Máximo de segundos restantes no vídeo que um estudante deve chegar para a atividade ser considerada como concluída';
+$string['completeimmediately'] = 'Marcar vídeo como concluído imediatamente';
+$string['completeimmediately_desc'] = 'Marcar vídeo como concluído sem esperar o tocador de vídeo concluir a exibição.';
+$string['commentsaboutthisvideo'] = 'Comentários sobre o vídeo';
+$string['nocommentsyet'] = 'Nenhum comentário ainda. Seja o primeiro a comentar!';
+$string['leaveyourcomment'] = 'Comentar';
+$string['publishcomment'] = 'Publicar';
+$string['commentsheader'] = 'Comentários';
+$string['commentsforum'] = 'Fórum de comentários';
+$string['commentsforum_help'] = 'Fórum no qual os comentários sobre o vídeo serão postados';
+$string['commentfrom'] = 'Comentário de';
+$string['type'] = 'Tipo';
+$string['stored'] = 'Armazenado';
+$string['vimeo'] = 'Vimeo';
+$string['vimeoformat'] = 'Formato Vimeo';
+$string['vimeoid'] = 'ID Vimeo';
+$string['vimeoformatexplain'] = 'Formato de vídeo a ser usado em vídeos Vimeo. Deve conter um {$a} onde o ID do vídeo Vimeo deve ser inserido';
+$string['vimeoformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="https://player.vimeo.com/video/{$a}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div></div>';
+$string['youtubeformat'] = 'Formato YouTube';
+$string['youtube'] = 'YouTube';
+$string['youtubeid'] = 'ID YouTube';
+$string['youtubeformatexplain'] = 'Formato de vídeo a ser usado em vídeos YouTube. Deve conter um {$a} onde o ID do vídeo YouTube deve ser inserido';
+$string['youtubeformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="https://www.youtube.com/embed/{$a}?enablejsapi=1" frameborder="0" allowfullscreen=""></iframe></div></div>';
+$string['embeded'] = 'Incorporado';
+$string['embededurl'] = 'URL do Vídeo';
+$string['cardthumbnail'] = 'Imagem do card';
+$string['cardthumbnail_help'] = 'Imagem exibida no card do vídeo na Sala de Conferências. Recomendado para vídeos inseridos por URL, que não possuem miniatura automática.';
+$string['caption'] = 'Legenda (VTT)';
+$string['caption_help'] = 'Arquivo WebVTT (.vtt) com a legenda do vídeo. A mesma legenda é usada na página da atividade e no player da Sala de Conferências.';
+$string['captionlabel'] = 'Português';
+$string['captiontoggle'] = 'CC';
+$string['embededformat'] = 'Formato Incorporado';
+$string['embededformatexplain'] = 'Formato de vídeo a ser usado em vídeos incorporados. Deve conter um {$a} onde o link do vídeo deve ser inserido';
+$string['embededformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="{$a}" width="854px" height="480px" frameborder="0" scrolling="no" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div></div>';
+$string['fieldcannotbeempty'] = 'Campo {$a} não pode ser vazio';
+$string['module'] = 'Módulo';
+$string['aboutthisvideo'] = 'Sobre este Vídeo';
+$string['commenthere'] = 'Escreva um comentário...';
+$string['gotoforum'] = 'Ver todas os comentários desta aula no fórum';
+$string['crontask'] = 'Upload de vídeos armazenados para o Vimeo';
+
+$string['vimeoaccountinfo'] = 'Informações da conta Vimeo';
+$string['vimeoaccountinfodesc'] = 'Informações da conta Vimeo a serem usadas no upload de vídeos';
+$string['vimeouserid'] = 'Id do usuário Vimeo';
+$string['vimeouseriddesc'] = 'Id de usuário da conta Vimeo';
+$string['vimeouseriddefault'] = '';
+$string['vimeoclientid'] = 'Id de cliente';
+$string['vimeoclientiddesc'] = 'Id de cliente da conta Vimeo';
+$string['vimeoclientiddefault'] = '';
+$string['vimeoclientsecret'] = 'Segredo de cliente';
+$string['vimeoclientsecretdesc'] = 'Segredo de cliente da conta Vimeo';
+$string['vimeoclientsecretdefault'] = '';
+$string['vimeoclienttoken'] = 'Token de cliente';
+$string['vimeoclienttokendesc'] = 'Token de cliente da conta Vimeo';
+$string['vimeoclienttokendefault'] = '';
+$string['datetimeformat'] = 'd/m/Y à\s H:i';
+$string['alreadywatched'] = 'Você já assistiu esta aula';
+$string['completedat'] = 'Atividade concluída em';
+$string['file'] = 'Arquivo';
+$string['seeallcomments'] = 'Ver todos os debates desta aula no fórum';
+$string['daysago'] = 'dias atrás';
+$string['hoursago'] = 'horas atrás';
+$string['minutesago'] = 'minutos atrás';
+$string['secondsago'] = 'segundos atrás';
+$string['dayago'] = 'dia atrás';
+$string['hourago'] = 'hora atrás';
+$string['minuteago'] = 'minuto atrás';
+$string['secondago'] = 'segundo atrás';
+$string['minutes'] = 'minutos';
+$string['and'] = 'e';
+$string['seconds'] = 'segundos';
+$string['uploadtovimeo'] = 'Upload para Vimeo';
+$string['uploadtovimeodesc'] = 'Fazer upload de videos armazenados para o Vimeo';
+$string['videocourse'] = 'Vídeo de {$a}';
+$string['videosection'] = 'Playlist: {$a}';
+$string['duration'] = 'Duração';
+$string['postdate'] = 'Data de Publicação';
+$string['dateformat'] = 'd/m/Y';

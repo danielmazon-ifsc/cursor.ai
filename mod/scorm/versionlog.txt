@@ -1,0 +1,53 @@
+2025052601:
+    - One string changed
+
+2025052102:
+    - Minor change in SCORM view page layout
+
+2025052101:
+    - Changes in SCORM details layout, including making it vertical
+    - SCORM details moved to after SCORM content
+
+2025051601:
+    - SCORM details area moved from the bottom to the top of the SCORM view
+        screen
+
+2025051501:
+    - Removed package date from the bottom of the view screen
+
+2025042701:
+    - Published date format changed
+
+2025040301:
+    - Fixed display of scorm launch date
+    - Changed icon for link to scorm's course 
+    - Back button now returns to scorm's course instead of last page
+
+2025040201:
+    - File subplugins.json added
+
+2025040101:
+    - Moodle required version updated to 2017051500
+    - Usage of function strftime() replaced by date()
+
+2025032601:
+    - Adapted to work in Moodle 4.1
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2025031102:
+    - Verified that the hack to skip first page is required
+
+2025031101:
+    - Layout completed
+    - Options for automatic completion set as default in the scorm creation
+        form
+
+2025031001:
+    - Draft layout completed
+    - Added redirect to skip view page and go straight to player page
+
+2025012101:
+    - First version
+    - Minor visual tweaks on version 2018051400
