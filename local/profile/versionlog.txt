@@ -1,0 +1,251 @@
+2026091301:
+    - Study plan can be changed as many times as the student wants. Removed
+      the server-side one-change lock and always show the plan selector on the
+      profile page. Changing the plan still recalculates studypace deadlines.
+
+2026052647:
+    - After a study-plan change, studypace recalculation no longer depends on
+      non-Eixo enrolment succeeding: enrol and pace update run in separate
+      try/catch blocks so estimatedcompletion / expected progress still refresh
+      when the plan months change.
+
+2026052646:
+    - New admin diagnostic (Site administration > Profile > Eixo
+      auto-progression check, gated by moodle/site:config): lists students who
+      completed an Eixo but were never enrolled into the next visible Eixo (an
+      auto-progression failure). For each student it shows the completed Eixo,
+      the missing next Eixo, the completion date and whether a bounded
+      automatic retry is already queued. Includes per-student and bulk
+      "Repair" actions (which reuse the idempotent backfill — they only ever
+      create the missing enrolment) and a CSV export. Detection is set-based
+      (one query per Eixo) and streamed, so it scales on large sites.
+
+2026052645:
+    - Eixo auto-progression hardening (no behaviour change in the common
+      all-visible case):
+        * Hidden Eixo no longer breaks progression. The completed Eixo is now
+          located against the FULL ordered list (visible + hidden), so a
+          completion that lands while an Eixo is temporarily hidden (admin
+          editing it) still resolves its position instead of silently
+          stalling forever (the course_completed event is idempotent and
+          never re-fires). Enrolment still targets only the next VISIBLE
+          (reachable) Eixo.
+        * Transient enrol failures now retry. When the next Eixo is found, the
+          user isn't enrolled yet, and local_profile_auto_enrol_in_course()
+          reports failure, a bounded adhoc task (local_profile\task\
+          enrol_next_eixo) is queued: up to 3 attempts with 5min/30min/2h
+          backoff. It is scoped to the specific freshly-completed pair (NOT a
+          history sweep), so it can never resurrect enrolments an admin
+          removed on purpose, and it is idempotent via is_enrolled().
+        * The bulk backfill (Recalcular/upgrade) passes queueretry=false so it
+          never floods the adhoc queue — admins re-run it manually instead.
+
+2026052644:
+    - numupdates is now incremented only when nummonths actually changes, so
+      avatar-only profile saves no longer consume the user's single plan
+      change (local_profile_apply_study_plan_change).
+    - updateprofile.php rejects empty POSTs (HTTP 400 + nothingtoupdate) so
+      crafted requests cannot bump numupdates without changing anything.
+
+2026052643:
+    - Fix false "Plan can only be changed once" when changing study plan on
+      the profile settings page after onboarding. The server-side guard now
+      respects numupdates (same rule as the UI): users with numupdates = 0
+      may change away from the default plan stored at onboarding; only
+      numupdates > 0 locks further plan changes.
+
+2026052605:
+    - Eixo auto-progression now works on courses that use enrol_self
+      (or any other enrolment plugin) — not only enrol_manual.
+        * The previous enrolment helper hardcoded plugin='manual' and
+          required exactly one active manual instance per course. In
+          production the Eixos commonly disable manual and rely on
+          enrol_self so students can join from the top-navigation Eixos
+          menu (which links to /enrol/index.php). The strict check
+          meant every system-initiated enrolment failed silently:
+            - First Eixo on profile save: not enroled.
+            - Next Eixo after completing the current one: not enroled.
+              Symptom: "menu shows Eixo 3 liberado but the student is
+              never actually enroled, only manually self-enroling
+              works."
+            - Mass enrolment in non-Eixo courses: silently incomplete.
+        * New helper local_profile_auto_enrol_in_course() picks the
+          enrolment plugin from the course's enabled instances in this
+          order: manual → self → first other enabled (cohort, lti, …),
+          skipping plugins that aren't safe for unattended use (guest,
+          paypal, stripe, fee). Each attempt is wrapped in try/catch
+          so a plugin-level failure falls through to the next.
+        * enrol_self_plugin::enrol_user() honours the underlying
+          enrol_plugin contract: calling it programmatically just
+          writes user_enrolments, the password/key gate lives in
+          /enrol/index.php and is correctly bypassed for an admin-
+          initiated progression.
+        * Three callers updated to use the permissive helper:
+            - local_profile_enrol_in_first_eixo
+            - local_profile_enrol_in_next_eixo
+            - local_profile_enrol_in_all_non_specialization_courses
+          local_profile_enrol_user() stays as-is (still strict, still
+          manual-by-default) so callers that intentionally want the
+          old behaviour keep it.
+    - db/upgrade.php step 2026052605 re-runs
+      local_profile_backfill_eixo_progression() so production sites
+      whose 2026052604 backfill silently failed (Eixos using enrol_self)
+      finally get their students enroled in the next Eixo. The backfill
+      is idempotent — sites whose 2026052604 pass already worked just
+      see a 0-row pass this time.
+
+2026052604:
+    - One-shot backfill for the Eixo auto-progression.
+        * Production sites that ran pre-2026052602 (the version that
+          wired \local_studypace\event\course_completed into
+          local_profile_enrol_in_next_eixo) have an existing population
+          of students with completed Eixos whose event never had a
+          listener — studypace::mark_course_completed() short-circuits
+          and fires the event ONLY on the first write of
+          local_studypace.actualcompletion, so post-deploy nothing
+          retriggers for them. Symptom: "student finished Eixo 1 long
+          ago, after the upgrade still wasn't auto-enrolled in Eixo 2".
+        * New db/upgrade.php step iterates every (user, course-Eixo)
+          completion already on disk and pushes each through the
+          idempotent local_profile_enrol_in_next_eixo(). Already-enrolled
+          users and non-Eixo completions (e.g. Sala de Conferências)
+          are no-ops, so the upgrade is safe to re-run.
+        * Re-firing the studypace event was intentionally avoided —
+          that would also re-emit planned_completion(_high_grade),
+          double-counting badges and re-sending achievement messages.
+        * New helper local_profile_backfill_eixo_progression() in lib.php
+          backs the upgrade and is also callable from CLI scripts /
+          adhoc tasks if a site ever needs to replay the catch-up.
+
+2026052603:
+    - Performance + robustness sweep on the enrolment helpers:
+        * local_profile_enrol_in_all_non_specialization_courses() no
+          longer issues one is_enrolled() (context + enrolment) query
+          per candidate course. It now pulls the user's existing
+          enrolments in a single enrol_get_users_courses() call and
+          pushes the "not an Eixo" filter into a NOT IN clause, so the
+          remaining work is a small in-memory diff plus one enrolment
+          per course that actually needs it. On a site with hundreds
+          of non-Eixo courses this turns a first profile save from
+          "noticeably slow" to "imperceptible".
+        * local_profile_enrol_user() previously returned false on three
+          soft-failure paths (enrol plugin disabled, plugin missing,
+          wrong number of enrolment instances on the course) without
+          any signal. The auto-progression observer just swallowed the
+          false, so a misconfigured Eixo manifested as "students never
+          advance" with no log to look at. The function now calls
+          debugging() with a precise message on each false path so the
+          admin sees it in Site administration → Development → Debug
+          messages when debugging is on.
+    - Observer::course_completed exception handler switched from
+      error_log() (lands in php-error.log / Apache log, invisible to
+      the Moodle UI) to debugging(DEBUG_NORMAL) so failures surface in
+      the standard Moodle debug stream.
+
+2026052602:
+    - Re-enabled the Eixo auto-progression workflow (originally removed
+      in 2025060401):
+        * updateprofile.php now enrols the user into the FIRST Eixo on the
+          very first profile save (firstrun branch). Site admins are
+          skipped inside local_profile_enrol_in_first_eixo() so the hook
+          is safe to leave running for everyone.
+        * New observer (classes/observer.php) listens to
+          \local_studypace\event\course_completed and, when the completed
+          course is part of the Eixo progression, enrols the user into
+          the NEXT Eixo via the manual enrolment plugin.
+        * New helpers in lib.php:
+            - local_profile_get_eixos_in_order()
+            - local_profile_enrol_in_first_eixo($userid)
+            - local_profile_enrol_in_next_eixo($userid, $completedeixoid)
+        * Self-enrollment via the home page interactive cards keeps
+          working — the auto-enrol just gets there first. If for any
+          reason the observer misses (e.g. an upgrade window), the user
+          can still self-enrol manually.
+
+2026052601:
+    - Removed dead code: local_profile_get_next_specialization() was the old
+      auto-progression helper for Eixo enrollment, decommissioned in
+      2025060401 but never deleted. It had no callers left.
+
+2025061701:
+    - Changed to update all user enrolments after profile creation or update
+
+2025061401:
+    - Fixed retrieval of non-existent profile
+
+2025060901:
+    - Field hiredate (default null) added to local_profile table
+    - Page updateprofile.php changed to receive hiredate as URL parameter
+        and add the information to user's profile
+
+2025060402:
+    - Removed cron task to enrol users in all specializations
+    - Replaced function local_profile_get_user_months_per_specialization by
+        local_profile_get_user_months
+
+2025060401:
+    - Stopped enroling user in the first specialization at profile update
+
+2025051601:
+    - Field numupdates (initialized with 0) added to local_profile table in DB
+    - Changed to only allow one study plan change. Avatars can be changed an
+        unlimited number of times
+
+2025050101:
+    - Changed to enrol new users also in invisible non-specialization courses
+
+2025042701:
+    - Changed to enrol new students only in first specialization
+
+2025042401:
+    - Changed to enrol new students in all visible non-specialization courses
+        along with the specialization ones
+    - Minor layout changes
+    - Fixed function that updates enrolment end
+
+2025040202:
+    - SQL literals updated to become PostgreSQL compatible
+
+2025040201:
+    - Fixed password update
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032601:
+    - Adapted to work in Moodle 4.1
+
+2025032001:
+    - Layout for theme pdi completed
+
+2025031803:
+    - Added specific avatars for theme pdi
+    - Scheduled task added to enrol students in new specialization courses
+    - Added a method to lib.php do set user's avatar by image relative url
+    - Added a table local_profile to the database to store last time the user
+        updated its profile and how many months he/she selected
+    - PHP module added to be activated by Ajax and update user's profile
+    - Dependency on format_specialization added
+
+2024091302:
+    - Page to choose avatar adjusted for mobile access
+
+2024091301:
+    - Profile page adjusted for mobile access
+
+2024080701:
+    - Adjusted size of form fields
+    - Fixed flow of password change
+
+2024070101:
+    - Removed facebook and linkedin fields
+    - Added new password and repeat password fields
+
+2024062702:
+    - String added
+
+2024062701:
+    - First complete version
+
+2024061801:
+    - First version, missing only the avatar selection as user image

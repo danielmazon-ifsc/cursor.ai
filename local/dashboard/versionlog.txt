@@ -1,0 +1,110 @@
+2026091501:
+    - Journey section-pass checks use strict boolean true (aligned with
+      certificate / format_specialization 2026091502).
+
+2026091302:
+    - Eixo "completed" (journey circles + overall progress bar count) also
+      requires every graded section/disciplina >= 60% (not only course total).
+
+2026091301:
+    - Overall progress bar turns green (#42B77A) when the student is on pace
+      ("Mantenha o ritmo!"); stays accent/red when behind ("Aumente o seu ritmo!").
+
+2026090102:
+    - Fixed NUMBER precision for workload hours (10,2).
+    - Drop the workloadhours index before altering the column (Postgres
+      refuses change_field_precision while mdl_locadashwork_wor_ix exists).
+    - Clearing a course hour field now deletes the stored row (fallback weighting).
+    - Only tracked specialization/sala course ids are saved.
+
+2026090101:
+    - Admin page to configure workload hours per Eixo and Sala de Conferências course.
+    - Dashboard progress weighting uses proportional workload hours when configured;
+      falls back to 90% Eixos / 10% Sala when none are set.
+    - Workload table named local_dashboard_workload (Moodle 28-char table limit).
+
+2026052644:
+    - Scoped the consolidated-final-grade tie-break to the ADMIN report only.
+      The student dashboard widget reverts to coins-only "1224" ranking (equal
+      coin totals share a position), restoring its cached coin-distribution
+      snapshot (key 'distribution') and O(log n) position lookup.
+    - The admin report/CSV keep the tie-break: order by coins desc, then
+      consolidated final grade desc, then surname/first name as a stable
+      display fallback. SQL still selects lean columns (was u.*); the full set
+      is sorted in PHP under raised time/memory limits.
+
+2026052643:
+    - Ranking tie-break by consolidated final grade (later scoped to admin only
+      in 2026052644). Applied to both the widget and the admin report; the
+      widget's snapshot stored each student's (coins, final grade) key.
+    - Admin ranking SQL switched to lean columns (was u.*).
+
+2026052642:
+    - Ranking-position scalability fix (critical for large sites). The per-user
+      dashboard widget used to run a site-wide {coin_stack} aggregate on every
+      render, cached only per-user — so on a 10k-student site a login burst
+      stampedes the DB with thousands of identical full-table aggregations.
+      The coin-total distribution is now computed ONCE site-wide and cached
+      (key 'distribution', TTL 300s); each user's position is derived from it
+      with an O(log n) binary search plus one cheap indexed lookup of their own
+      total. Same "1224" ranking semantics. The 'coinranking' cache TTL moved
+      from 60s to 300s accordingly.
+
+2026052641:
+    - Admin "Student ranking" report now also shows consolidated grades: one
+      column per visible Eixo (the course-total final grade, the same value
+      format_specialization::get_student_grade / studypace use) plus a
+      summative final grade (sum across all Eixos). Eixos a student has not
+      completed (no local_studypace course completion) count as 0. The grade
+      matrix is loaded set-based — one query per Eixo, restricted to the page's
+      students on screen and streamed for the CSV — so it scales. The CSV
+      export gained the same Eixo + final-grade columns.
+
+2026052640:
+    - Rewrote the dashboard coin ranking to be set-based (student count and
+      per-user position computed in SQL + cached) instead of loading every
+      student and the whole coin_stack into PHP. Removes the OOM/timeout risk
+      on large sites.
+    - Added an admin-only report page (Site administration > Dashboard >
+      Student ranking) listing every active student's coin total, best-first,
+      paginated, with a CSV download. Gated by moodle/site:config.
+
+2026052604:
+    - Bumped dependencies to pick up the perf/robustness sweep in
+      local_profile 2026052603, format_specialization 2026052609 and
+      local_notifications 2026052601. No behavioural change in this
+      plugin itself.
+
+2025061401:
+    - Fixed display of badge desciption
+
+2025061302:
+    - Changed to retrieve the number os specializations completed from studypace
+    - Fixed icons, tooltip and links in progress timeline
+
+2025061301:
+    - Changed to check course completion in studypace instead of Moodle's
+        course completion
+    - Fixed icons and background color in progress timeline
+
+2025051601:
+    - Stop converting number format for grades
+
+2025050501:
+    - Change display of average grade to use , as a decimal separator
+
+2025050202:
+    - Fix display of dashboard in case there's no enrolment in specialization
+
+2025050201:
+    - Enabled display of coins ranking
+
+2025042903:
+    - Fixed display of single-row badges
+
+2025042902:
+    - Changed to enable display of coins box
+    - Dependency on local_coin added
+
+2025042901:
+    - First version

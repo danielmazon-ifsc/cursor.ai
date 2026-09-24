@@ -1,0 +1,40 @@
+2025051902:
+    - Changed to display next videos area even when there's no available
+        videos
+
+2025051901:
+    - Changed to display the videos with availability set to the future in
+        the next vídeos area, including the date in which those videos will
+        become available
+
+2025040301:
+    - Button to ter editing on is now only visible if the user has course
+        editing capability
+    - Runtime error avoided in case of empty section
+
+2025040102:
+    - SQL literals updated to become PostgreSQL compatible
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032701:
+    - Adapted to work in Moodle 4.1    
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2025030801:
+    - Section name and summary retrieved from the section itself instead of
+        being hardcoded
+    - Added controls to increase/decrease the number of sections
+    - Section menu moved to the top of the section
+
+2025030701:
+    - Number of unwatched videos is no longer hard-coded
+
+2025030601:
+    - Mark current video as completed at page load
+
+2025030502:
+    - Complete version

@@ -1,0 +1,354 @@
+2026091603:
+    - Pending (not yet eligible) certificate button uses gray outline/hover
+      instead of white; still links to the dashboard.
+
+2026091602:
+    - While the certificate is not yet available, the Certificado button stays
+      enabled and links to the dashboard (progress / approval requirements).
+
+2026091601:
+    - Disabled home certificate button: no pointer hand and no hover color
+      change (overrides btn-outline-white:hover).
+
+2026091503:
+    - Depends on format_specialization 2026091503 (section grades = cquiz only).
+
+2026091502:
+    - Certificate eligibility fails closed unless every Eixo section pass is
+      strictly true (same helper as dashboard). Depends on
+      format_specialization 2026091502 (all graded activities per section).
+    - After deploy: purge caches / theme caches so home stops showing the
+      stale "Parabéns" state for learners who fail a discipline grade.
+
+2026091501:
+    - Certificate button also requires every graded Eixo section (disciplina
+      with cquiz) to have at least one evaluative activity >= 60%, using the
+      same helper as dashboard progress. Depends on format_specialization
+      2026091301. Fails closed if the helper is missing.
+
+2026052644:
+    - Reaction-evaluation activity pages now use the same PDI top navbar
+      (#default-navbar) and custom footer as Eixo course pages
+      (uses_pdi_custom_chrome + avaliacao.css hides Boost navbar).
+
+2026052643:
+    - Avaliação de Reação pages (mod_page / survey / questionnaire) now
+      receive avaliacao.css in production: theme_pdi_page_init() adds
+      body.pdi-avaliacao-reacao and loads the sheet on activity view pages,
+      not only on page-course-view-specialization.
+    - Replaced hardcoded .cmid-89/100/… selectors (homologation IDs) with
+      body.pdi-avaliacao-reacao so styling follows the activity name on any
+      environment.
+
+2026052612:
+    - Bumped dependency on block_onboarding to 2026052602 to pick up the
+      jQuery removal from block_onboarding.js. Without this bump, an
+      install that already has block_onboarding 2026052601 would keep
+      the broken jQuery-dependent script cached.
+
+2026052611:
+    - Bumped dependency on block_onboarding to 2026052601 to pick up the
+      portability + security fix on the onboarding URL builders (see
+      block_onboarding versionlog 2026052601). This is the same plugin
+      that local_profile uses for the new-user flow, so theme deploys
+      that ship them together need to land in lockstep.
+
+2026052610:
+    - Cleanup pass on theme/pdi/renderers.php notifications dropdown:
+      the foreach body that emits each notification was over-indented
+      by one level (4 extra spaces), which made it visually look like
+      the "see all notifications" link that follows the loop was
+      inside the loop. PHP braces were correct, but the indentation
+      misled future maintainers. Re-aligned to the actual nesting.
+    - Bumped dependencies to the new versions of the plugins this
+      theme integrates with (format_specialization 2026052609,
+      local_profile 2026052603, local_notifications 2026052601).
+
+2026052609:
+    - Bumped dependency on format_specialization to 2026052608 to pick
+      up the click-bubble fix on the server-rendered mural-aviso (see
+      format_specialization versionlog 2026052608).
+
+2026052608:
+    - Removed js/avaliacao.js and stopped requiring it from footer().
+      The "Avaliação de Reação" banner is now rendered server-side by
+      format_specialization's renderer (see that plugin's versionlog
+      entry 2026052607). The CSS in style/avaliacao.css is kept intact
+      because the .mural-aviso / #course-N-window-M positioning rules
+      are still needed to style the server-rendered banner; only the
+      JS-side injection was migrated.
+
+2026052607:
+    - Added style/avaliacao.css and js/avaliacao.js:
+        * CSS dark-themes the "Avaliação de Satisfação" pages (mod_page /
+          mod_survey via .cmid-89/100/101/102/103/104) and the
+          mod_questionnaire view/complete pages.
+        * Defines the .mural-aviso overlay card used over Eixo hotspots
+          (#course-N-window-5/6) plus the topo-pdi-avr hero, .card-eixo
+          callout block and the .botao-* / .botao-pdi-avr-* button styles.
+        * js/avaliacao.js injects an <a><img class="mural-aviso"></a>
+          banner pointing to the "Avaliação de Reação" page in each Eixo
+          window. URLs and mod_page IDs are currently hardcoded to the
+          homologation host (pdi-ns-hom.enap.gov.br); local/dev
+          installations will need either custom URLs or a future theme
+          setting to override them.
+    - Original snippet supplied by the product team had a few syntax
+      issues (period instead of comma in selector list, border-radius
+      assigned a color, orphan declaration block, missing leading dots
+      in a media query, duplicate .card rules). All fixed before being
+      added to the theme.
+
+2026052606:
+    - Eixo self-enrollment URL is now the canonical Moodle landing page
+      (/enrol/index.php?id=<courseid>) instead of being read from
+      {role_names}.name. The previous implementation overloaded the per-
+      context role-name override field as a URL store, which:
+        * Required admins to remember to set the override per Eixo (no UI
+          hint pointed at it), silently falling back to ?redirect=0 (home)
+          when missing.
+        * Was attacker-controllable by anyone with moodle/role:manage in
+          the context — mitigated previously with clean_param(PARAM_URL)
+          but still fundamentally a misuse of the field.
+        * Bypassed Moodle's standard enrolment landing page (which knows
+          how to render self, payment, cohort, etc.).
+
+2025111202:
+    - Changed to use method get_first_not_enroled_course_id from class
+        format_specialization instead of local_studypace
+
+2025111201:
+    - Changed to use method all_previous_courses_completed from class
+        format_specialization instead of local_studypace
+
+2025080701:
+    - Changed the style of questions text in cquiz review page
+
+2025072201:
+    - Removed dates to block
+    - Added the course start date to the door tooltip in initial screen
+
+2025070901:
+    - Changed CSS for blockquote
+
+2025070801:
+    - Fixed CSS to access conference room from all the courses but the first
+
+2025062301:
+    - Date to block updated
+
+2025061401:
+    - Changed to redirect to enrol also from to navigation bar
+
+2025061301:
+    - Changed icon for to-enrol doors
+    - Changed to check if a course is completed in studypace
+
+2025060904:
+    - Changed to add target="_blank" attribute to view link of URL course
+        modules
+
+2025060903:
+    - Changed click instruction message at the top of doors picture
+    - Contrast of instruction message at the top of doors picture increased
+    - Contrast of top menu options increased
+
+2025060902:
+    - Fixed SQL in method is_user_a_course_teacher to PostgreSQL syntax
+
+2025060901:
+    - Changed contact link
+
+2025060701:
+    - Changed click instruction message at the top of doors picture
+
+2025060601:
+    - Added a click instruction message at the top of doors picture
+
+2025060401:
+    - Added a special style for home doors with enrolment feature
+    - Added a link for an URL to enrol user in a specialization after he/she
+        completed the previous one
+
+2025053101:
+    - Enabled again the check whether a couse should be available to the
+        student or not
+
+2025053001:
+    - Temporarily removed the check whether a couse should be available to the
+        student or not
+
+2025052901:
+    - Size of font in enumerated lists in questions text increased
+    - Date block added
+
+2025052801:
+    - Made colors in quiz questions text brighter
+
+2025052702:
+    - Removed green/red markers for read/unread messages in notifications
+        drop down
+
+2025052701:
+    - Height of SCORM view area in SCORM view page set to 90%
+
+2025052602:
+    - Minor layout changes in onboarding block
+
+2025052601:
+    - Minor layout changes in main screen
+    - Text of About section changed in main screen
+
+2025052102:
+    - Minor changes in SCORM view page layout
+
+2025052101:
+    - Changes in SCORM view page layout
+
+2025051901:
+    - Make enough space for edit dropdown menu items in conference room and
+        video gallery
+
+2025051601:
+    - Minor layout changes in SCORM view page
+
+2025051501:
+    - Review message removed from above the view window in SCORM page
+    - Hid button to leave couse in SCORM window (second attempt)
+    - Width of SCORM view window reduced
+
+2025050602:
+    - Do not start showing user menu dropdown as open
+
+2025050601:
+    - Fixed size of text areas in forms
+
+2025050102:
+    - Dependency on local_coin added
+    - Enabled the display of user's coins in home page
+
+2025050101:
+    - Fixed display of mini-dashboard at home page when there's no enrolment
+    - Make conference room blocked also when it's no visible, and show a
+        message refering to video gallery
+    - Enlarged SCORM display window
+
+2025042902:
+    - Enabled access to dashboard
+    - Show mini-dashboard
+    - Hid links to terms and privacy
+
+2025042901:
+    - Hid button to leave couse in SCORM window
+
+2025042702:
+    - Changed to retrieve spacializations's status from studypace
+    - Minor changes in mod_scorm style
+
+2025042701:
+    - Changed the scorm player height
+    - Avoid blocking access to courses for admin users
+    - Minor layout changes
+
+2025042401:
+    - Minor changes in overall layout
+    - Support to notifications advanced, but remains disabled
+    - Support to dashboard access advanced, but remains disabled
+    - Minor but important changes in cquiz layout
+
+2025041401:
+    - Support to dashboard access advanced, but remains disabled
+    - Mail to contact in main page added (button tyle changed as well)
+
+2025040902:
+    - Enabled access to notification dropdown menu
+
+2025040901:
+    - Improved layout of format_specialization, including preparation to
+        display mini-dashboard
+    - Fixed display of dropdown menus with .menu class
+
+2025040601:
+    - Fixed format of format_specialization to support access to conference
+        room from there
+    - Fixed home.js to ignore clicks on locked areas
+
+2025040503:
+    - Border of checkbox made darker
+
+2025040502:
+    - Requirement for notifications/lib.php commented
+
+2025040501:
+    - Overlay picture of a sitting woman removed from home page
+    - Preparation to show notifications in header advanced
+
+2025040201:
+    - Styles for login page added
+    - Fixed styles for block onboarding
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025033101:
+    - Dependency of local_notifications added
+    - Style for local_notifications added
+    - Page page-local-notifications-view added to the list of pages with
+        customized layout
+
+2025032903:
+    - Minor style changes
+
+2025032902:
+    - Styles fixed in block_onboarding
+
+2025032901:
+    - Style for block_onboarding fully adapted
+    - Minor changes in all other styles except pdi and app
+    - Versions of dependency plugins updated
+
+2025032801:
+    - Style for mod_cquiz added
+    - Pages page-mod-cquiz-view, page-mod-cquiz-attempt and
+        page-mod-cquiz-review added to the list of pages with
+        customized layout
+    - Pages page-mod-cquiz-view, page-mod-cquiz-attempt and
+        page-mod-cquiz-review added to the list of pages with white header and
+        footer
+    - Javascript dom-factory (required?) removed
+    - Minor style changes
+
+2025032703:
+    - Page page-mod-video-view added to the list of pages with
+        customized layout
+    - Style for mod_video added
+
+2025032702:
+    - Strings added to support format_videogallery
+    - Style for format_videogallery added
+    - Page page-course-view-videogallery added to the list of pages with
+        customized layout
+    - Fixed the generation of tags for carousel sections
+    - Method simple_course_section_cm added to class 
+        theme_pdi_core_course_renderer 
+    - Minor style changes
+
+2025032701:
+    - Style format_specialization changes
+    - Style app added
+    - Style block_onboarding added
+    - Style format_conferenceroom added
+    - Style home changed
+    - Style local_profile changed
+    - Style pdi changed
+    - Class theme_pdi_core_renderer changed to allow pages with customized
+        layout
+    - Methods course_section_cm, get_module_name, get_thumbnail_url,
+        is_user_a_course_teacher, course_section_cm_list and
+        course_section_cm_list_item added to class 
+        theme_pdi_core_course_renderer 
+    - Javascript dom-factory (required?) added
+    - Function theme_pdi_is_cm_completed added to lib
+
+2025032601:
+    - First version in Moodle 4.1
+

@@ -1,0 +1,366 @@
+/**
+ * scorm styles
+ *
+ * @package    mod_scorm
+ */
+
+.path-mod-scorm .top {
+    vertical-align: top;
+}
+
+.path-mod-scorm .scorm-left {
+    text-align: left;
+}
+
+.path-mod-scorm .scorm-right {
+    text-align: right;
+}
+
+.path-mod-scorm .scoframe {
+    position: relative;
+    width: 100%;
+}
+
+.ios #scormpage #scorm_content {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+#page-mod-scorm-player {
+    background-color: rgb(1,19,23);
+}
+
+#page-mod-scorm-player .navbar.fixed-top,
+#page-mod-scorm-player #page-footer,
+#page-mod-scorm-player #region-main h2,
+#page-mod-scorm-player .activity-header,
+#page-mod-scorm-player #scorm_toc,
+#page-mod-scorm-player #scorm_toc_toggle,
+#page-mod-scorm-player .activity-navigation {
+    display: none !important;
+}
+
+#page-mod-scorm-player #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-mod-scorm-player #topofscroll,
+#page-mod-scorm-player #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-mod-scorm-player .secondary-navigation,
+#page-mod-scorm-player #scormtop {
+    display: none;
+}
+
+#page-mod-scorm-player #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-mod-scorm-player #scormbrowse {
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+#page-mod-scorm-player #scormnav {
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 3px;
+    width: 100%;
+}
+
+#page-mod-scorm-player #scormbox {
+    width: 74%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#page-mod-scorm-player #scormpage {
+    width: 90%;
+    float: left;
+}
+
+#page-mod-scorm-player #scormdetails {
+  float: left;
+  width: 10%;
+}
+
+#page-mod-scorm-player #scormpage #toctree {
+    position: relative;
+    width: 100%;
+}
+
+#page-mod-scorm-player #tocbox {
+    position: relative;
+    left: 0;
+    width: 100%;
+    font-size: 0.8em;
+    max-width: unset !important;
+}
+
+#page-mod-scorm-player #toctree {
+    overflow: visible;
+}
+
+#page-mod-scorm-player #tochead {
+    position: relative;
+    text-align: center;
+    top: 3px;
+    height: 30px;
+}
+
+#page-mod-scorm-player #scormpage .scoframe {
+    border: 0;
+}
+
+#page-mod-scorm-player #scormpage #scorm_object {
+    border: none;
+    width: 100%;
+    height: 90vh;
+}
+
+#page-mod-scorm-player #scormpage #scorm_object.scorm_nav_under_content {
+    height: 95%;
+}
+
+#page-mod-scorm-player #scormpage #scorm_content {
+    width: 100%;
+}
+
+#page-mod-scorm-player #scormpage #scorm_toc {
+    position: relative;
+}
+
+#page-mod-scorm-player #scormpage #scorm_toc_title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#page-mod-scorm-player #scormpage #scorm_tree {
+    border-right: 5px solid rgb(239, 245, 255);
+}
+
+#page-mod-scorm-player #scormpage #scorm_navpanel {
+    text-align: center;
+}
+
+#page-mod-scorm-player .toc,
+#page-mod-scorm-player .no-toc {
+    width: 100%;
+}
+
+#page-mod-scorm-player .structlist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-scorm-player .structurelist {
+    position: relative;
+    list-style-type: none;
+    width: 96%;
+    margin: 0;
+    padding: 0;
+}
+
+#page-mod-scorm-player .structurelist ul {
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+}
+
+#page-mod-scorm-player #scormpage #scorm_toc.disabled,
+#page-mod-scorm-player #scormpage #scorm_toc.loading,
+#page-mod-scorm-player #scormpage #scorm_toc_toggle.disabled,
+#page-mod-scorm-player #scormpage #scorm_toc_toggle.loading {
+    display: none;
+}
+
+#page-mod-scorm-view .structurelist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-scorm-view .structurelist {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#page-mod-scorm-view .exceededmaxattempts {
+    color: #c00;
+}
+
+#page-mod-scorm-player #altfinishlink {
+    font-size: 140%;
+    border: 0;
+    padding: 0;
+}
+
+#page-mod-scorm-player #scormmode {
+    float: left;
+    border: 0;
+}
+
+#page-mod-scorm-player.pagelayout-popup #page-content .region-content {
+    padding: 0;
+}
+
+#page-mod-scorm-player.pagelayout-popup #page-wrapper {
+    width: 100%;
+}
+
+#page-mod-scorm-player .yui-layout-scroll div.yui-layout-bd {
+    overflow: visible;
+}
+
+#page-mod-scorm-player .yui-layout-unit-left div.yui-layout-bd {
+    overflow: auto;
+}
+
+.path-mod-scorm.forcejavascript .toc {
+    display: none;
+}
+
+.path-mod-scorm.forcejavascript #scormpage #tocbox {
+    display: none;
+}
+
+.path-mod-scorm.jsenabled .forcejavascriptmessage {
+    display: none;
+}
+
+.path-mod-scorm.jsenabled .toc {
+    display: block;
+}
+
+.path-mod-scorm.jsenabled #scormpage #tocbox {
+    display: block;
+}
+
+#page-mod-scorm-report-userreporttracks table .c1 {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#page-mod-scorm-report .scormattemptcounts {
+    clear: left;
+    text-align: center;
+    display: inline;
+    margin-left: 20%;
+}
+
+#page-mod-scorm-player #scormpage span.yui3-treeview-icon {
+    display: none;
+}
+
+#page-mod-scorm-player #scormpage li.yui3-treeview-has-children > div.yui3-treeview-row > span.yui3-treeview-icon {
+    display: block;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-u-1,
+#page-mod-scorm-player #scormpage div.yui3-u-3-4,
+#page-mod-scorm-player #scormpage div.yui3-u-1-5,
+#page-mod-scorm-player #scormpage div.yui3-u-1-24 {
+    display: inline-block;
+    *display: inline; /* stylelint-disable-line */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-u-1 {
+    display: block;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-u-3-4 {
+    width: 75%;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-u-1-5 {
+    width: 20%;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-u-1-24 {
+    width: 4.1666%;
+}
+
+#page-mod-scorm-player #scormpage div.yui3-g-r {
+    letter-spacing: normal;
+    word-spacing: -0.43em;
+}
+
+#scorm_layout {
+    margin-bottom: 50px;
+}
+
+/**
+* Opera as of 12 on Windows needs word-spacing.
+* The ".opera-only" selector is used to prevent actual prefocus styling
+* and is not required in markup.
+*/
+#page-mod-scorm-player .opera-only :-o-prefocus,
+#page-mod-scorm-player #scormpage div.yui3-g-r img {
+    max-width: 100%;
+}
+
+/* Theme pdi specific BEGIN */
+
+#page-mod-scorm-player #scorm_toc,
+#page-mod-scorm-player #scorm_toc_toggle,
+#page-mod-scorm-player #scorm_navpanel,
+#page-mod-scorm-player .course-header,
+#page-mod-scorm-player scormtop {
+    display: none;
+}
+
+#page-mod-scorm-player #scorm_object {
+    width: 100%;
+    height: 43rem;
+}
+
+#page-mod-scorm-player #scormpage {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+#page-mod-scorm-player #scorm_layout {
+    margin-bottom: 0;
+    height: unset !important;
+}
+
+#page-mod-scorm-player #scordmdetails {
+    color: rgb(14, 66, 66);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+[dir] #page-mod-scorm-player #scormdetails .btn.btn-clear {
+    color: #288D8C !important;
+}
+
+[dir] #page-mod-scorm-player #scormdetails .btn.btn-clear:hover {
+    background-color: rgb(14, 66, 66) !important;
+    border-color: rgb(14, 66, 66) !important;
+    color: rgb(205, 254, 253) !important;   
+}
+
+#page-mod-scorm-player .debuggingmessage {
+    display: none;
+}
+
+#page-mod-scorm-player #footer-content {
+  display: none;
+}
+
+/* Theme pdi specific END */

@@ -1,0 +1,16 @@
+.path-local-coin .coinsbalance {
+    background-color: [[setting:maincolor]];
+    color:  [[setting:contrastcolor]];
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: x-large;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.path-local-coin .coinsbalance img.icon {
+  height: 1.5rem !important;
+  margin-left: .3rem;
+  margin-bottom: .2rem;
+}
+

@@ -1,0 +1,26 @@
+{
+  "moodle-mod_cquiz-util": {
+    "requires": [
+        "node"
+    ],
+    "use": [
+        "moodle-mod_cquiz-util-base"
+    ],
+    "submodules": {
+        "moodle-mod_cquiz-util-base": {
+        },
+        "moodle-mod_cquiz-util-slot": {
+            "requires": [
+                "node",
+                "moodle-mod_cquiz-util-base"
+            ]
+        },
+        "moodle-mod_cquiz-util-page": {
+            "requires": [
+                "node",
+                "moodle-mod_cquiz-util-base"
+            ]
+        }
+    }
+  }
+}

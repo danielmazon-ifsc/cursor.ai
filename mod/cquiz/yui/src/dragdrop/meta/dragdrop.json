@@ -1,0 +1,19 @@
+{
+    "moodle-mod_cquiz-dragdrop": {
+        "requires": [
+            "base",
+            "node",
+            "io",
+            "dom",
+            "dd",
+            "dd-scroll",
+            "moodle-core-dragdrop",
+            "moodle-core-notification",
+            "moodle-mod_cquiz-cquizbase",
+            "moodle-mod_cquiz-util-base",
+            "moodle-mod_cquiz-util-page",
+            "moodle-mod_cquiz-util-slot",
+            "moodle-course-util"
+        ]
+    }
+}

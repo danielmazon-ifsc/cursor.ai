@@ -1,0 +1,26 @@
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032801:
+    - Replace material-icons with fontawesome
+
+2024052801:
+    - Changed how feedback is presented
+
+2022050501:
+    - Fixed the retrieval of question competencies
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2019012901:
+    - Bug fix: tables name with fullpath instead od {tablename} format
+
+2017070701:
+    - Changed to improve question creation form: default multiple tries penalty to .5 and expanded competency section by default
+
+2017062801:
+    - Changed to allow competencies to be associated with specific question answers
+
+2017032101:
+    - First version

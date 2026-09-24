@@ -1,0 +1,327 @@
+/* Sala de Conferências — course format layout */
+
+/* Featured player area */
+.saladeconferencias-featured {
+    background: #fff;
+    padding: 2.5rem 1.5rem 2rem;
+}
+
+.saladeconferencias-featured__player-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(14, 66, 66, 0.08);
+}
+
+.saladeconferencias-featured__player {
+    background: #000;
+    position: relative;
+}
+
+.saladeconferencias-featured__poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    cursor: pointer;
+}
+
+.saladeconferencias-featured__poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.saladeconferencias-featured__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(55, 182, 181, 0.92);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.saladeconferencias-featured__play-btn::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 0.85rem solid transparent;
+    border-bottom: 0.85rem solid transparent;
+    border-left: 1.35rem solid #fff;
+    transform: translateX(0.2rem);
+}
+
+.saladeconferencias-featured__play-btn:hover {
+    background: #2da8a7;
+}
+
+.saladeconferencias-featured__player-inner {
+    background: #000;
+}
+
+.saladeconferencias-featured__player > .js-player,
+.saladeconferencias-featured__player-inner > .js-player {
+    position: relative;
+    z-index: 1;
+}
+
+.saladeconferencias-featured__player-inner .embed-responsive {
+    min-height: 200px;
+}
+
+.saladeconferencias-featured__native-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    background: #000;
+}
+
+.saladeconferencias-featured__player-inner video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    background: #000;
+}
+
+.saladeconferencias-featured__player--loading {
+    opacity: 0.6;
+}
+
+.saladeconferencias-featured__video-title {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
+    color: #0e4242;
+    border-top: 1px solid #e9edf2;
+}
+
+/* Sections */
+.saladeconferencias-sections {
+    background: #f5feff;
+    padding: 2rem 1.5rem 1.5rem;
+}
+
+.saladeconferencias-section {
+    margin-bottom: 2.5rem;
+}
+
+.saladeconferencias-section:last-child {
+    margin-bottom: 0;
+}
+
+.saladeconferencias-changenumsections {
+    margin-bottom: 0;
+}
+
+.saladeconferencias-section__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.saladeconferencias-section__play-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: #cdfefd;
+    color: #303840;
+    font-size: 1rem;
+}
+
+.saladeconferencias-section__title {
+    margin: 0;
+    margin-bottom: 0!important;
+    font-size: 1.35rem;
+    color: #303840;
+}
+
+.saladeconferencias-section__summary {
+    color: rgba(39, 44, 51, 0.7);
+    margin: 0 0 1.25rem 3.25rem;
+    max-width: 48rem;
+}
+
+.saladeconferencias-section__videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.saladeconferencias-section__video-item {
+    flex: 0 0 calc(33.333% - 0.67rem);
+    max-width: calc(33.333% - 0.67rem);
+    min-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .saladeconferencias-section__video-item {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .saladeconferencias-section__video-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Video cards */
+.saladeconferencias-video-card {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.saladeconferencias-video-card__editbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    padding: 0.35rem 0.5rem;
+    margin-bottom: 0.35rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.35rem;
+    min-height: 2.25rem;
+}
+
+.saladeconferencias-video-card__editbar .cm_action_menu,
+.saladeconferencias-video-card__editbar .section-cm-edit-actions {
+    margin: 0;
+    float: none;
+}
+
+.saladeconferencias-video-card__editbar .dropdown-toggle,
+.saladeconferencias-video-card__editbar .action-menu-trigger {
+    color: #303840 !important;
+}
+
+.saladeconferencias-video-card__editbar a {
+    color: #303840 !important;
+}
+
+.saladeconferencias-video-card .editing_move {
+    margin-bottom: 0.25rem;
+}
+
+.saladeconferencias-video-card__link[href="#"] {
+    cursor: pointer;
+}
+
+.saladeconferencias-video-card--active {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+.saladeconferencias-video-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(14, 66, 66, 0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.saladeconferencias-video-card__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(14, 66, 66, 0.15);
+    text-decoration: none;
+}
+
+.saladeconferencias-video-card__thumb img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.saladeconferencias-video-card__titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 0.65rem 0.75rem;
+    min-height: 2.75rem;
+}
+
+.saladeconferencias-video-card__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #303840;
+    line-height: 1.3;
+}
+
+.saladeconferencias-video-card__status {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+}
+
+.saladeconferencias-video-card__status--pending .saladeconferencias-video-card__play {
+    color: #37b6b5;
+    font-size: 1.35rem;
+}
+
+.saladeconferencias-video-card__status--complete .saladeconferencias-video-card__check-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0;
+}
+
+.saladeconferencias-video-card--complete .saladeconferencias-video-card__base {
+    background: #c8f0c8;
+}
+
+.saladeconferencias-video-card__base {
+    height: 0.65rem;
+    background: #d4e4ff;
+}
+
+.saladeconferencias-video-card--locked:not(.saladeconferencias-video-card--hidden) .saladeconferencias-video-card__thumb img {
+    filter: grayscale(0.6);
+    opacity: 0.85;
+}
+
+.saladeconferencias-video-card--hidden .saladeconferencias-video-card__thumb img {
+    filter: none;
+    opacity: 1;
+    object-fit: cover;
+}
+
+.saladeconferencias-video-card__link--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.saladeconferencias-video-card__link--disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(14, 66, 66, 0.1);
+}
+
+.saladeconferencias-video-card--hidden .saladeconferencias-video-card__title {
+    opacity: 0.75;
+}
+
+#page-course-view-saladeconferencias .saladeconferencias-video-card .section-cm-edit-actions {
+    background: #fff !important;
+    float: none;
+}

@@ -1,0 +1,111 @@
+2026052602:
+    - Removed jQuery dependency from block_onboarding.js.
+        * The previous file referenced $(event.target), $(".carousel-control-*")
+          and $.ajax. In Moodle 4.x jQuery is loaded via AMD/RequireJS and
+          is NOT guaranteed to be on the global window when a legacy
+          $PAGE->requires->js() script runs. Production hit
+          "Uncaught ReferenceError: $ is not defined" inside the
+          DOMContentLoaded handler.
+        * Rewrote in vanilla JS:
+            - $(event.target)[0] was a no-op around an already-DOM node →
+              uses event.target directly.
+            - $(".carousel-control-next").click(...) → querySelectorAll +
+              addEventListener.
+            - $.ajax(...) → fetch(...) with URLSearchParams body, keeping
+              the application/x-www-form-urlencoded contract that
+              optional_param() in updateprofile.php already accepts.
+        * Added a defensive early-return when #avatarCarousel isn't on
+          the page so this script doesn't crash on pages that load it
+          but don't render the onboarding markup.
+        * onboardingWwwroot() helper tries Config.wwwroot first
+          (legacy global), falls back to M.cfg.wwwroot (AMD-era global),
+          and finally to window.location.* — so the script keeps
+          working regardless of which JS bootstrap loaded for the page.
+        * Fixed an existing dead bug: avatar.getAttribute("avatar-url").value
+          dereferenced .value off of a primitive string (returns
+          undefined). Validator accidentally still worked because the
+          subsequent === "" check evaluated to false on undefined. Now
+          uses the raw getAttribute() return value.
+    - No server-side change: updateprofile.php already supports both
+      GET and POST via optional_param().
+
+2026052601:
+    - Portability + security sweep on the onboarding URLs:
+        * block_onboarding.php "continue" buttons on the second and third
+          onboarding pages no longer use the bare href '/?redirect=0',
+          which resolved against the host root and 404'd on every
+          subdirectory install (e.g. https://host/moodle/...). They now
+          build the URL via moodle_url('/', ['redirect' => 0]), which
+          honours $CFG->wwwroot on any deploy layout.
+        * block_onboarding.js setAttribute("src", avatarOption) on the
+          user picture element used to set a host-root path
+          (/local/profile/pix/avatars/...). On subdirectory installs the
+          image silently 404'd. Now prefixed with Config.wwwroot so the
+          preview matches what the server actually serves.
+        * block_onboarding.js updateProfile() was building the AJAX URL
+          by string concatenation with hand-coded encoding (only spaces
+          were escaped). This had three concrete problems:
+            - Hire dates with slashes and any non-ASCII name corrupted
+              the URL.
+            - The user's password was sent in the GET query string and
+              therefore landed in browser history, Apache/Nginx access
+              logs and every reverse-proxy log on the way.
+            - Long names + long avatar paths could push URLs past the
+              8KB ceiling some proxies impose on GET requests.
+          Replaced with a POST + jQuery data object, which encodes every
+          value correctly and never leaks credentials through URLs.
+        * updateprofile.php reads via optional_param() (accepts GET or
+          POST) so no server-side change was required.
+
+2025060901:
+    - Change to fill hire date and hide the field in case parameter date is
+        received in URL
+    - Changed to update hire date in user's profile
+
+2025052601:
+    - Changed to update selected avatar immediately
+    - Removed text below welcome title
+    - Minor layout changes in avatar selection screen
+
+2025040901:
+    - Replaced the id oauth2 with secretaria for SSO authenticated users
+
+2025040201:
+    - Capability block/onboarding:myaddinstance added
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032901:
+    - Adapted to work in Moodle 4.1
+
+2025032101:
+    - Style applied also to general my page editting
+    - Now only skipping to home if not in general my page editting
+    - Fixed bugs in case of no previous config in the block
+
+2025032001:
+    - Dependency version on local_profile updated
+    - Method local_profile_get_last_profile_update updated to
+        local_profile_get_last_profile_update_time
+
+2025031901:
+    - Added fields in the block editting form to get the data of the video to
+        be displayed in the third onboard screen
+    - Methods switchPages and handleContinue added to the form/screen control
+        Javascript
+    - Layout and behavior completed for the first, second and third screens
+
+2025031701:
+    - Javascript functions to validate screens added
+    - Javascript function to update profile through Ajax added
+    - Dependency of local_profile added
+    - String are noew dynamic loaded
+    - Avatar images are noew retrieved from local_profile
+    - Block is now skipped and user go stright to home page in case he/she has
+        already updated his profile before
+
+2025031501:
+    - First version
+    - Leyout and navigation of first page completed
+    - First page is not doing anything yet

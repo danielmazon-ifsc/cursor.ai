@@ -1,0 +1,94 @@
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2024082101:
+    - Thumbnail image added
+
+2024071501:
+    - Changed to display post image while posting and in the discussion screen
+    - New event teacher_post_replied supported
+    - Changed to trigger event teacher_post_replied in case the post is a reply
+        to a teacher's post and it contains an image
+
+2024061001:
+    - Adapted also to flexible theme
+
+2024060501:
+    - Changed to new layout
+
+2021112202:
+    - Fixed text color for search box in discussions list page
+    - Fixed problem in displaying search results
+    - Fixed problem to create a new discussion
+
+2021112201:
+    - Fixed a problem which was preventing a post to be marked as read by an
+        user
+
+2021083001:
+    - Fix color settings
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2021011201:
+    - No longer sort posts according to relevancy but in descending creation
+        order
+    - No longer sort discussions according to relevancy order
+    - Discussion view now has a link to return to discussions list
+
+2018122701
+    - Strings translated to pt_br
+    - Bug fix: missing strings added
+
+2018091203:
+    - Default value for allow forced reading changed to yes
+
+2018091202:
+    - Default value for timed posts changed to no
+
+2018091201:
+    - Default value for user's email in replay changed to no
+
+2018082801:
+    - Size of voting icons raised
+    - Forum post commands changed to occupy all row
+    - Changed to optionally return only HTML for votes after a vote computation
+    - Changed to add post id in votes HTML
+
+2018042402:
+    - Changed to automatically unsubscribe users from social form at course completion
+
+2018032801:
+    - Changed to allow discussion table to follow global table format
+
+2017091201:
+    - Bug fix: lib wasn't being required in events
+
+2017081501:
+    - New icon
+
+2017071401:
+    - Adapted to Moodle 3.3.1
+
+2017062101:
+    - Changed to improve information in improper content event
+
+2017062002:
+    - Improper content control added
+
+2017051801:
+    - Changed to generate url for relevancy vote events
+
+2017051502:
+    - Plugin name fixed in pt_br
+
+2017051501:
+    - Bug fix: Discussion subscription toggle wasn't working
+    - Bug fix: Order of discussion headers were wrong (Unread x Relevancy)
+
+2017041801:
+    - First version

@@ -1,0 +1,595 @@
+
+#page-local-dashboard-view .navbar.fixed-top,
+#page-local-dashboard-view #page-footer {
+    display: none;
+}
+
+#page-local-dashboard-view .course-header {
+    display: none;
+}
+
+[dir] #page-local-dashboard-view .btn-outline-white:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #00747B !important;
+}
+
+#page-local-dashboard-view [role="main"] {
+    background-color: rgb(245, 247, 250);
+}
+
+#page-local-dashboard-view .debuggingmessage,
+#page-local-dashboard-view #maincontent {
+    display: none;
+}
+
+#page-local-dashboard-view #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-local-dashboard-view #topofscroll,
+#page-local-dashboard-view #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-local-dashboard-view #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-local-dashboard-view .animated-gradient {
+    background: linear-gradient(45deg,
+            #6774df,
+            #9613f3,
+            #4f29cd,
+            #6774df);
+    animation: gradientAnimation 10s ease infinite,
+        pulseEffect 3s ease-in-out infinite;
+}
+
+#page-local-dashboard-view .animated-gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 70%);
+    animation: rotateEffect 8s linear infinite;
+}
+
+#page-local-dashboard-view .animated-gradient::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 100%);
+    animation: shineEffect 4s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateEffect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shineEffect {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+#page-local-dashboard-view .shine-effect::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.063),
+            transparent);
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+
+    20%,
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+#page-local-dashboard-view .progress-circle-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#page-local-dashboard-view .progress-circle-container {
+    cursor: pointer;
+}
+
+#page-local-dashboard-view .progress-bar-container {
+    /* Circle diameter — line is pinned to the vertical midpoint of the circles. */
+    --progress-circle-size: 34px;
+    --progress-circle-center: calc(var(--progress-circle-size) / 2);
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 130px;
+    padding-bottom: 0.5rem;
+}
+
+#page-local-dashboard-view .progress-bar-line {
+    position: absolute;
+    top: var(--progress-circle-center);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    transform: translateY(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#page-local-dashboard-view .progress-bar-line-active {
+    background-color: #4caf50;
+}
+
+#page-local-dashboard-view .progress-bar-circles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+    z-index: 1;
+}
+
+#page-local-dashboard-view .progress-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+}
+
+#page-local-dashboard-view .progress-circle {
+    width: var(--progress-circle-size);
+    height: var(--progress-circle-size);
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+#page-local-dashboard-view .progress-circle .icon,
+#page-local-dashboard-view .progress-circle .fa {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    display: block;
+    position: relative;
+}
+
+/* Triangle glyph sits optically high in Font Awesome — nudge it down. */
+#page-local-dashboard-view .progress-circle .fa-exclamation-triangle {
+    top: 1px;
+}
+
+#page-local-dashboard-view .progress-circle.completed {
+    background-color: #4caf50;
+}
+
+#page-local-dashboard-view .progress-circle.available {
+    background-color: #77c13a;
+}
+
+#page-local-dashboard-view .progress-circle.incomplete {
+    background-color: #e6a23c;
+}
+
+#page-local-dashboard-view .progress-circle.locked {
+    background-color: #ddd;
+    color: #757575;
+}
+
+#page-local-dashboard-view .progress-circle.active {
+    background-color: #e0fee1;
+    border: 1px solid #4caf50;
+}
+
+#page-local-dashboard-view .progress-circle-label {
+    background-color: #f0fff1;
+    padding: 1px 12px 2px 12px;
+    border-radius: 20px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #094609;
+    border: 1px solid #e7f5e7;
+    font-family: \'Exo 2\', sans-serif;
+}
+
+#page-local-dashboard-view .progress-circle-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #5c6b73;
+    font-family: \'Exo 2\', sans-serif;
+    line-height: 1;
+}
+
+#page-local-dashboard-view .progress-circle-grade .icon,
+#page-local-dashboard-view .progress-circle-grade .fa {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto;
+    height: auto;
+    font-size: 11px;
+    line-height: 1;
+    color: #4b2796;
+    position: relative;
+    top: 2px;
+}
+
+#page-local-dashboard-view .progress-circle-grade-value {
+    display: inline-block;
+}
+
+#page-local-dashboard-view .progress-circle-label.available {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #094609;
+    border: 1px solid #e7f5e7;
+}
+
+#page-local-dashboard-view .progress-circle-label.incomplete {
+    background-color: rgba(230, 162, 60, 0.15);
+    color: #8a5a00;
+    border: 1px solid rgba(230, 162, 60, 0.35);
+}
+
+#page-local-dashboard-view .progress-circle-label.locked {
+    background-color: #fafafa;
+    padding: 1px 8px 2px 8px;
+    border-radius: 20px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #9e9e9e;
+    border: 1px solid #eeeeee;
+    font-family: \'Exo 2\', sans-serif;
+}
+
+#page-local-dashboard-view .progress-circle-label.incomplete + .progress-circle-grade {
+    color: #8a5a00;
+}
+
+#page-local-dashboard-view .progress-circle-label.incomplete + .progress-circle-grade .icon,
+#page-local-dashboard-view .progress-circle-label.incomplete + .progress-circle-grade .fa {
+    color: #e6a23c;
+}
+
+#page-local-dashboard-view .progress-circle-label--confroom {
+    text-align: center;
+    line-height: 1.15;
+    max-width: 105px;
+    white-space: normal;
+}
+
+#page-local-dashboard-view .circular-progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#page-local-dashboard-view .circular-progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#42B77A 92.6%, #e0e0e0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-local-dashboard-view .circular-progress::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#page-local-dashboard-view .circular-progress-value {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+#page-local-dashboard-view .circular-progress-value .h1 {
+    font-size: 3rem;
+}
+
+#page-local-dashboard-view .medal-master {
+    position: relative;
+    transform: scale(1.1);
+    /* Slightly larger than base medals */
+}
+
+#page-local-dashboard-view .medal-glow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    /* Golden glow */
+    transition: all 0.3s ease;
+}
+
+#page-local-dashboard-view .medal-effect {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #73567f, #f5f5f517);
+    opacity: 0.01;
+    animation: rotate 20s linear infinite;
+}
+
+#page-local-dashboard-view .medal-master:hover .medal-glow {
+    box-shadow: 0 0 20px rgba(150, 14, 255, 0.4);
+    transform: scale(1.05);
+}
+
+#page-local-dashboard-view .medal-master:hover .medal-effect {
+    opacity: 0.4;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sparkle effect */
+#page-local-dashboard-view .medal-master::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+    opacity: 0;
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#page-local-dashboard-view .custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-local-dashboard-view .custom-modal.show {
+    display: flex;
+}
+
+#page-local-dashboard-view .custom-modal::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+#page-local-dashboard-view .custom-modal-dialog {
+    position: relative;
+    width: 800px;
+    max-width: 90%;
+    z-index: 2001;
+    margin: 0;
+}
+
+#page-local-dashboard-view .custom-modal-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#page-local-dashboard-view .custom-modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    background: linear-gradient(45deg, #4b2796, #6937b5);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-local-dashboard-view .custom-modal-title {
+    margin: 0;
+    color: white;
+    font-weight: 500;
+}
+
+#page-local-dashboard-view .custom-modal-controls {
+    display: flex;
+    align-items: center;
+}
+
+#page-local-dashboard-view .custom-close,
+#page-local-dashboard-view .custom-minimize {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-local-dashboard-view .custom-minimize {
+    font-size: 20px;
+}
+
+#page-local-dashboard-view .custom-close:hover,
+#page-local-dashboard-view .custom-minimize:hover {
+    opacity: 1;
+}
+
+#page-local-dashboard-view .custom-modal-body {
+    padding: 20px;
+}
+
+#page-local-dashboard-view .minimized-modal {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+#page-local-dashboard-view .minimized-modal.show {
+    display: block;
+}
+
+#page-local-dashboard-view .minimized-modal-content {
+    background: linear-gradient(45deg, #4b2796, #6937b5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+#page-local-dashboard-view .minimized-modal-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+#page-local-dashboard-view .custom-maximize,
+#page-local-dashboard-view .custom-close-mini {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-left: 5px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-local-dashboard-view .custom-maximize:hover,
+#page-local-dashboard-view .custom-close-mini:hover {
+    opacity: 1;
+}
+
+#page-local-dashboard-view .card {
+    position: relative;
+    z-index: 1;
+}

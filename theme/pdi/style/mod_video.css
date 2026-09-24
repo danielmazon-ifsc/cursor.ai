@@ -1,0 +1,186 @@
+#page-mod-video-view {
+    background-color: rgb(1,19,23);
+}
+
+#page-mod-video-view #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-mod-video-view #topofscroll,
+#page-mod-video-view #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-mod-video-view .secondary-navigation {
+    display: none;
+}
+
+#page-mod-video-view #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-mod-video-view .navbar.fixed-top,
+#page-mod-video-view #page-footer,
+#page-mod-video-view .activity-navigation {
+    display: none;
+}
+
+/* Custom video layout: hide default activity header (completion is shown in .video-completion-ui). */
+#page-mod-video-view .activity-header,
+#page-mod-video-view #region-main > h2 {
+    display: none;
+}
+
+#page-mod-video-view .video-completion-ui {
+    display: block;
+    padding: 1rem 0 1.5rem;
+}
+
+#page-mod-video-view .video-completion-ui .completion-info .btn {
+    color: #fff;
+}
+
+#page-mod-video-view .main_content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: unset !important;
+}
+
+#page-mod-video-view [role="main"] {
+  padding-top: 4rem !important;
+}
+
+#page-mod-video-view .page-section {
+    margin: 0 !important;
+    border: none !important;
+}
+
+#page-mod-video-view .text-body {
+    color: #fff !important;
+}
+
+#page-mod-video-view #maincontent {
+    display: none;
+}
+
+#page-mod-video-view .container {
+    background-color: inherit;
+    padding-bottom: 2rem;
+}
+
+#page-mod-video-view .completionmark {
+    height: 2rem;
+}
+
+#page-mod-video-view .page-separator {
+    background-color: inherit;
+}
+
+#page-mod-video-view .duration i {
+    width: 1.5rem;
+    height: 1.5rem !important;
+    margin-bottom: .5rem;
+    margin-right: .1rem !important;
+    background-image: unset;
+}
+
+#page-mod-video-view .answer {
+    float: unset;
+    height: unset;
+    width: unset;
+}
+
+#page-mod-video-view .comment {
+    margin-top: 1.5rem;
+    margin-bottom: .2rem;
+}
+
+#page-mod-video-view #newcomment .material-icons {
+  color: [[setting:highlightcolor]] !important;
+}
+
+#page-mod-video-view .course-section-nav {
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+#page-mod-video-view .comment p {
+    margin: 0;
+}
+
+#page-mod-video-view .answer {
+    margin-left: 5rem !important;
+    margin-top: 0 !important;
+}
+
+#page-mod-video-view .answer p {
+    margin-bottom: 0 !important;
+}
+
+#page-mod-video-view .form-label {
+  color: inherit;
+}
+
+#page-mod-video-view #downloads {
+  border-color: [[setting:highlightcolor]];
+}
+
+#page-mod-video-view #downloads .card-body {
+  background-color: [[setting:highlightcolor]];
+}
+
+#page-mod-video-view .footer {
+    margin-top: 0 !important;
+}
+
+#mod-video-view .course-section-nav .iconplaceholder.completed {
+    background-color: rgb(29, 185, 84) !important;
+}
+
+#mod-video-view #downloadbox {
+  background: linear-gradient(rgb(100, 31, 224), rgb(142,45,226));
+}
+
+#mod-video-view #footer {
+    display: unset !important;
+}
+
+#page-mod-video-view .page-content.container {
+    background-color: #042121;
+}
+
+#page-mod-video-view .course-header,
+#page-mod-video-view #videodata #videoduration,
+#page-mod-video-view #videoextradata {
+    display: none;
+}
+
+#page-mod-video-view .main_content {
+    padding-top: 4rem !important;
+}
+
+#page-mod-video-view #videotitle {
+    line-height: 1;
+}
+
+#page-mod-video-view #videodescription {
+    max-width: 75%;
+}
+
+[dir] #page-mod-video-view #videodetails .btn.btn-clear {
+    color: rgb(14, 66, 66) !important;
+}
+
+[dir] #page-mod-video-view #videodetails .btn.btn-clear:hover {
+    background-color: rgb(14, 66, 66) !important;
+    border-color: rgb(14, 66, 66) !important;
+    color: rgb(205, 254, 253) !important;   
+}
+

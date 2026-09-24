@@ -1,0 +1,55 @@
+/* Caption overlay for mod_video players (Sala + activity view). */
+.mod-video-player {
+    position: relative;
+}
+
+/* Native HTML5 track captions (Safari/Chrome/Firefox). */
+.mod-video-player video::cue {
+    font-size: 0.85em;
+}
+
+.mod-video-captions {
+    position: absolute;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
+    z-index: 5;
+    max-width: 90%;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.25rem;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    text-align: center;
+    pointer-events: none;
+    white-space: pre-line;
+}
+
+.mod-video-captions[hidden] {
+    display: none !important;
+}
+
+.mod-video-captions-toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 6;
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.mod-video-captions-toggle:hover,
+.mod-video-captions-toggle:focus,
+.mod-video-captions-toggle:active {
+    text-decoration: none;
+}
+
+.mod-video-captions-toggle.is-off {
+    opacity: 0.55;
+}
+
+.saladeconferencias-featured__player .mod-video-player {
+    width: 100%;
+    height: 100%;
+}

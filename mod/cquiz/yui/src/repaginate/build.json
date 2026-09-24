@@ -1,0 +1,10 @@
+{
+    "name": "moodle-mod_cquiz-repaginate",
+    "builds": {
+        "moodle-mod_cquiz-repaginate": {
+            "jsfiles": [
+                "repaginate.js"
+            ]
+        }
+    }
+}

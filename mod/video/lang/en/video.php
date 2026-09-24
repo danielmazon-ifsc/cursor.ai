@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Strings for component 'video', language 'en', branch 'MOODLE_20_STABLE'
+ *
+ * @package   mod_video
+ * @copyright 2017 Viddia (http://viddia.com.br)
+ * @author    Ricardo Drummond
+ */
+$string['configdisplayoptions'] = 'Select all options that should be available, existing settings are not modified. Hold CTRL key to select multiple fields.';
+$string['storedvideo'] = 'Video file';
+$string['contentheader'] = 'Video';
+$string['downloads'] = 'Downloads';
+$string['download'] = 'Download';
+$string['downloadheader'] = 'Downloadable content';
+$string['createvideo'] = 'Create a new video resource';
+$string['displayoptions'] = 'Available display options';
+$string['displayselect'] = 'Display';
+$string['displayselectexplain'] = 'Select display type.';
+$string['modulename'] = 'Video';
+$string['modulename_help'] = 'The video module enables a teacher to create a web video resource using embedded code of iframe type.';
+$string['modulename_link'] = 'mod/video/view';
+$string['modulenameplural'] = 'Videos';
+$string['optionsheader'] = 'Display options';
+$string['video-mod-video-x'] = 'Any video module video';
+$string['video:addinstance'] = 'Add a new video resource';
+$string['video:view'] = 'View video content';
+$string['pluginadministration'] = 'Video module administration';
+$string['pluginname'] = 'Video';
+$string['popupheight'] = 'Pop-up height (in pixels)';
+$string['popupheightexplain'] = 'Specifies default height of popup windows.';
+$string['popupwidth'] = 'Pop-up width (in pixels)';
+$string['popupwidthexplain'] = 'Specifies default width of popup windows.';
+$string['printheading'] = 'Display video name';
+$string['printheadingexplain'] = 'Display video name above video?';
+$string['printintro'] = 'Display video description';
+$string['printintroexplain'] = 'Display video description above video?';
+$string['search:activity'] = 'Video';
+$string['secondstocomplete'] = 'Seconds left to complete';
+$string['secondstocomplete_desc'] = 'How many seconds before video end a student must reach in order to an activity being considered as completed.';
+$string['completeimmediately'] = 'Mark video as completed immediately';
+$string['completeimmediately_desc'] = 'Mark video as completed without waiting for player to finish video.';
+$string['commentsaboutthisvideo'] = 'Comments about this video';
+$string['nocommentsyet'] = 'No comments yet. Be the first to comment!';
+$string['leaveyourcomment'] = 'Comment';
+$string['publishcomment'] = 'Publish';
+$string['commentsheader'] = 'Comments';
+$string['commentsforum'] = 'Comments forum';
+$string['commentsforum_help'] = 'Forum in which comments on video will be posted';
+$string['commentfrom'] = 'Comment from';
+$string['stored'] = 'Stored';
+$string['type'] = 'Type';
+$string['vimeo'] = 'Vimeo';
+$string['vimeoformat'] = 'Vimeo format';
+$string['vimeoid'] = 'Vimeo ID';
+$string['vimeoformatexplain'] = 'Text format to be used in Vimeo videos. It should contain a {$a} where Vimeo video ID should be';
+$string['vimeoformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="https://player.vimeo.com/video/{$a}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div></div>';
+$string['youtube'] = 'YouTube';
+$string['youtubeid'] = 'YouTube ID';
+$string['youtubeformat'] = 'YouTube format';
+$string['youtubeformatexplain'] = 'Text format to be used in YouTube videos. It should contain a {$a} where YouTube video ID should be';
+$string['youtubeformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="https://www.youtube.com/embed/{$a}?enablejsapi=1" frameborder="0" allowfullscreen=""></iframe></div></div>';
+$string['embeded'] = 'Embeded';
+$string['embededurl'] = 'Video URL';
+$string['cardthumbnail'] = 'Card image';
+$string['cardthumbnail_help'] = 'Image shown on the video card in the conference room. Recommended for videos added by URL, which do not have an automatic thumbnail.';
+$string['caption'] = 'Caption (VTT)';
+$string['caption_help'] = 'WebVTT (.vtt) caption file for this video. The same caption is used on the activity page and in the conference-room player.';
+$string['captionlabel'] = 'Portuguese';
+$string['captiontoggle'] = 'CC';
+$string['embededformat'] = 'Embeded format';
+$string['embededformatexplain'] = 'Text format to be used in general embeded videos. It should contain a {$a} where embeded video link should be';
+$string['embededformatdefault'] = '<div class="js-videobody"><div class="js-videowrapper"><iframe src="{$a}" width="854px" height="480px" frameborder="0" scrolling="no" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div></div>';
+$string['fieldcannotbeempty'] = 'Field {$a} cannot be empty';
+$string['module'] = 'Module';
+$string['aboutthisvideo'] = 'About this video';
+$string['commenthere'] = 'Leave your comment...';
+$string['gotoforum'] = "Check all comments about this class in class' forum";
+$string['crontask'] = 'Upload of stored videos to Vimeo';
+
+$string['vimeoaccountinfo'] = 'Vimeo account info';
+$string['vimeoaccountinfodesc'] = 'Vimeo account information to be used to upload videos';
+$string['vimeouserid'] = 'Vimeo user id';
+$string['vimeouseriddesc'] = 'User id of the Vimeo account';
+$string['vimeouseriddefault'] = '';
+$string['vimeoclientid'] = 'Vimeo client id';
+$string['vimeoclientiddesc'] = 'Client id of the Vimeo account';
+$string['vimeoclientiddefault'] = '';
+$string['vimeoclientsecret'] = 'Vimeo client secret';
+$string['vimeoclientsecretdesc'] = 'Client secret of the Vimeo account';
+$string['vimeoclientsecretdefault'] = '';
+$string['vimeoclienttoken'] = 'Vimeo client token';
+$string['vimeoclienttokendesc'] = 'Client token of the Vimeo account';
+$string['vimeoclienttokendefault'] = '';
+$string['datetimeformat'] = 'm/d/Y \b\y H:i';
+$string['alreadywatched'] = 'You have already watched this class';
+$string['completedat'] = 'Activity completed at';
+$string['file'] = 'File';
+$string['seeallcomments'] = 'See all comments in the forum';
+$string['daysago'] = 'days ago';
+$string['hoursago'] = 'hours ago';
+$string['minutesago'] = 'minutes ago';
+$string['secondsago'] = 'seconds ago';
+$string['dayago'] = 'day ago';
+$string['hourago'] = 'hour ago';
+$string['minuteago'] = 'minute ago';
+$string['secondago'] = 'second ago';
+$string['minutes'] = 'minutes';
+$string['and'] = 'and';
+$string['seconds'] = 'seconds';
+$string['uploadtovimeo'] = 'Upload to Vimeo';
+$string['uploadtovimeodesc'] = 'Upload stored videos to Vimeo';
+$string['videocourse'] = 'Video of {$a}';
+$string['videosection'] = 'Module: {$a}';
+$string['duration'] = 'Duration';
+$string['postdate'] = 'Post date';
+$string['dateformat'] = 'd/m/Y';

@@ -1,0 +1,999 @@
+<?php
+
+/**
+ * Strings for component 'cquiz', language 'en', branch 'MOODLE_20_STABLE'
+ *
+ * @package   mod_cquiz
+ * @copyright 2017 Viddia (http://viddia.com.br)
+ * @author     Ricardo Drummond
+ */
+$string['accessnoticesheader'] = 'You can preview this competency quiz, but if this were a real attempt, you would be blocked because:';
+$string['action'] = 'Action';
+$string['activityoverview'] = 'You have competency quizzes that are due';
+$string['adaptive'] = 'Adaptive mode';
+$string['adaptive_help'] = 'If enabled, multiple responses to a question are allowed within the same attempt at the competency quiz. So for example if a response is marked as incorrect, the student will be allowed to try again immediately. However, depending on the "Apply penalties" setting, a penalty will usually be subtracted for each wrong attempt.';
+$string['add'] = 'Add';
+$string['addaquestion'] = 'a new question';
+$string['addasection'] = 'a new section heading';
+$string['addarandomquestion'] = 'a random question';
+$string['addarandomquestion_help'] = 'When a random question is added, it results in a randomly-chosen question from the category being inserted into the competency quiz. This means that different students are likely to get a different selection of questions, and when a competency quiz allows multiple attempts then each attempt is likely to contain a new selection of questions.';
+$string['addarandomselectedquestion'] = 'Add a random selected question ...';
+$string['adddescriptionlabel'] = 'Add a description item';
+$string['addingquestion'] = 'Adding a question';
+$string['addingquestions'] = '<p>This side of the page is where you manage your database of questions. Questions are stored in categories to help you keep them organised, and can be used by any competency quiz in your course or even other courses if you choose to \'publish\' them.</p>
+<p>After you select or create a question category you will be able to create or edit questions. You can select any of these questions to add to your competency quiz over on the other side of this page.</p>';
+$string['addmoreoverallfeedbacks'] = 'Add {no} more feedback fields';
+$string['addnewgroupoverride'] = 'Add group override';
+$string['addnewpagesafterselected'] = 'Add new pages after selected questions';
+$string['addnewquestionsqbank'] = 'Add questions to the category {$a->catname}: {$a->link}';
+$string['addnewuseroverride'] = 'Add user override';
+$string['addpagebreak'] = 'Add page break';
+$string['addpagehere'] = 'Add page here';
+$string['addquestion'] = 'Add question';
+$string['addquestionfrombankatend'] = 'Add from the question bank at the end';
+$string['addquestionfrombanktopage'] = 'Add from the question bank to page {$a}';
+$string['addquestions'] = 'Add questions';
+$string['addquestionstocquiz'] = 'Add questions to current competency quiz';
+$string['addrandom'] = 'Add {$a} random questions';
+$string['addrandomfromcategory'] = 'Add random questions from category:';
+$string['addrandomquestion'] = 'Add random question';
+$string['addarandomquestion_help'] = 'When a random question is added, it results in a randomly-chosen question from the category being inserted into the competency quiz. This means that different students are likely to get a different selection of questions, and when a competency quiz allows multiple attempts then each attempt is likely to contain a new selection of questions.';
+$string['addrandomquestionatend'] = 'Add a random question at the end';
+$string['addrandomquestiontopage'] = 'Add a random question to page {$a}';
+$string['addrandomquestiontocquiz'] = 'Add a random question to competency quiz {$a}';
+$string['addrandom1'] = '<< Add';
+$string['addrandom2'] = 'random questions';
+$string['addselectedquestionstocquiz'] = 'Add selected questions to the competency quiz';
+$string['addselectedtocquiz'] = 'Add selected to competency quiz';
+$string['addtocquiz'] = 'Add to competency quiz';
+$string['affectedstudents'] = 'Affected {$a}';
+$string['aftereachquestion'] = 'After adding each question';
+$string['afternquestions'] = 'After adding {$a} questions';
+$string['age'] = 'age';
+$string['allattempts'] = 'All attempts';
+$string['allinone'] = 'Unlimited';
+$string['allowreview'] = 'Allow review';
+$string['alreadysubmitted'] = 'It is likely that you have already submitted this attempt';
+$string['alternativeunits'] = 'Alternative units';
+$string['alwaysavailable'] = 'Always available';
+$string['analysisoptions'] = 'Analysis options';
+$string['analysistitle'] = 'Item analysis table';
+$string['answer'] = 'Answer';
+$string['answered'] = 'Answered';
+$string['answerhowmany'] = 'One or multiple answers?';
+$string['answers'] = 'Answers';
+$string['answersingleno'] = 'Multiple answers allowed';
+$string['answersingleyes'] = 'One answer only';
+$string['answertoolong'] = 'Answer too long after line {$a} (255 char. max)';
+$string['aon'] = 'AON format';
+$string['areyousureremoveselected'] = 'Are you sure you want to remove all the selected questions?';
+$string['asshownoneditscreen'] = 'As shown on the edit screen';
+$string['attempt'] = 'Attempt {$a}';
+$string['attemptalreadyclosed'] = 'This attempt has already been finished.';
+$string['attemptclosed'] = 'Attempt has not closed yet';
+$string['attemptduration'] = 'Time taken';
+$string['attemptedon'] = 'Attempted on';
+$string['attempterror'] = 'You are not allowed to attempt this competency quiz at this time because: {$a}';
+$string['attemptfirst'] = 'First attempt';
+$string['attemptincomplete'] = 'That attempt (by {$a}) is not yet completed.';
+$string['attemptlast'] = 'Last attempt';
+$string['attemptnumber'] = 'Attempt';
+$string['attemptcquiznow'] = 'Start quiz';
+$string['attempts'] = 'Attempts';
+$string['attemptsallowed'] = 'Attempts allowed';
+$string['attemptsdeleted'] = 'Competency Quiz attempts deleted';
+$string['attemptselection'] = 'Select which attempts to analyze per user:';
+$string['attemptsexist'] = 'You can no longer add or remove questions.';
+$string['attemptsnum'] = 'Attempts: {$a}';
+$string['attemptsnumthisgroup'] = 'Attempts: {$a->total} ({$a->group} from this group)';
+$string['attemptsnumyourgroups'] = 'Attempts: {$a->total} ({$a->group} from your groups)';
+$string['attemptsonly'] = 'Show only students with attempts';
+$string['attemptstate'] = 'State';
+$string['attemptstillinprogress'] = 'Attempt still in progress';
+$string['attemptsunlimited'] = 'Unlimited attempts';
+$string['autosaveperiod'] = 'Auto-save delay';
+$string['autosaveperiod_desc'] = 'Responses can be saved automatically during competency quiz attempts. The responses are saved whenever one is changed, and then after this delay. There is a trade-off: a shorter delay increases the server load, but reduces the chance that students lose their work. If you are going to make this delay much shorter, you should change the value gradually and monitor the server load. If the load gets too high, make the delay longer again. Setting the delay to 0 turns off auto-saving.';
+$string['back'] = 'Back to preview question';
+$string['backtocourse'] = 'Back to the course';
+$string['backtoquestionlist'] = 'Back to question list';
+$string['backtocquiz'] = 'Back to competency quiz editing';
+$string['basicideasofcquiz'] = 'The basic ideas of competency quiz-making';
+$string['bestgrade'] = 'Best grade';
+$string['bothattempts'] = 'Show students with and without attempts';
+$string['browsersecurity'] = 'Browser security';
+$string['browsersecurity_help'] = 'If "Full screen pop-up with some JavaScript security" is selected,
+
+* The competency quiz will only start if the student has a JavaScript-enabled web-browser
+* The competency quiz appears in a full screen popup window that covers all the other windows and has no navigation controls
+* Students are prevented, as far as is possible, from using facilities like copy and paste';
+$string['calculated'] = 'Calculated';
+$string['calculatedquestion'] = 'Calculated question not supported at line {$a}. The question will be ignored';
+$string['cannotcreatepath'] = 'Path cannot be created ({$a})';
+$string['cannoteditafterattempts'] = 'You cannot add or remove questions because this competency quiz has been attempted. ({$a})';
+$string['cannotfindprevattempt'] = 'Cannot find previous attempt to build on.';
+$string['cannotfindquestionregard'] = 'Failed to get questions for regrading!';
+$string['cannotinsert'] = 'Cannot insert question';
+$string['cannotinsertrandomquestion'] = 'Could not insert new random question!';
+$string['cannotloadquestion'] = 'Could not load question options';
+$string['cannotloadtypeinfo'] = 'Unable to load questiontype specific question information';
+$string['cannotopen'] = 'Cannot open export file ({$a})';
+$string['cannotrestore'] = 'Could not restore question sessions';
+$string['cannotreviewopen'] = 'You cannot review this attempt, it is still open.';
+$string['cannotsavelayout'] = 'Could not save layout';
+$string['cannotsavenumberofquestion'] = 'Could not save number of questions per page';
+$string['cannotsavequestion'] = 'Cannot save question list';
+$string['cannotsetgrade'] = 'Could not set a new maximum grade for the competency quiz';
+$string['cannotsetsumgrades'] = 'Failed to set sumgrades';
+$string['cannotstartgradesmismatch'] = 'Cannot start an attempt at this competency quiz. The competency quiz is set to be graded out of {$a->grade}, but none of the questions in the competency quiz have a grade. This can be fixed on the \'Edit competency quiz\' page.';
+$string['cannotstartmissingquestion'] = 'Cannot start an attempt at this competency quiz. The competency quiz definition includes a question that does not exist.';
+$string['cannotstartnoquestions'] = 'Cannot start an attempt at this competency quiz. The competency quiz has not been set up yet. No questions have been added.';
+$string['cannotwrite'] = 'Cannot write to export file ({$a})';
+$string['canredoquestions'] = 'Allow redo within an attempt';
+$string['canredoquestions_desc'] = 'If enabled, then when students have finished attempting particular question, they will see a Redo question button. This allows them to attempt another version of the same question, without having to submit the entire competency quiz attempt and start another one. This option is mainly useful for practice competency quizzes.
+
+This setting only affects questions (for example not Essay questions) and behaviours (for example Immediate feedback, or Interactive with multiple tries) where it is possible for student to finish the question before the attempt is submitted.';
+$string['canredoquestions_help'] = 'If enabled, then when students have finished attempting particular question, they will see a Redo question button. This allows them to attempt another version of the same question, without having to submit the entire competency quiz attempt and start another one. This option is mainly useful for practice competency quizzes.
+
+This setting only affects questions (for example not Essay questions) and behaviours (for example Immediate feedback, or Interactive with multiple tries) where it is possible for student to finish the question before the attempt is submitted.';
+$string['canredoquestionsyes'] = 'Students may redo another version of any finished question';
+$string['caseno'] = 'No, case is unimportant';
+$string['casesensitive'] = 'Case sensitivity';
+$string['caseyes'] = 'Yes, case must match';
+$string['categoryadded'] = 'The category \'{$a}\' was added';
+$string['categorydeleted'] = 'The category \'{$a}\' was deleted';
+$string['categorynoedit'] = 'You do not have editing privileges in the category \'{$a}\'.';
+$string['categoryupdated'] = 'The category was successfully updated';
+$string['close'] = 'Close window';
+$string['closed'] = 'Closed';
+$string['closebeforeopen'] = 'Could not update the competency quiz. You have specified a close date before the open date.';
+$string['closepreview'] = 'Close preview';
+$string['closereview'] = 'Close review';
+$string['comment'] = 'Comment';
+$string['commentorgrade'] = 'Make comment or override grade';
+$string['comments'] = 'Comments';
+$string['completedon'] = 'Completed on';
+$string['completionpass'] = 'Require passing grade';
+$string['completionpass_help'] = 'If enabled, this activity is considered complete when the student receives a passing grade, with the pass grade set in the gradebook.';
+$string['completionattemptsexhausted'] = 'Or all available attempts completed';
+$string['completionattemptsexhausted_help'] = 'Mark competency quiz complete when the student has exhausted the maximum number of attempts.';
+$string['configadaptive'] = 'If you choose Yes for this option then the student will be allowed multiple responses to a question even within the same attempt at the competency quiz.';
+$string['configattemptsallowed'] = 'Restriction on the number of attempts students are allowed at the competency quiz.';
+$string['configdecimaldigits'] = 'Number of digits that should be shown after the decimal point when displaying grades.';
+$string['configdecimalplaces'] = 'Number of digits that should be shown after the decimal point when displaying grades for the competency quiz.';
+$string['configdecimalplacesquestion'] = 'Number of digits that should be shown after the decimal point when displaying the grade for individual questions.';
+$string['configdelaylater'] = 'If you set a time delay here, the student cannot start their third, fourth, ... attempt until this much time has passed since the end of their previous attempt.';
+$string['configdelay1'] = 'If you set a time delay, then a student has to wait for that time before they can attempt a competency quiz after the first attempt.';
+$string['configdelay1st2nd'] = 'If you set a time delay here, the student cannot start their second attempt until this much time has passed since the end of their first attempt.';
+$string['configdelay2'] = 'If you set a time delay here, then a student has to wait for that time before they can attempt their third or later attempts.';
+$string['configeachattemptbuildsonthelast'] = 'If multiple attempts are allowed then each new attempt contains the results of the previous attempt.';
+$string['configgrademethod'] = 'When multiple attempts are allowed, which method should be used to calculate the student\'s final grade for the competency quiz.';
+$string['configintro'] = 'The values you set here define the default values that are used in the settings form when you create a new competency quiz. You can also configure which competency quiz settings are considered advanced.';
+$string['configmaximumgrade'] = 'The default grade that the competency quiz grade is scaled to be out of.';
+$string['confignewpageevery'] = 'When adding questions to the competency quiz page breaks will automatically be inserted according to the setting you choose here.';
+$string['confignavmethod'] = 'In Free navigation, questions may be answered in any order using navigation. In Sequential, questions must be answered in strict sequence.';
+$string['configoutcomesadvanced'] = 'If this option is turned on, then the Outcomes on the competency quiz editing form are advanced settings.';
+$string['configpenaltyscheme'] = 'Penalty subtracted for each wrong response in adaptive mode.';
+$string['configpopup'] = 'Force the attempt to open in a popup window, and use JavaScript tricks to try to restrict copy and paste, etc. during competency quiz attempts.';
+$string['configrequirepassword'] = 'Students must enter this password before they can attempt the competency quiz.';
+$string['configrequiresubnet'] = 'Students can only attempt the competency quiz from these computers.';
+$string['configreviewoptions'] = 'These options control what information users can see when they review a competency quiz attempt or look at the competency quiz reports.';
+$string['configshowblocks'] = 'Show blocks during competency quiz attempts.';
+$string['configshowuserpicture'] = 'Show the user\'s picture on screen during attempts.';
+$string['configshufflewithin'] = 'If you enable this option, then the parts making up the individual questions will be randomly shuffled each time a student starts an attempt at this competency quiz, provided the option is also enabled in the question settings.';
+$string['configtimelimit'] = 'Default time limit for competency quizzes in minutes. 0 mean no time limit.';
+$string['configtimelimitsec'] = 'Default time limit for competency quizzes in seconds. 0 mean no time limit.';
+$string['configurerandomquestion'] = 'Configure question';
+$string['confirmclose'] = 'Once you submit, you will no longer be able to change your answers for this attempt.';
+$string['confirmremovequestion'] = 'Are you sure you want to remove this {$a} question?';
+$string['confirmremovesectionheading'] = 'Are you sure you want to remove the \'{$a}\' section heading?';
+$string['confirmserverdelete'] = 'Are you sure you want to remove the server <b>{$a}</b> from the list?';
+$string['connectionok'] = 'Network connection restored. You may continue safely.';
+$string['connectionerror'] = 'Network connection lost. (Autosave failed).
+
+Make a note of any responses entered on this page in the last few minutes, then try to re-connect.
+
+Once connection has been re-established, your responses should be saved and this message will disappear.';
+$string['containercategorycreated'] = 'This category has been created to store all the original categories moved to site level due to the causes specified below.';
+$string['continueattemptcquiz'] = 'Continue the last attempt';
+$string['continuepreview'] = 'Continue the last preview';
+$string['copyingfrom'] = 'Creating a copy of the question \'{$a}\'';
+$string['copyingquestion'] = 'Copying a question';
+$string['correct'] = 'Correct';
+$string['correctanswer'] = 'Correct answer';
+$string['correctanswerformula'] = 'Correct answer formula';
+$string['correctansweris'] = 'Correct answer: {$a}';
+$string['correctanswerlength'] = 'Significant figures';
+$string['correctanswers'] = 'Correct answers';
+$string['correctanswershows'] = 'Correct answer shows';
+$string['corrresp'] = 'Correct response';
+$string['countdown'] = 'Countdown';
+$string['countdownfinished'] = 'The competency quiz is closing, you should submit your answers now.';
+$string['countdowntenminutes'] = 'The competency quiz will be closing in ten minutes.';
+$string['coursetestmanager'] = 'Course Test Manager format';
+$string['createcategoryandaddrandomquestion'] = 'Create category and add random question';
+$string['createfirst'] = 'You must create some short-answer questions first.';
+$string['createmultiple'] = 'Add several random questions to competency quiz';
+$string['createnewquestion'] = 'Create new question';
+$string['createquestionandadd'] = 'Create a new question and add it to the competency quiz.';
+$string['custom'] = 'Custom format';
+$string['dataitemneed'] = 'You need to add at least one set of data items to get a valid question';
+$string['datasetdefinitions'] = 'Reusable dataset definitions for category {$a}';
+$string['datasetnumber'] = 'Number';
+$string['daysavailable'] = 'Days available';
+$string['decimaldigits'] = 'Decimal digits in grades';
+$string['decimalplaces'] = 'Decimal places in grades';
+$string['decimalplaces_help'] = 'This setting specifies the number of digits shown after the decimal point when displaying grades. It only affects the display of grades, not the grades stored in the database, nor the internal calculations, which are carried out to full accuracy.';
+$string['decimalplacesquestion'] = 'Decimal places in question grades';
+$string['decimalplacesquestion_help'] = 'This setting specifies the number of digits shown after the decimal point when displaying the grades for individual questions.';
+$string['decimalpoints'] = 'Decimal points';
+$string['default'] = 'Default';
+$string['defaultgrade'] = 'Default question grade';
+$string['defaultinfo'] = 'The default category for questions.';
+$string['delaylater'] = 'Enforced delay between later attempts';
+$string['delaylater_help'] = 'If enabled, a student must wait for the specified time to elapse before attempting the competency quiz a third time and any subsequent times.';
+$string['delay1'] = 'Time delay between first and second attempt';
+$string['delay1st2nd'] = 'Enforced delay between 1st and 2nd attempts';
+$string['delay1st2nd_help'] = 'If enabled, a student must wait for the specified time to elapse before being able to attempt the competency quiz a second time.';
+$string['delay2'] = 'Time delay between later attempts';
+$string['deleteattemptcheck'] = 'Are you absolutely sure you want to completely delete these attempts?';
+$string['deleteselected'] = 'Delete selected';
+$string['deletingquestionattempts'] = 'Deleting question attempts';
+$string['description'] = 'Description';
+$string['disabled'] = 'Disabled';
+$string['displayoptions'] = 'Display options';
+$string['donotuseautosave'] = 'Do not use auto-save';
+$string['download'] = 'Click to download the exported category file';
+$string['downloadextra'] = '(file is also stored in the course files in the /backupdata/cquiz folder)';
+$string['dragtoafter'] = 'After {$a}';
+$string['dragtostart'] = 'To the start';
+$string['duplicateresponse'] = 'This submission has been ignored because you gave an equivalent answer earlier.';
+$string['eachattemptbuildsonthelast'] = 'Each attempt builds on the last';
+$string['eachattemptbuildsonthelast_help'] = 'If multiple attempts are allowed and this setting is enabled, each new competency quiz attempt will contain the results of the previous attempt. This allows a competency quiz to be completed over several attempts.';
+$string['editcategories'] = 'Edit categories';
+$string['editcategory'] = 'Edit category';
+$string['editcatquestions'] = 'Edit category questions';
+$string['editingquestion'] = 'Editing a question';
+$string['editingcquiz'] = 'Editing competency quiz';
+$string['editingcquiz_help'] = 'When creating a competency quiz, the main concepts are:
+
+* The competency quiz, containing questions over one or more pages
+* The question bank, which stores copies of all questions organised into categories
+* Random questions -  A student gets different questions each time they attempt the competency quiz and different students can get different questions';
+$string['editingcquiz_link'] = 'mod/cquiz/edit';
+$string['editingcquizx'] = 'Editing competency quiz: {$a}';
+$string['editmaxmark'] = 'Edit maximum mark';
+$string['editoverride'] = 'Edit override';
+$string['editqcats'] = 'Edit questions categories';
+$string['editquestion'] = 'Edit question';
+$string['editquestions'] = 'Edit questions';
+$string['editcquiz'] = 'Edit competency quiz';
+$string['editcquizquestions'] = 'Edit competency quiz questions';
+$string['emailconfirmbody'] = 'Dear {$a->username},
+
+Thank you for submitting your answers to
+\'{$a->cquizname}\'
+in course \'{$a->coursename}\'
+at {$a->submissiontime}.
+
+This message confirms that we have safely received your answers.
+
+You can access this competency quiz at {$a->cquizurl}.';
+$string['emailconfirmsmall'] = 'Thank you for submitting your answers to \'{$a->cquizname}\'';
+$string['emailconfirmsubject'] = 'Submission confirmation: {$a->cquizname}';
+$string['emailnotifybody'] = 'Dear {$a->username},
+
+{$a->studentname} has completed
+\'{$a->cquizname}\' ({$a->cquizurl})
+in course \'{$a->coursename}\'';
+$string['emailnotifysmall'] = '{$a->studentname} has completed {$a->cquizname}. See {$a->cquizreviewurl}';
+$string['emailnotifysubject'] = '{$a->studentname} has completed {$a->cquizname}';
+$string['emailoverduebody'] = 'Dear {$a->studentname},
+
+You started an attempt at \'{$a->cquizname}\'
+in course \'{$a->coursename}\', but you never submitted it. It should have been
+submitted by {$a->attemptduedate}.
+
+If you would still like to submit this attempt, please go to
+{$a->attemptsummaryurl} and click the submit button.
+You must do this before {$a->attemptgraceend}
+otherwise your attempt will not be counted.';
+$string['emailoverduesmall'] = 'You did not submit your attempt at {$a->cquizname}. Please go to {$a->attemptsummaryurl} before {$a->attemptgraceend} if you would still like to submit.';
+$string['emailoverduesubject'] = 'Attempt now overdue: {$a->cquizname}';
+$string['empty'] = 'Empty';
+$string['enabled'] = 'Enabled';
+$string['endtest'] = 'Finish attempt';
+$string['erroraccessingreport'] = 'You cannot access this report';
+$string['errorinquestion'] = 'Error in question';
+$string['errormissingquestion'] = 'Error: The system is missing the question with id {$a}';
+$string['errornotnumbers'] = 'Error - answers must be numeric';
+$string['errorunexpectedevent'] = 'Unexpected event code {$a->event} found for question {$a->questionid} in attempt {$a->attemptid}.';
+$string['essay'] = 'Essay';
+$string['essayquestions'] = 'Questions';
+$string['eventattemptdeleted'] = 'Competency Quiz attempt deleted';
+$string['eventattemptpreviewstarted'] = 'Competency Quiz attempt preview started';
+$string['eventattemptreviewed'] = 'Competency Quiz attempt reviewed';
+$string['eventattemptsummaryviewed'] = 'Competency Quiz attempt summary viewed';
+$string['eventattemptviewed'] = 'Competency Quiz attempt viewed';
+$string['eventeditpageviewed'] = 'Competency Quiz edit page viewed';
+$string['eventoverridecreated'] = 'Competency Quiz override created';
+$string['eventoverridedeleted'] = 'Competency Quiz override deleted';
+$string['eventoverrideupdated'] = 'Competency Quiz override updated';
+$string['eventquestionmanuallygraded'] = 'Question manually graded';
+$string['eventcquizattemptabandoned'] = 'Competency Quiz attempt abandoned';
+$string['eventcquizattempttimelimitexceeded'] = 'Competency Quiz attempt time limit exceeded';
+$string['eventcquizattemptstarted'] = 'Competency Quiz attempt started';
+$string['eventcquizattemptsubmitted'] = 'Competency Quiz attempt submitted';
+$string['eventreportviewed'] = 'Cquiz report viewed';
+$string['everynquestions'] = 'Every {$a} questions';
+$string['everyquestion'] = 'Every question';
+$string['everythingon'] = 'Everything on';
+$string['exportcategory'] = 'export category';
+$string['exporterror'] = 'An error occurred during export processing';
+$string['exportingquestions'] = 'Questions are being exported to file';
+$string['exportname'] = 'File name';
+$string['exportquestions'] = 'Export questions to file';
+$string['extraattemptrestrictions'] = 'Extra restrictions on attempts';
+$string['false'] = 'False';
+$string['feedback'] = 'Feedback';
+$string['feedbackerrorboundaryformat'] = 'Feedback grade boundaries must be either a percentage or a number. The value you entered in boundary {$a} is not recognised.';
+$string['feedbackerrorboundaryoutofrange'] = 'Feedback grade boundaries must be between 0% and 100%. The value you entered in boundary {$a} is out of range.';
+$string['feedbackerrorjunkinboundary'] = 'You must fill in the feedback grade boundary boxes without leaving any gaps.';
+$string['feedbackerrorjunkinfeedback'] = 'You must fill in the feedback boxes without leaving any gaps.';
+$string['feedbackerrororder'] = 'Feedback grade boundaries must be in order, highest first. The value you entered in boundary {$a} is out of sequence.';
+$string['file'] = 'File';
+$string['fileformat'] = 'File format';
+$string['fillcorrect'] = 'Fill with correct';
+$string['filloutnumericalanswer'] = 'You provide at least one possible answer and tolerance. The first matching answer will be used to determine the grade and feedback. If you supply some feedback with no answer at the end, that will be shown to students whose response is not matched by any of the other answers.';
+$string['filloutoneanswer'] = 'You must provide at least one possible answer. Answers left blank will not be used. \'*\' can be used as a wildcard to match any characters. The first matching answer will be used to determine the grade and feedback.';
+$string['filloutthreequestions'] = 'You must provide at least three questions with matching answers. You can provide extra wrong answers by giving an answer with a blank question. Entries where both the question and the answer are blank will be ignored.';
+$string['fillouttwochoices'] = 'You must fill out at least two choices.  Choices left blank will not be used.';
+$string['finishattemptdots'] = 'Finish attempt...';
+$string['finishreview'] = 'Finish review';
+$string['forceregeneration'] = 'force regeneration';
+$string['formatnotfound'] = 'Import/export format {$a} not found';
+$string['formulaerror'] = 'Formula errors!';
+$string['fractionsaddwrong'] = 'The positive grades you have chosen do not add up to 100%<br />Instead, they add up to {$a}%<br />Do you want to go back and fix this question?';
+$string['fractionsnomax'] = 'One of the answers should be 100%, so that it is<br />possible to get a full grade for this question.<br />Do you want to go back and fix this question?';
+$string['fromfile'] = 'from file:';
+$string['functiondisabledbysecuremode'] = 'That functionality is currently disabled';
+$string['generalfeedback'] = 'General feedback';
+$string['generalfeedback_help'] = 'General feedback is text which is shown after a question has been attempted. Unlike feedback for a specific question which depends on the response given, the same general feedback is always shown.';
+$string['graceperiod'] = 'Submission grace period';
+$string['graceperiod_desc'] = 'If what to do when time expires is set to \'Allow a grace period to submit, but not change any responses\', this is the default amount of extra time that is allowed.';
+$string['graceperiod_help'] = 'If what to do when time expires is set to \'Allow a grace period to submit, but not change any responses\', this is the amount of extra time that is allowed.';
+$string['graceperiodmin'] = 'Last submission grace period';
+$string['graceperiodmin_desc'] = 'There is a potential problem right at the end of the competency quiz. On the one hand, we want to let students continue working right up until the last second - with the help of the timer that automatically submits the competency quiz when time runs out. On the other hand, the server may then be overloaded, and take some time to get to process the responses. Therefore, we will accept responses for up to this long after time expires, so they are not penalised for the server being slow. However, the student could cheat and get this many seconds to answer the competency quiz. You have to make a trade-off based on how much you trust the performance of your server during competency quizzes.';
+$string['graceperiodtoosmall'] = 'The grace period must be more than {$a}.';
+$string['grade'] = 'Grade';
+$string['gradeall'] = 'Grade all';
+$string['gradeaverage'] = 'Average grade';
+$string['gradeboundary'] = 'Grade boundary';
+$string['gradeessays'] = 'Grade essays';
+$string['gradehighest'] = 'Highest grade among attempts';
+$string['grademethod'] = 'Grading method';
+$string['grademethod_help'] = 'When multiple attempts are allowed, the following methods are available for calculating the final competency quiz grade:
+
+* Highest grade of all attempts
+* Average (mean) grade of all attempts
+* First attempt (all other attempts are ignored)
+* Last attempt (all other attempts are ignored)';
+$string['gradesdeleted'] = 'Competency Quiz grades deleted';
+$string['gradesofar'] = '{$a->method}: {$a->mygrade} / {$a->cquizgrade}.';
+$string['gradingdetails'] = 'Marks for this submission: {$a->raw}/{$a->max}.';
+$string['gradingdetailsadjustment'] = 'With previous penalties this gives <strong>{$a->cur}/{$a->max}</strong>.';
+$string['gradingdetailspenalty'] = 'This submission attracted a penalty of {$a}.';
+$string['gradingdetailszeropenalty'] = 'You were not penalized for this submission.';
+$string['gradingmethod'] = 'Grading method: {$a}';
+$string['groupoverrides'] = 'Group overrides';
+$string['groupoverridesdeleted'] = 'Group overrides deleted';
+$string['groupsnone'] = 'There are no groups in this course';
+$string['guestsno'] = 'Sorry, guests cannot see or attempt competency quizzes';
+$string['hidebreaks'] = 'Hide page breaks';
+$string['hidereordertool'] = 'Hide the reordering tool';
+$string['history'] = 'History of responses:';
+$string['howquestionsbehave_desc'] = 'Default setting for how questions behave in a competency quiz.';
+$string['imagedisplay'] = 'Image to display';
+$string['import_help'] = 'This function allows you to import questions from external text files.
+
+If your file contains non-ascii characters then it must use UTF-8 encoding. Be particularly cautious with files generated by Microsoft Office applications, as these commonly use special encoding which will not be handled correctly.
+
+Import and Export formats are a pluggable resource. Other optional formats may be available in the Modules and Plugins database.';
+$string['import_link'] = 'question/import';
+$string['importcategory'] = 'import category';
+$string['importerror'] = 'An error occurred during import processing';
+$string['importfilearea'] = 'Import from file already in course files...';
+$string['importfileupload'] = 'Import from file upload...';
+$string['importfromthisfile'] = 'Import from this file';
+$string['importingquestions'] = 'Importing {$a} questions from file';
+$string['importmaxerror'] = 'There is an error in the question. There are too many answers.';
+$string['importmax10error'] = 'There is an error in the question. You may not have more than ten answers';
+$string['importquestions'] = 'Import questions from file';
+$string['inactiveoverridehelp'] = '* Student does not have the correct group or role to attempt the competency quiz';
+$string['incorrect'] = 'Incorrect';
+$string['indivresp'] = 'Responses of individuals to each item';
+$string['info'] = 'Info';
+$string['infoshort'] = 'i';
+$string['initialnumfeedbacks'] = 'Initial number of overall feedback fields';
+$string['initialnumfeedbacks_desc'] = 'When creating a new competency quiz, provide this many blank overall feedback boxes. Once the competency quiz has been created, the form shows the number of fields required for the number of feedbacks in the competency quiz. The setting must be at least 1.';
+$string['inprogress'] = 'In progress';
+$string['introduction'] = 'Description';
+$string['invalidattemptid'] = 'No such attempt ID exists';
+$string['invalidcategory'] = 'Category ID is invalid';
+$string['invalidoverrideid'] = 'Invalid override id';
+$string['invalidquestionid'] = 'Invalid question id';
+$string['invalidcquizid'] = 'Invalid competency quiz ID';
+$string['invalidsource'] = 'The source is not accepted as valid.';
+$string['invalidsourcetype'] = 'Invalid source type.';
+$string['invalidstateid'] = 'Invalid state id';
+$string['lastanswer'] = 'Your last answer was';
+$string['layout'] = 'Layout';
+$string['layoutasshown'] = 'Page layout as shown.';
+$string['layoutasshownwithpages'] = 'Page layout as shown. <small>(Automatic new page every {$a} questions.)</small>';
+$string['layoutshuffledandpaged'] = 'Questions randomly shuffled with {$a} questions per page.';
+$string['layoutshuffledsinglepage'] = 'Questions randomly shuffled, all on one page.';
+$string['link'] = 'Link';
+$string['listitems'] = 'Listing of items in competency quiz';
+$string['literal'] = 'Literal';
+$string['loadingquestionsfailed'] = 'Loading questions failed: {$a}';
+$string['makecopy'] = 'Save as new question';
+$string['managetypes'] = 'Manage question types and servers';
+$string['manualgrading'] = 'Grading';
+$string['manualgradequestion'] = 'Manually grade question {$a->question} in {$a->cquiz} by {$a->user}';
+$string['mark'] = 'Submit';
+$string['markall'] = 'Submit page';
+$string['marks'] = 'Marks';
+$string['marks_help'] = 'The numerical marks for each question, and the overall attempt score.';
+$string['match'] = 'Matching';
+$string['matchanswer'] = 'Matching answer';
+$string['matchanswerno'] = 'Matching answer {$a}';
+$string['messageprovider:attempt_overdue'] = 'Warning when your competency quiz attempt becomes overdue';
+$string['messageprovider:confirmation'] = 'Confirmation of your own competency quiz submissions';
+$string['messageprovider:submission'] = 'Notification of competency quiz submissions';
+$string['max'] = 'Max';
+$string['maxmark'] = 'Maximum mark';
+$string['min'] = 'Min';
+$string['minutes'] = 'Minutes';
+$string['missingcorrectanswer'] = 'Correct answer must be specified';
+$string['missingitemtypename'] = 'Missing name';
+$string['missingquestion'] = 'This question no longer seems to exist';
+$string['modulename'] = 'Cquiz';
+$string['modulename_help'] = 'The competency quiz activity enables a teacher to create competency quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.
+
+The teacher can allow the competency quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.
+
+Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.
+
+The teacher can choose when and if hints, feedback and correct answers are shown to students.
+
+Quizzes may be used
+
+* As course exams
+* As mini tests for reading assignments or at the end of a topic
+* As exam practice using questions from past exams
+* To deliver immediate feedback about performance
+* For self-assessment';
+$string['modulename_link'] = 'mod/cquiz/view';
+$string['modulenameplural'] = 'Competency quizzes';
+$string['moveselectedonpage'] = 'Move selected questions to page: {$a}';
+$string['multichoice'] = 'Multiple choice';
+$string['multipleanswers'] = 'Choose at least one answer.';
+$string['mustbesubmittedby'] = 'This attempt must be submitted by {$a}.';
+$string['name'] = 'Name';
+$string['navigatenext'] = 'Go to next question';
+$string['navigateprevious'] = 'Return to previous question';
+$string['navmethod'] = 'Navigation method';
+$string['navmethod_free'] = 'Free';
+$string['navmethod_help'] = 'When sequential navigation is enabled a student must progress through the competency quiz in order and may not return to previous pages nor skip ahead.';
+$string['navmethod_seq'] = 'Sequential';
+$string['navnojswarning'] = 'Warning: these links will not save your answers. Use the next button at the bottom of the page.';
+$string['neverallononepage'] = 'Never, all questions on one page';
+$string['newattemptfail'] = 'Error: Could not start a new attempt at the competency quiz';
+$string['newpage'] = 'New page';
+$string['newpage_help'] = 'For longer competency quizzes it makes sense to stretch the competency quiz over several pages by limiting the number of questions per page. When adding questions to the competency quiz, page breaks will automatically be inserted according to this setting. However page breaks may later be moved manually on the editing page.';
+$string['newpageevery'] = 'Automatically start a new page';
+$string['noanswers'] = 'No answers were selected!';
+$string['noattempts'] = 'No attempts have been made on this competency quiz';
+$string['noattemptsfound'] = 'No attempts found.';
+$string['noattemptstoshow'] = 'There are no attempts to show';
+$string['nocategory'] = 'Incorrect or no category specified';
+$string['noclose'] = 'No close date';
+$string['nocommentsyet'] = 'No comments yet.';
+$string['noconnection'] = 'There is currently no connection to a web service that can process this question. Please contact your administrator';
+$string['nodataset'] = 'nothing - it is not a wild card';
+$string['nodatasubmitted'] = 'No data was submitted.';
+$string['noessayquestionsfound'] = 'No manually graded questions found';
+$string['nogradewarning'] = 'This competency quiz is not graded, so you cannot set overall feedback that differs by grade.';
+$string['nomoreattempts'] = 'No more attempts are allowed';
+$string['none'] = 'None';
+$string['noopen'] = 'No open date';
+$string['nooverridedata'] = 'You must override at least one of the competency quiz settings.';
+$string['nopossibledatasets'] = 'No possible datasets';
+$string['noquestionintext'] = 'The question text does not contain any embedded questions';
+$string['noquestions'] = 'No questions have been added yet';
+$string['noquestionsfound'] = 'No questions found';
+$string['noquestionsincquiz'] = 'There are no questions in this competency quiz.';
+$string['noquestionsnotinuse'] = 'This random question is not in use, since its category is empty.';
+$string['noquestionsonpage'] = 'Empty page';
+$string['noresponse'] = 'No response';
+$string['noreview'] = 'You are not allowed to review this competency quiz';
+$string['noreviewattempt'] = 'You are not allowed to review this attempt.';
+$string['noreviewshort'] = 'Not permitted';
+$string['noreviewuntil'] = 'You are not allowed to review this competency quiz until {$a}';
+$string['noreviewuntilshort'] = 'Available {$a}';
+$string['noscript'] = 'JavaScript must be enabled to continue!';
+$string['notavailabletostudents'] = 'Note: This competency quiz is not currently available to your students';
+$string['notenoughrandomquestions'] = 'There are not enough questions in category {$a->category} to create the question {$a->name} ({$a->id}).';
+$string['notenoughsubquestions'] = 'Not enough sub-questions have been defined!<br />Do you want to go back and fix this question?';
+$string['notimedependentitems'] = 'Time dependent items are not currently supported by the competency quiz module. As a work around, set a time limit for the whole competency quiz. Do you wish to choose a different item (or use the current item regardless)?';
+$string['notyetgraded'] = 'Not yet graded';
+$string['notyetviewed'] = 'Not yet viewed';
+$string['notyourattempt'] = 'This is not your attempt!';
+$string['noview'] = 'Logged-in user is not allowed to view this competency quiz';
+$string['numattempts'] = '{$a->studentnum} {$a->studentstring} have made {$a->attemptnum} attempts';
+$string['numattemptsmade'] = '{$a} attempts made on this competency quiz';
+$string['numberabbr'] = '#';
+$string['numerical'] = 'Numerical';
+$string['numquestionsx'] = 'Questions: {$a}';
+$string['oneminute'] = '1 minute';
+$string['onlyteachersexport'] = 'Only teachers can export questions';
+$string['onlyteachersimport'] = 'Only teachers with editing rights can import questions';
+$string['onthispage'] = 'This page';
+$string['open'] = 'Not answered';
+$string['openclosedatesupdated'] = 'Cquiz open and close dates updated';
+$string['optional'] = 'optional';
+$string['orderandpaging'] = 'Order and paging';
+$string['orderandpaging_help'] = 'The numbers 10, 20, 30, ... opposite each question indicate the order of the questions. The numbers increase in steps of 10 to leave space for additional questions to be inserted. To reorder the questions, change the numbers then click the "Reorder questions" button.
+
+To add page breaks after particular questions, tick the checkboxes next to the questions then click the "Add new pages after selected questions" button.
+
+To arrange the questions over a number of pages, click the Repaginate button and select the desired number of questions per page.';
+$string['orderingcquiz'] = 'Order and paging';
+$string['orderingcquizx'] = 'Order and paging: {$a}';
+$string['outcomesadvanced'] = 'Outcomes are advanced settings';
+$string['outof'] = '{$a->grade} out of {$a->maxgrade}';
+$string['outofpercent'] = '{$a->grade} out of {$a->maxgrade} ({$a->percent}%)';
+$string['outofshort'] = '{$a->grade}/{$a->maxgrade}';
+$string['overallfeedback'] = 'Overall feedback';
+$string['overallfeedback_help'] = 'Overall feedback is text that is shown after a competency quiz has been attempted. By specifying additional grade boundaries (as a percentage or as a number), the text shown can depend on the grade obtained.';
+$string['overdue'] = 'Overdue';
+$string['overduehandling'] = 'When time expires';
+$string['overduehandling_desc'] = 'What should happen by default if a student does not submit the competency quiz before time expires.';
+$string['overduehandling_help'] = 'This setting controls what happens if the Student fails to submit their competency quiz attempt before time expires. If the student is actively working on the competency quiz at the time, then the countdown timer will always automatically submit the attempt for them, but if they have logged out, then this setting controls what happens.';
+$string['overduehandling_link'] = 'mod/cquiz/timing';
+$string['overduehandlingautosubmit'] = 'Open attempts are submitted automatically';
+$string['overduehandlinggraceperiod'] = 'There is a grace period when open attempts can be submitted, but no more questions answered';
+$string['overduehandlingautoabandon'] = 'Attempts must be submitted before time expires, or they are not counted';
+$string['overduemustbesubmittedby'] = 'This attempt is now overdue. It should already have been submitted. If you would like this competency quiz to be graded, you must submit it by {$a}. If you do not submit it by then, no marks from this attempt will be counted.';
+$string['override'] = 'Override';
+$string['overridedeletegroupsure'] = 'Are you sure you want to delete the override for group {$a}?';
+$string['overridedeleteusersure'] = 'Are you sure you want to delete the override for user {$a}?';
+$string['overridegroup'] = 'Override group';
+$string['overridegroupeventname'] = '{$a->cquiz} - {$a->group}';
+$string['overrides'] = 'Overrides';
+$string['overrideuser'] = 'Override user';
+$string['overrideusereventname'] = '{$a->cquiz} - Override';
+$string['pageshort'] = 'P';
+$string['page-mod-cquiz-x'] = 'Any competency quiz module page';
+$string['page-mod-cquiz-attempt'] = 'Attempt competency quiz page';
+$string['page-mod-cquiz-edit'] = 'Edit competency quiz page';
+$string['page-mod-cquiz-report'] = 'Any competency quiz report page';
+$string['page-mod-cquiz-review'] = 'Review competency quiz attempt page';
+$string['page-mod-cquiz-summary'] = 'Cquiz attempt summary page';
+$string['page-mod-cquiz-view'] = 'Cquiz information page';
+$string['pagesize'] = 'Page size';
+$string['parent'] = 'Parent';
+$string['parentcategory'] = 'Parent category';
+$string['parsingquestions'] = 'Parsing questions from import file.';
+$string['partiallycorrect'] = 'Partially correct';
+$string['penalty'] = 'Penalty';
+$string['penaltyscheme'] = 'Apply penalties';
+$string['penaltyscheme_help'] = 'If enabled, a penalty is subtracted from the final mark for a question for a wrong response. The amount of penalty is specified in the question settings. This setting only applies if adaptive mode is enabled.';
+$string['percentcorrect'] = 'Percent correct';
+$string['pleaseclose'] = 'Your request has been processed. You can now close this window';
+$string['pluginadministration'] = 'Competency Quiz administration';
+$string['pluginname'] = 'Competency Quiz';
+$string['popup'] = 'Show competency quiz in a &quot;secure&quot; window';
+$string['popupblockerwarning'] = 'This section of the test is in secure mode, this means that you need to take the competency quiz in a secure window. Please turn off your popup blocker. Thank you.';
+$string['popupnotice'] = 'Students will see this competency quiz in a secure window';
+$string['preprocesserror'] = 'Error occurred during pre-processing!';
+$string['preview'] = 'Preview';
+$string['previewquestion'] = 'Preview question';
+$string['previewcquiz'] = 'Preview {$a}';
+$string['previewcquiznow'] = 'Preview competency quiz now';
+$string['previous'] = 'Previous state';
+$string['publish'] = 'Publish';
+$string['publishedit'] = 'You must have permission in the publishing course to add or edit questions in this category';
+$string['qname'] = 'name';
+$string['qbrief'] = 'Q. {$a}';
+$string['qti'] = 'IMS QTI format';
+$string['qtypename'] = 'type, name';
+$string['question'] = 'Question';
+$string['questionbank'] = 'from question bank';
+$string['questionbankmanagement'] = 'Question bank management';
+$string['questionbehaviour'] = 'Question behaviour';
+$string['questioncats'] = 'Question categories';
+$string['questiondeleted'] = 'This question has been deleted. Please contact your teacher';
+$string['questiondependencyadd'] = 'No restriction on when question {$a->thisq} can be attempted • Click to change';
+$string['questiondependencyfree'] = 'No restriction on this question';
+$string['questiondependencyremove'] = 'Question {$a->thisq} cannot be attempted until the previous question {$a->previousq} has been completed • Click to change';
+$string['questiondependsonprevious'] = 'This question cannot be attempted until the previous question has been completed.';
+$string['questioninuse'] = 'The question \'{$a->questionname}\' is currently being used in: <br />{$a->cquiznames}<br />The question will not be deleted from these competency quizzes but only from the category list.';
+$string['questionmissing'] = 'Question for this session is missing';
+$string['questionname'] = 'Question name';
+$string['questionnonav'] = '<span class="accesshide">Question </span>{$a->number}<span class="accesshide"> {$a->attributes}</span>';
+$string['questionnonavinfo'] = '<span class="accesshide">Information </span>{$a->number}<span class="accesshide"> {$a->attributes}</span>';
+$string['questionnotloaded'] = 'Question {$a} has not been loaded from the database';
+$string['questionorder'] = 'Question order';
+$string['questionposition'] = 'New position in order for question {$a}';
+$string['questions'] = 'Questions';
+$string['questionsinclhidden'] = 'Questions (including hidden)';
+$string['questionsinthiscquiz'] = 'Questions in this competency quiz';
+$string['questionsperpage'] = 'Questions per page';
+$string['questionsperpageselected'] = 'Questions per page has been set so the paging is currently fixed. As a result, the paging controls have been disabled. You can change this in {$a}.';
+$string['questionsperpagex'] = 'Questions per page: {$a}';
+$string['questiontext'] = 'Question text';
+$string['questiontextisempty'] = '[Empty question text]';
+$string['questiontype'] = 'Question type {$a}';
+$string['questiontypesetupoptions'] = 'Setup options for question types:';
+$string['cquiz:addinstance'] = 'Add a new competency quiz';
+$string['cquiz:attempt'] = 'Attempt competency quizzes';
+$string['cquizavailable'] = 'The competency quiz is available until: {$a}';
+$string['cquizclose'] = 'Close the competency quiz';
+$string['cquizclosed'] = 'This competency quiz closed on {$a}';
+$string['cquizcloses'] = 'Competency Quiz closes';
+$string['cquizcloseson'] = 'This competency quiz will close at {$a}';
+$string['cquiz:deleteattempts'] = 'Delete competency quiz attempts';
+$string['cquiz:emailconfirmsubmission'] = 'Get a confirmation message when submitting';
+$string['cquiz:emailnotifysubmission'] = 'Get a notification message when an attempt is submitted';
+$string['cquiz:emailwarnoverdue'] = 'Get a notification message when an attempt becomes overdue and needs to be submitted.';
+$string['cquiz:grade'] = 'Grade competency quizzes manually';
+$string['cquiz:ignoretimelimits'] = 'Ignores time limit on competency quizzes';
+$string['cquizisclosed'] = 'This competency quiz is closed';
+$string['cquizisopen'] = 'This competency quiz is open';
+$string['cquizisclosedwillopen'] = 'Competency Quiz closed (opens {$a})';
+$string['cquizisopenwillclose'] = 'Competency Quiz open (closes {$a})';
+$string['cquiz:manage'] = 'Manage competency quizzes';
+$string['cquiz:manageoverrides'] = 'Manage competency quiz overrides';
+$string['cquiznavigation'] = 'Competency Quiz navigation';
+$string['cquizopen'] = 'Open the competency quiz';
+$string['cquizopenclose'] = 'Open and close dates';
+$string['cquizopenclose_help'] = 'Students can only start their attempt(s) after the open time and they must complete their attempts before the close time.';
+$string['cquizopenclose_link'] = 'mod/cquiz/timing';
+$string['cquizopened'] = 'This competency quiz is open.';
+$string['cquizopenedon'] = 'This competency quiz opened at {$a}';
+$string['cquizopens'] = 'Competency Quiz opens';
+$string['cquizopenwillclose'] = 'This competency quiz is open, will close on {$a} at';
+$string['cquizordernotrandom'] = 'Order of competency quiz not shuffled';
+$string['cquizorderrandom'] = '* Order of competency quiz is shuffled';
+$string['cquiz:preview'] = 'Preview competency quizzes';
+$string['cquiz:regrade'] = 'Regrade competency quiz attempts';
+$string['cquiz:reviewmyattempts'] = 'Review your own attempts';
+$string['cquizsettings'] = 'Competency Quiz settings';
+$string['cquiz:view'] = 'View competency quiz information';
+$string['cquiz:viewreports'] = 'View competency quiz reports';
+$string['cquiztimer'] = 'Competency Quiz Timer';
+$string['cquizwillopen'] = 'This competency quiz will open {$a}';
+$string['random'] = 'Random question';
+$string['randomcreate'] = 'Create random questions';
+$string['randomfromcategory'] = 'Random question from category:';
+$string['randomfromexistingcategory'] = 'Random question from an existing category';
+$string['randomnumber'] = 'Number of random questions';
+$string['randomnosubcat'] = 'Questions from this category only, not its subcategories.';
+$string['randomquestionusinganewcategory'] = 'Random question using a new category';
+$string['randomwithsubcat'] = 'Questions from this category and its subcategories.';
+$string['readytosend'] = 'You are about to send your whole competency quiz to be graded.  Are you sure you want to continue?';
+$string['reattemptcquiz'] = 'Re-attempt competency quiz';
+$string['recentlyaddedquestion'] = 'Recently added question!';
+$string['recurse'] = 'Include questions from subcategories too';
+$string['redoquestion'] = 'Redo question';
+$string['redoesofthisquestion'] = 'Other questions attempted here: {$a}';
+$string['regrade'] = 'Regrade all attempts';
+$string['regradecomplete'] = 'All attempts have been regraded';
+$string['regradecount'] = '{$a->changed} out of {$a->attempt} grades were changed';
+$string['regradedisplayexplanation'] = 'Attempts that change during regrading are displayed as hyperlinks to the question review window';
+$string['regradenotallowed'] = 'You do not have permission to regrade this competency quiz';
+$string['regradingquestion'] = 'Regrading "{$a}".';
+$string['regradingcquiz'] = 'Regrading competency quiz "{$a}"';
+$string['remove'] = 'Remove';
+$string['removeallgroupoverrides'] = 'Delete all group overrides';
+$string['removeallcquizattempts'] = 'Delete all competency quiz attempts';
+$string['removealluseroverrides'] = 'Delete all user overrides';
+$string['removeemptypage'] = 'Remove empty page';
+$string['removepagebreak'] = 'Remove page break';
+$string['removeselected'] = 'Remove selected';
+$string['rename'] = 'Rename';
+$string['renderingserverconnectfailed'] = 'The server {$a} failed to process an RQP request. Check that the URL is correct.';
+$string['reorderquestions'] = 'Reorder questions';
+$string['reordertool'] = 'Show the reordering tool';
+$string['repaginate'] = 'Repaginate with {$a} questions per page';
+$string['repaginatecommand'] = 'Repaginate';
+$string['repaginatenow'] = 'Repaginate now';
+$string['replace'] = 'Replace';
+$string['replacementoptions'] = 'Replacement options';
+$string['report'] = 'Reports';
+$string['reportanalysis'] = 'Item analysis';
+$string['reportattemptsfrom'] = 'Attempts from';
+$string['reportattemptsthatare'] = 'Attempts that are';
+$string['reportdisplayoptions'] = 'Display options';
+$string['reportfullstat'] = 'Detailed statistics';
+$string['reportmulti_percent'] = 'Multi-percentages';
+$string['reportmulti_q_x_student'] = 'Multi-student choices';
+$string['reportmulti_resp'] = 'Individual responses';
+$string['reportmustselectstate'] = 'You must select at least one state.';
+$string['reportnotfound'] = 'Report not known ({$a})';
+$string['reportoverview'] = 'Overview';
+$string['reportregrade'] = 'Regrade attempts';
+$string['reportresponses'] = 'Detailed responses';
+$string['reports'] = 'Reports';
+$string['reportshowonly'] = 'Show only attempts';
+$string['reportshowonlyfinished'] = 'Show at most one finished attempt per user ({$a})';
+$string['reportsimplestat'] = 'Simple statistics';
+$string['reportusersall'] = 'all users who have attempted the competency quiz';
+$string['reportuserswith'] = 'enrolled users who have attempted the competency quiz';
+$string['reportuserswithorwithout'] = 'enrolled users who have, or have not, attempted the competency quiz';
+$string['reportuserswithout'] = 'enrolled users who have not attempted the competency quiz';
+$string['reportwhattoinclude'] = 'What to include in the report';
+$string['requirepassword'] = 'Require password';
+$string['requirepassword_help'] = 'If a password is specified, a student must enter it in order to attempt the competency quiz.';
+$string['requiresubnet'] = 'Require network address';
+$string['requiresubnet_help'] = 'Competency Quiz access may be restricted to particular subnets on the LAN or Internet by specifying a comma-separated list of partial or full IP address numbers. This can be useful for an invigilated (proctored) competency quiz, to ensure that only people in a certain location can access the competency quiz.';
+$string['response'] = 'Response';
+$string['responses'] = 'Responses';
+$string['results'] = 'Results';
+$string['returnattempt'] = 'Return to attempt';
+$string['reuseifpossible'] = 'reuse previously removed';
+$string['reverttodefaults'] = 'Revert to competency quiz defaults';
+$string['review'] = 'Review';
+$string['reviewafter'] = 'Allow review after competency quiz is closed';
+$string['reviewalways'] = 'Allow review at any time';
+$string['reviewattempt'] = 'Review attempt';
+$string['reviewbefore'] = 'Allow review while competency quiz is open';
+$string['reviewclosed'] = 'After the competency quiz is closed';
+$string['reviewduring'] = 'During the attempt';
+$string['reviewimmediately'] = 'Immediately after the attempt';
+$string['reviewnever'] = 'Never allow review';
+$string['reviewofattempt'] = 'Review of attempt {$a}';
+$string['reviewofpreview'] = 'Review of preview';
+$string['reviewofquestion'] = 'Review of question {$a->question} in {$a->cquiz} by {$a->user}';
+$string['reviewopen'] = 'Later, while the competency quiz is still open';
+$string['reviewoptions'] = 'Students may review';
+$string['reviewoptionsheading'] = 'Review options';
+$string['reviewoptionsheading_help'] = 'These options control what information students can see when they review a competency quiz attempt or look at the competency quiz reports.
+
+**During the attempt** settings are only relevant for some behaviours, like \'interactive with multiple tries\', which may display feedback during the attempt.
+
+**Immediately after the attempt** settings apply for the first two minutes after \'Submit all and finish\' is clicked.
+
+**Later, while the competency quiz is still open** settings apply after this, and before the competency quiz close date.
+
+**After the competency quiz is closed** settings apply after the competency quiz close date has passed. If the competency quiz does not have a close date, this state is never reached.';
+$string['reviewoverallfeedback'] = 'Overall feedback';
+$string['reviewoverallfeedback_help'] = 'The feedback given at the end of the attempt, depending on the student\'s total mark.';
+$string['reviewresponse'] = 'Review response';
+$string['reviewresponsetoq'] = 'Review response (question {$a})';
+$string['reviewthisattempt'] = 'Review your responses to this attempt';
+$string['rqp'] = 'Remote question';
+$string['rqps'] = 'Remote questions';
+$string['sameasoverall'] = 'Same as for overall grades';
+$string['save'] = 'Save';
+$string['saveandedit'] = 'Save changes and edit questions';
+$string['saveattemptfailed'] = 'Failed to save the current competency quiz attempt.';
+$string['savedfromdeletedcourse'] = 'Saved from deleted course "{$a}"';
+$string['savegrades'] = 'Save grades';
+$string['savemyanswers'] = 'Save my answers';
+$string['savenosubmit'] = 'Save without submitting';
+$string['saveoverrideandstay'] = 'Save and enter another override';
+$string['savecquiz'] = 'Save this whole competency quiz';
+$string['saving'] = 'Saving';
+$string['savingnewgradeforquestion'] = 'Saving new grade for question id {$a}.';
+$string['savingnewmaximumgrade'] = 'Saving new maximum grade.';
+$string['score'] = 'Raw score';
+$string['scores'] = 'Scores';
+$string['search:activity'] = 'Competency Quiz - activity information';
+$string['sectionheadingedit'] = 'Edit heading \'{$a}\'';
+$string['sectionheadingremove'] = 'Remove heading \'{$a}\'';
+$string['seequestions'] = '(See questions)';
+$string['select'] = 'Select';
+$string['selectall'] = 'Select all';
+$string['selectcategory'] = 'Select category';
+$string['selectedattempts'] = 'Selected attempts...';
+$string['selectnone'] = 'Deselect all';
+$string['selectquestiontype'] = '-- Select question type --';
+$string['serveradded'] = 'Server added';
+$string['serveridentifier'] = 'Identifier';
+$string['serverinfo'] = 'Server information';
+$string['servers'] = 'Servers';
+$string['serverurl'] = 'Server URL';
+$string['settingsoverrides'] = 'Settings overrides';
+$string['shortanswer'] = 'Short answer';
+$string['show'] = 'Show';
+$string['showall'] = 'Show all questions on one page';
+$string['showblocks'] = 'Show blocks during competency quiz attempts';
+$string['showblocks_help'] = 'If set to yes then normal blocks will be shown during competency quiz attempts';
+$string['showbreaks'] = 'Show page breaks';
+$string['showcategorycontents'] = 'Show category contents {$a->arrow}';
+$string['showcorrectanswer'] = 'In feedback, show correct answers?';
+$string['showdetailedmarks'] = 'Show mark details';
+$string['showeachpage'] = 'Show one page at a time';
+$string['showfeedback'] = 'After answering, show feedback?';
+$string['showinsecurepopup'] = 'Use a \'secure\' popup window for attempts';
+$string['showlargeimage'] = 'Large image';
+$string['shownoattempts'] = 'Show students with no attempts';
+$string['shownoattemptsonly'] = 'Show only students with no attempts';
+$string['shownoimage'] = 'No image';
+$string['showreport'] = 'Show report';
+$string['showsmallimage'] = 'Small image';
+$string['showteacherattempts'] = 'Show teacher attempts';
+$string['showuserpicture'] = 'Show the user\'s picture';
+$string['showuserpicture_help'] = 'If enabled, the student\'s name and picture will be shown on-screen during the attempt, and on the review screen, making it easier to check that the student is logged in as themself in an invigilated (proctored) exam.';
+$string['shuffle'] = 'Shuffle';
+$string['shuffleanswers'] = 'Shuffle answers';
+$string['shuffledrandomly'] = 'Shuffled randomly';
+$string['shufflequestions'] = 'Shuffle';
+$string['shufflequestions_help'] = 'If you turn this on, then every time the competency quiz is attempted, the order of the questions in this section will be shuffled into a different random order.
+
+This can make it harder for students to share answers, but it also makes it harder for students discuss a particular question with you.';
+$string['shufflewithin'] = 'Shuffle within questions';
+$string['shufflewithin_help'] = 'If enabled, the parts making up each question will be randomly shuffled each time a student attempts the competency quiz, provided the option is also enabled in the question settings. This setting only applies to questions that have multiple parts, such as multiple choice or matching questions.';
+$string['singleanswer'] = 'Choose one answer.';
+$string['sortage'] = 'Sort by age';
+$string['sortalpha'] = 'Sort by name';
+$string['sortquestionsbyx'] = 'Sort questions by: {$a}';
+$string['sortsubmit'] = 'Sort questions';
+$string['sorttypealpha'] = 'Sort by type, name';
+$string['specificapathnotonquestion'] = 'The specified file path is not on the specified question';
+$string['specificquestionnotoncquiz'] = 'Specified question is not on the specified competency quiz';
+$string['startagain'] = 'Start again';
+$string['startattempt'] = 'Start attempt';
+$string['startedon'] = 'Started on';
+$string['startnewpreview'] = 'Start a new preview';
+$string['stateabandoned'] = 'Never submitted';
+$string['statefinished'] = 'Finished ';
+$string['statefinisheddetails'] = 'Submitted {$a}';
+$string['stateinprogress'] = 'In progress';
+$string['statenotloaded'] = 'The state for question {$a} has not been loaded from the database';
+$string['stateoverdue'] = 'Overdue';
+$string['stateoverduedetails'] = 'Must be submitted by {$a}';
+$string['status'] = 'Status';
+$string['stoponerror'] = 'Stop on error';
+$string['submitallandfinish'] = 'Submit all and finish';
+$string['subneterror'] = 'Sorry, this competency quiz has been locked so that it is only accessible from certain locations.  Currently your computer is not one of those allowed to use this competency quiz.';
+$string['subnetnotice'] = 'This competency quiz has been locked so that it is only accessible from certain locations. Your computer is not on an allowed subnet. As teacher you are allowed to preview anyway.';
+$string['subplugintype_cquiz'] = 'Report';
+$string['subplugintype_cquiz_plural'] = 'Reports';
+$string['subplugintype_cquizaccess'] = 'Access rule';
+$string['subplugintype_cquizaccess_plural'] = 'Access rules';
+$string['substitutedby'] = 'will be substituted by';
+$string['summaryofattempt'] = 'Summary of attempt';
+$string['summaryofattempts'] = 'Summary of your previous attempts';
+$string['temporaryblocked'] = 'You are temporarily not allowed to re-attempt the competency quiz.<br /> You will be able to take another attempt on:';
+$string['theattempt'] = 'The attempt';
+$string['theattempt_help'] = 'Whether the student can review the attempt at all.';
+$string['time'] = 'Time';
+$string['timecompleted'] = 'Completed';
+$string['timedelay'] = 'You are not allowed to do the competency quiz since you have not passed the time delay before attempting another competency quiz';
+$string['timeleft'] = 'Time left';
+$string['timelimit'] = 'Time limit';
+$string['timelimit_help'] = 'If enabled, the time limit is stated on the initial competency quiz page and a countdown timer is displayed in the competency quiz navigation block.';
+$string['timelimit_link'] = 'mod/cquiz/timing';
+$string['timelimittxt'] = 'You will have up to {$a} to finish and send the quiz. Manage well your time to answer all the questions carefully and review them before sending.';
+$string['timelimitexeeded'] = 'Sorry! Competency Quiz time limit exceeded!';
+$string['timestr'] = '%H:%M:%S on %d/%m/%y';
+$string['timesup'] = 'Time is up!';
+$string['timetaken'] = 'Time taken';
+$string['timing'] = 'Timing';
+$string['tofile'] = 'to file';
+$string['tolerance'] = 'Tolerance';
+$string['toomanyrandom'] = 'The number of random questions required is more than are still available in the category!';
+$string['top'] = 'Top';
+$string['totalmarksx'] = 'Total of marks: {$a}';
+$string['totalquestionsinrandomqcategory'] = 'Total of {$a} questions in category.';
+$string['true'] = 'True';
+$string['truefalse'] = 'True/false';
+$string['type'] = 'Type';
+$string['unfinished'] = 'open';
+$string['ungraded'] = 'Ungraded';
+$string['unit'] = 'Unit';
+$string['unknowntype'] = 'Question type not supported at line {$a}. The question will be ignored';
+$string['updatesettings'] = 'Update competency quiz settings';
+$string['updatingatttemptgrades'] = 'Updating attempt grades.';
+$string['updatingfinalgrades'] = 'Updating final grades.';
+$string['updatingthegradebook'] = 'Updating the gradebook.';
+$string['upgradesure'] = '<div>In particular the competency quiz module will perform an extensive change of the competency quiz tables and this upgrade has not yet been sufficiently tested. You are very strongly urged to backup your database tables before proceeding.</div>';
+$string['upgradingcquizattempts'] = 'Upgrading competency quiz attempts: competency quiz {$a->done}/{$a->outof} (Competency Quiz id {$a->info})';
+$string['upgradingveryoldcquizattempts'] = 'Upgrading very old competency quiz attempts: {$a->done}/{$a->outof}';
+$string['url'] = 'URL';
+$string['usedcategorymoved'] = 'This category has been preserved and moved to the site level because it is a published category still in use by other courses.';
+$string['useroverrides'] = 'User overrides';
+$string['useroverridesdeleted'] = 'User overrides deleted';
+$string['usersnone'] = 'No students have access to this competency quiz';
+$string['validate'] = 'Validate';
+$string['viewallanswers'] = 'View {$a} competency quiz attempts';
+$string['viewallreports'] = 'View reports for {$a} attempts';
+$string['viewed'] = 'Viewed';
+$string['warningmissingtype'] = '<b>This question is of a type that has not been installed on your Moodle yet.<br />Please alert your Moodle administrator.</b>';
+$string['wheregrade'] = 'Where\'s my grade?';
+$string['wildcard'] = 'Wild card';
+$string['windowclosing'] = 'This window will close shortly.';
+$string['withsummary'] = 'with summary statistics';
+$string['wronguse'] = 'You can not use this page like that';
+$string['xhtml'] = 'XHTML';
+$string['youneedtoenrol'] = 'You need to enrol in this course before you can attempt this competency quiz';
+$string['yourfinalgradeis'] = 'Your final grade for this competency quiz is {$a}.';
+
+// New in cquiz
+
+$string['attempts_help'] = 'Maximum number of attempts allowed for this competency quiz (0 means unlimited)';
+$string['helpforum'] = 'Help forum';
+$string['helpforum_help'] = 'Set a forum to be indicated for students to get help in a specific question.';
+$string['askforhelp'] = 'You can ask for help in this question at {$a->forum}';
+$string['attemptsmaxdelay'] = 'Maximum delay between attempts';
+$string['attemptsmaxdelay_help'] = 'Maximum amount of time that can pass between two consecutive attempts';
+$string['emailgradeearnedbody'] = 'Hi {$a->username},
+    
+You have earned a grade of {$a->grade} at competency quiz 
+\'{$a->cquizname}\'
+in course \'{$a->coursename}\'.';
+$string['emailgradeearnedsmall'] = 'You have earned a grade of \'{$a->grade}\' at \'{$a->quizname}\'';
+$string['emailgradeearnedsubject'] = 'You have earned a grade';
+$string['emailgradeimprovedbody'] = 'Hi {$a->username},
+    
+Your grade at competency quiz \'{$a->cquizname}\' 
+in course \'{$a->coursename}\'
+has improved from {$a->previousgrade} to {$a->grade}';
+$string['emailgradeimprovedsmall'] = 'Your grade improved to \'{$a->grade}\' at \'{$a->quizname}\'';
+$string['emailgradeimprovedsubject'] = 'Your grade has improved';
+$string['messageprovider:grade_earned'] = 'Notification of grade earned';
+$string['cquiz:emailgradeearned'] = 'Get a notification message when a gade has been earned in a quiz.';
+$string['generalinfo'] = 'General info';
+$string['generalinfo_desc'] = 'Introductory text to be presented to student before every quiz attempt';
+$string['of'] = 'of';
+$string['point'] = 'point(s)';
+$string['value'] = 'Value';
+$string['rightquestions'] = "You've " . 'got {$a->rightquestions} right answers out of {$a->totalquestions}';
+$string['right'] = 'Correct';
+$string['wrong'] = 'Incorrect';
+$string['testyourabilities'] = 'Time to test your abilities!';
+$string['beforeyoustart'] = 'Before you start, read the instructions';
+$string['multipleattemptsinstructions'] = 'Quizes have the goal to verify the learning by the students towards certification.
+                            They are based in the video content and supporting material, and can be taken consulting any content/material.
+                            You can also discuss questions with other students in the forum. You may take the quiz more than once,
+                            and the higher grade between the attempts will be considered. But notice: the questions you answered 
+                            incorrectly in the firsts attempts will have their grades reduced at the following ones.';
+$string['singleattemptinstructions'] = 'Quizes have the goal to verify the learning by the students towards certification.
+                            They are based in the video content and supporting material, and can be taken consulting any content/material.
+                            You can also discuss questions with other students in the forum.';
+$string['secondattempt'] = 'You can try this quiz twice. Remember to review your answers before sending the quiz.';
+$string['and'] = 'and';
+$string['second'] = 'second';
+$string['seconds'] = 'seconds';
+$string['gradingmethod'] = 'Grading method';
+$string['highestgrade'] = 'Highest grade among attempts.';
+$string['replaceifhigher'] = 'The grade in this quiz will replace the previous quiz grade in case is higher.';
+$string['datetimeformat'] = 'm/d/Y \b\y H:i';
+$string['summary'] = 'Summary';
+$string['letsgo'] = "Are you ready? Let's start?";
+$string['cquiz'] = 'Quiz';
+$string['youarehere'] = 'You are here';
+$string['answersaved'] = 'Answer saved';
+$string['notanswered'] = 'Not answered';
+$string['chooserightanswerbelow'] = 'Choose the right answer below';
+$string['youranswer'] = 'Your answer';
+$string['informations'] = 'Informations';
+$string['checkyourdashboard'] = 'Look at the feedback for the questions below or access {$a} to check your accomplishments.';
+$string['payattention'] = 'Pay attention!';
+$string['payattentiontxt'] = "It's possible to pause answering the activity and resume it later.";
+$string['payattentionto'] = 'Pay attention to {$a}!';
+$string['studentguide'] = "Student's guide";
+$string['zero'] = 'Zero';
+$string['one'] = 'One';
+$string['two'] = 'Two';
+$string['three'] = 'Three';
+$string['four'] = 'Four';
+$string['five'] = 'Five';
+$string['six'] = 'Six';
+$string['seven'] = 'Seven';
+$string['eight'] = 'Eight';
+$string['nine'] = 'Nine';
+$string['dashboard'] = 'My Dashboard';
+$string['yourdashboard'] = 'your dashboard';

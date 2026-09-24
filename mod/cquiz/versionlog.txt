@@ -1,0 +1,209 @@
+2025090803:
+    - Processing of question texts reverted to allow all HTML tags
+
+2025090802:
+    - Fixed processing of question texts to allow for only images and line
+        breaks, removing any other HTML tags
+
+2025090801:
+    - Fixed processing of question texts to allow for only images, removing
+        any other HTML tags
+
+2025082001:
+    - Fixed processing of question texts to allow for images
+
+2025080702:
+    - Changed the color of "no more attempts" to white
+
+2025080701:
+    - Fixed the translation of string 'of'
+
+2025052901:
+    - Height of the green banner in attempt page reduced
+
+2025051501:
+    - Button to finish attempt immediately at the bottom of attempt page
+        was removed
+    - Text asking student to choose an asnwer removed from attempt page
+
+2025050601:
+    - Fixed cquiz edit
+
+2025042902:
+    - Enabled access to dashboard
+
+2025042901:
+    - Changes in strings
+
+2025042701:
+    - Fixed permissions to send notifications of grade received
+
+2025042401:
+    - Fixed link to dashboard
+    - Button to access dashboard in review page is now hidden
+    - HTML tags are now allowed in question header
+    - Added confirmation dialog to early attempt finish button
+
+2025041401:
+    - Question text font size reduced and space maximized
+    - Text explaining grading method changed for non-mandatory quizes
+    - Style for instructions boxes improved
+    - All occurrences of strings quiz and questionário replaced by avaliação
+        in pt_br
+
+2025040505:
+    - Back button on banner now returns to course page instead of last page
+
+2025040504:
+    - SQL literals updated to become PostgreSQL compatible
+
+2025040503:
+    - Fixed the status of answered/not answered in attempt question navigation
+        bar
+    - Removed references to theme pdi
+    - Fix url of processattempt page
+
+2025040502:
+    - Fixed highlight of current question in attempt question navigation bar
+
+2025040501:
+    - Session summary replaced by session name in cquiz banner
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032801:
+    - Adapted to work in Moodle 4.1
+
+2025032101:
+    - Removed link to student's guide
+
+2025031302:
+    - Minor layout change
+
+2025031301:
+    - Many risky changes to make the plugin instalable in Moodle 4.1.1+
+        (Build: 20230203)
+
+2025030501:
+    - References to enap theme changed to pdi theme
+
+2025030401:
+    - Small layout changes
+
+2025022801:
+    - Small changes for layout version 0.7
+    - Layout adjusted to support themes anave and flexible as well
+
+2025022701:
+    - Full Layout adapted for enap theme
+
+2025021901:
+    - Layout of mod/cquiz/view.php (mostly) adapted for enap theme
+
+2024090401:
+    - Layout adapted for mobile
+
+2024082101:
+    - Thumbnail image added
+
+2024081201:
+    - Fixed the issue of unclickable button to finish review
+    - Fixed the color of font in admin instructions screen
+    - Fixed the width of the form to answer a question
+    - Fixed the backgroung of right answer marker to transparent
+    - Fixed he position of question action buttons in quiz edit page
+
+2024080801:
+    - Hide question outcome during attempt
+
+2024073101:
+    - Dependency of format_detail removed
+
+2024061701:
+    - Adapted also to flexible theme
+
+2024052101:
+    - Changed to new layout
+    - Added dependency to qtype_cmultichoice
+
+2024030401:
+    - Changed to allow administrators to answer quizes as students
+
+2022101101:
+    - Fix the number of right answers at the top of attempt review page
+
+2022071101:
+    - Buttons to finish attempt and return to attempt are no longer shown
+    - Style of asnwer options text changed to improve readability
+    - Improved the text of some buttons
+
+2022052701:
+    - Changed to display a link to social forum instead of just the social forum
+        name in questions feedback
+    - Fixed format of information in summary table
+
+2022011001:
+    - Fix wrong text displayed for correct/incorrect asnwers but the first one
+
+2021121301:
+    - Fixed a problem which was preventing question action buttons to be
+        displayed in edit page
+    - Fixed a problem which was preventing question type selection menu to be
+        displayed in edit page
+
+2021090801:
+    - Fix problem in display of images inside question text
+
+2021083001:
+    - Fix color settings
+
+2021082302:
+    - Fix display of multi-language question headers
+
+2021082301:
+    - Stop removing tags to question text
+    - Fix question header colors
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2018121901:
+    - Updated to avoid using deprecated classes
+
+2018030901:
+    - Changed to display a cofigurable introductory text to student before
+        every attempt
+
+2018020901:
+    - Icon changed
+
+2018020101:
+    - Strings changed to better explain penalties and hoghest trande criteria
+
+2018010501:
+    - Changes in "attemptcquiznow" button text
+
+2017081501:
+    - New icon
+
+2017071401:
+    - Adapted to Moodle 3.3.1
+
+2017062901:
+    - Changed to display competencies in reverse order of total achievement in case of a tie in % achievement in review report
+    - Changed to display competencies description in review report
+    - Changed to consider answer competencies in review report
+
+2017062701:
+    - Changed to display competencies in reverse order of % achievement in review report
+    - Bug fix: missing string cquiz:emailgradeearned
+
+2017060501:
+    - Bug fix: quiz timer was being reset at every question viewed
+
+2017050901:
+    - Changed to consider attempt start time only after user authentication
+
+2017041801:
+    - First version

@@ -1,0 +1,31 @@
+2026052601:
+    - Removed orphan language string 'start' from pt_br and en lang files.
+      The corresponding "Início" button was deleted from local/notifications/lib.php
+      in a previous release, leaving the string with zero callers in the codebase.
+
+2025050101:
+    - Changed to display notifications only from some specific components
+
+2025042901:
+    - Enabled access to dashboard
+
+2025042701:
+    - Changed the order of notifications displayed
+    - Added a default icon
+    - Unused code removed
+
+2025040903:
+    - Fixed precedence of PHP operators
+
+2025040902:
+    - Changed SQL to retrieve notifications to make it compatible with PostgreSQL
+
+2025040901:
+    - First working version
+
+2025033101:
+    - First version
+    - Still missing:
+        - Implement local_notifications_get_user_last_messages
+        - Dashboard: Enable access to dashboard
+        - Generating a summary for the navigation bar

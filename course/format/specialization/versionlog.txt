@@ -1,0 +1,243 @@
+2026091503:
+    - Section grade gate checks only mod_cquiz again (main + recovery). Other
+      graded activities are ignored to avoid errors / false fails.
+
+2026091502:
+    - Section grade gate now considers every graded activity in the section
+      (not only cquiz), taking the best percentage. Added
+      user_passes_eixo_approval() for shared dashboard/certificate checks.
+
+2026091301:
+    - user_passes_all_section_grades() / user_section_grades_pass_map(): an
+      Eixo only passes when every graded section (disciplina with cquiz)
+      has percentage >= min grade (best of main + recovery). Used by
+      dashboard progress and journey circles.
+
+2025111203:
+    - Fixed issue with unknown class studypace
+
+2025111202:
+    - Method get_first_not_enroled_course_id added to format_specialization
+        class
+
+2026052642:
+    - "Avaliação de Reação" mural: stop assuming a fixed Moodle section
+      number per Eixo (1→5, 2→6, 3–6→5). Eixos with only two disciplines
+      store the evaluation page in section 3 or 4, while avaliacao.css still
+      positions the hotspot at #course-N-window-5/6. The renderer now:
+        * discovers the section that contains the evaluation mod_page /
+          survey / questionnaire by name;
+        * injects the mural on that section;
+        * assigns the CSS hotspot DOM id (window-5/6) even when the Moodle
+          section index is lower.
+    - resolve_avaliacao_reacao_url() matches activities named "Avaliação
+      de Reação" (or section names containing "avaliação") instead of
+      grabbing the first page in the hotspot section.
+
+2026052609:
+    - Performance + robustness sweep on the renderer:
+        * Dropped renderer::get_module_name() and replaced its only call
+          site with $mod->modname. The cm_info object already carries the
+          module name as a string, so we no longer issue one extra
+          {modules} SELECT per course module per page render (was N+1 on
+          every Eixo page; an Eixo with 5 sections × 3 CMs cost 15 extra
+          round-trips for nothing).
+        * Hardened strip_letters(): now also strips whitespace, so a
+          shortname like "Eixo 1" (with a space) produces "1" instead of
+          " 1". The latter would have leaked a space into the generated
+          DOM id (course- 1-window-5), which is invalid HTML and breaks
+          any #id CSS selector that targeted it. The mapping for
+          build_avaliacao_reacao_mural already trim()'d defensively, but
+          the DOM id itself was still leaking the space.
+    - lib.php: get_first_not_enroled_course_id() now gates its
+      studypace::is_enroled() call behind class_exists(). If
+      local_studypace is uninstalled (impossible in normal deploys but
+      possible in fragmented dev setups) the home page now falls back
+      to is_enrolled() from core instead of fatalling.
+
+2026052608:
+    - Fixed double-navigation bug introduced by 2026052607's server-side
+      mural rendering. The .mural-aviso anchor is now a child of
+      .interactive-area, so its click bubbles up to the section click
+      handler. Without a guard, the user got the avaliação opened in a
+      new tab AND the current tab navigated to the section content (or
+      the section modal appeared). format-specialization.js now bails
+      out of the section click handler when the click originated inside
+      .mural-aviso, letting the anchor's native target="_blank"
+      behaviour be the only navigation.
+    - JS file is loaded with ?v=<pluginversion> by format.php, so
+      bumping the plugin version is what invalidates the cached copy
+      in the browser; an explicit purge is no longer required for this
+      change to land for repeat visitors.
+
+2026052607:
+    - "Avaliação de Reação" banner now rendered server-side.
+        * New private method renderer::build_avaliacao_reacao_mural is
+          called from print_section() and emits the anchor + .mural-aviso
+          card as the first child of .interactive-area for the specific
+          (specializationnumber, section) pairs that map to evaluation
+          pages on the homologation instance.
+        * URLs and the image src kept identical to the previous client-
+          side injection (theme/pdi/js/avaliacao.js), so the production
+          experience does not change.
+        * Banner is skipped in editing mode (was previously hidden via
+          a CSS display:none rule) to keep the edit-time DOM clean.
+        * Added language string format_specialization/avaliacaoreacao
+          used as the alt text of the banner image.
+    - Visible benefit: the banner is now on the page from the first
+      paint instead of appearing after JS executes (no more "missing
+      card" flash that was reported in the most recent screenshot).
+
+2026052606:
+    - Eixo progression hardening (self-enrollment flow):
+        * get_courses_in_format() now orders Eixos by sortorder (Moodle-native
+          drag/drop position) with shortname as tie-breaker, instead of the
+          fragile "ORDER BY shortname ASC" that broke as soon as admins used
+          non-numeric shortnames (Eixo I, II, III...).
+        * get_first_not_enroled_course_id() now skips hidden Eixos so the
+          home page's toenrol-area card never targets a 403-bound course.
+        * is_course_completed() delegates to studypace::is_course_completed
+          when available, restoring consistency between the home page,
+          mini-dashboard and the user dashboard progression bar (which were
+          previously consulting different sources of truth).
+        * Fixed the "empty Eixo is completed" vacuous-truth bug: a course
+          with zero monitorable CMs used to return true (0 >= 0), making
+          unconfigured Eixos silently appear "done" and get skipped by the
+          progression cursor. They now correctly return false.
+
+2025111201:
+    - Methods is_course_completed and all_previous_courses_completed added
+        to format_specialization class
+
+2025053101:
+    - Avoid blocking access to sections to admin users
+
+2025051602:
+    - Stop converting number format for grades
+
+2025051601:
+    - Number of decimal digits in grades set to 0
+
+2025051501:
+    - Text explaining conditions for second chance changed
+    - Added Javascript to minimize/maximize mini-dashboard
+
+2025050501:
+    - Change display of grade in mini-dashboard to use , as a decimal separator
+
+2025050102:
+    - Enabled the display of user's coins in the mini-dashboard
+
+2025050101:
+    - Fixed syntax to retrieve student's grade from DB
+    - Increased the number of decimal digits in student's grade to 1
+
+2025042901:
+    - Fixed calculation of couses completed by user
+    - Method all_previous_specializations_completed removed
+    - Method get_average_grade added
+    - Methods specialization_completed and get_student_grade fixed
+    - Enabled access to mini-dashboard (with no keys yet)
+
+2025041001:
+    - Changed to only consider mandatory course modules when chacking if
+        previous sections have been completed
+
+2025040901:
+    - Advanced in preparation to display mini-dashboard
+    - Changed to display button to access second chance and enable/disable it
+        according to the evaluation's result
+
+2025040501:
+    - Changed to display global conference room instead of the last course
+        section
+    - Changed to ignore invible ones when looking for uncompleted previous
+        course modules
+    - Fixed management of buttons to navigate inside sections to only consider
+        the first content and the first cquiz
+
+2025040302:
+    - Changed to consider only the first cquiz of a section
+
+2025040301:
+    - Button to ter editing on is now only visible if the user has course
+        editing capability
+
+2025040102:
+    - SQL literals updated to become PostgreSQL compatible
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032601:
+    - Adapted to work in Moodle 4.1
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2025032102:
+    - Display of mini-dashboard is now temporarily disabled
+
+2025032101:
+    - Method get_courses_in_format in format_specialization class changed to
+        optionally filter only visible specializations
+    - Method specialization_completed added to format_specialization class
+
+2025031101:
+    - Some variable names improved
+
+2025030801:
+    - Moved method is_cm_completed and
+        all_previous_specializations_completed from render clas to format class
+    - Added method all_previous_sections_completed to format class
+
+2025030701:
+    - Small changes in layout
+    - Now blocking an section evaluation of the section content wasn't 
+        completed yet
+    - Now blocking a section if previous sections weren't completed yet
+    - Format script moved from theme to format plugin
+
+2025030501:
+    - Changed the name of function get_specialization_courses to
+        get_courses_in_format
+
+2025030401:
+    - Completed the layout for all specializations
+    - Changed the layout of the profile card to the new one
+
+2025021301:
+    - Added the menu to edit section for each section in edit mode
+    - Added menus to edit course modules for each course modeule in edit mode
+    - Added menus to add course modules for each section in edit mode
+
+2025021201:
+    - More layout changes
+
+2025021001:
+    - More layout updates
+
+2025020601:
+    - More layout updates
+
+2025020301:
+    - Redesigned for Enap format. Only layout is ok. No dynamic content yet.
+
+2021081201:
+    - Redesigned for 2021 refresh
+
+2019051301:
+    - Bug fix: data related to courses of format specialization weren`t being
+        deleted at course deletion
+
+2019010201:
+    - Bug fix: it wasn't taking into account user's role in enrolment
+
+2018121401:
+    - Method part_of added
+
+2018112901:
+    - Bug fix: plugin upgrade wasn't working when there was nothing to be done
+
+2018110501:
+    - First version

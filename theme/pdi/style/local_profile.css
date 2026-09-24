@@ -1,0 +1,72 @@
+#page-local-profile-edit .navbar.fixed-top,
+#page-local-profile-edit #page-footer {
+    display: none;
+}
+
+#page-local-profile-edit .course-header {
+    display: none;
+}
+
+[dir] #page-local-profile-edit .btn-outline-white:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #00747B !important;
+}
+
+#page-local-profile-edit [role="main"] {
+    background-color: rgb(245, 247, 250);
+}
+
+[dir] #page-local-profile-edit .btn-accent {
+    background-color: #7000C4;
+    border-color: #7000C4;
+    color: white !important;
+}
+
+[dir] #page-local-profile-edit .btn-accent:hover,
+[dir] #page-local-profile-edit .btn-accent:active {
+    background-color: #8e2dd9;
+    border-color: #8e2dd9;
+    color: white !important;
+}
+
+#page-local-profile-edit #avatarSelector .avatar-item {
+    cursor: pointer;
+    padding: 3px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+#page-local-profile-edit #avatarSelector .avatar-item:hover {
+    transform: scale(1.1);
+}
+
+#page-local-profile-edit #avatarSelector .avatar-item.selected {
+    border-color: #5567ff;
+}
+
+#page-local-profile-edit .debuggingmessage,
+#page-local-profile-edit #maincontent {
+    display: none;
+}
+
+#page-local-profile-edit #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-local-profile-edit #topofscroll,
+#page-local-profile-edit #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-local-profile-edit #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}

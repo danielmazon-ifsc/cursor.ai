@@ -1,0 +1,484 @@
+#page-mod-cquiz-view,
+#page-mod-cquiz-attempt,
+#page-mod-cquiz-review {
+    background-color: white;
+}
+
+#page-mod-cquiz-view .debuggingmessage,
+#page-mod-cquiz-attempt .debuggingmessage,
+#page-mod-cquiz-review .debuggingmessage,
+#page-mod-cquiz-view #region-main h3 {
+    display: none;
+}
+
+#page-mod-cquiz-view [role="main"],
+#page-mod-cquiz-attempt [role="main"],
+#page-mod-cquiz-review [role="main"]{
+  padding-top: 0 !important;
+}
+
+#page-mod-cquiz-view #page,
+#page-mod-cquiz-attempt #page,
+#page-mod-cquiz-review #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-mod-cquiz-view #topofscroll,
+#page-mod-cquiz-view #region-main,
+#page-mod-cquiz-attempt #topofscroll,
+#page-mod-cquiz-attempt #region-main,
+#page-mod-cquiz-review #topofscroll,
+#page-mod-cquiz-review #region-main
+{
+    background-color: transparent !important;
+    color: rgba(255,255,255,.8) !important;
+}
+
+#page-mod-cquiz-view .secondary-navigation,
+#page-mod-cquiz-view .secondary-navigation,
+#page-mod-cquiz-attempt .secondary-navigation,
+#page-mod-cquiz-attempt .secondary-navigation,
+#page-mod-cquiz-review .secondary-navigation,
+#page-mod-cquiz-review .secondary-navigation {
+    display: none;
+}
+
+#page-mod-cquiz-view #topofscroll,
+#page-mod-cquiz-attempt #topofscroll,
+#page-mod-cquiz-review #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+#page-mod-cquiz-view .navbar.fixed-top,
+#page-mod-cquiz-view #page-footer,
+#page-mod-cquiz-view .activity-navigation,
+#page-mod-cquiz-attempt .navbar.fixed-top,
+#page-mod-cquiz-attempt #page-footer,
+#page-mod-cquiz-attempt .activity-navigation,
+#page-mod-cquiz-review .navbar.fixed-top,
+#page-mod-cquiz-review #page-footer,
+#page-mod-cquiz-review .activity-navigation {
+    display: none;
+}
+
+#page-mod-cquiz-view .activity-header,
+#page-mod-cquiz-view #region-main > h2,
+#page-mod-cquiz-attempt .activity-header,
+#page-mod-cquiz-attempt #region-main > h2,
+#page-mod-cquiz-review .activity-header,
+#page-mod-cquiz-review #region-main > h2 {
+    display: none;
+}
+
+#page-mod-cquiz-view .main_content,
+#page-mod-cquiz-attempt .main_content,
+#page-mod-cquiz-review .main_content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: unset !important;
+}
+
+#page-mod-cquiz-view .page-section,
+#page-mod-cquiz-attempt .page-section, 
+#page-mod-cquiz-review .page-section {
+    margin: 0 !important;
+    border: none !important;
+}
+
+#page-mod-cquiz-view .text-body,
+#page-mod-cquiz-attempt .text-body,
+#page-mod-cquiz-review .text-body {
+    color: #fff !important;
+}
+
+#page-mod-cquiz-view .container,
+#page-mod-cquiz-attempt .container,
+#page-mod-cquiz-review .container {
+    background-color: inherit;
+    padding-bottom: 2rem;
+}
+
+#page-mod-cquiz-view #maincontent,
+#page-mod-cquiz-attempt #maincontent,
+#page-mod-cquiz-review #maincontent {
+    display: none;
+}
+
+#page-mod-cquiz-view #prebanner,
+#page-mod-cquiz-attempt #prebanner,
+#page-mod-cquiz-review  #prebanner {
+    white-space: nowrap;
+    padding: 0;
+    border-bottom: 1px solid #e9edf2 !important;
+    background-color: #F5FEFF !important;
+    min-height: 72px;
+    align-content: center;
+}
+
+#page-mod-cquiz-view #page-content,
+#page-mod-cquiz-attempt #page-content,
+#page-mod-cquiz-review #page-content {
+    background-color: #f5f7fa;
+    padding-bottom: 0 !important;
+}
+
+#page-mod-cquiz-view .instructions h4 {
+    font-size: 1.999rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border-bottom: 4px solid #00747B;
+    padding-bottom: 1.3rem;
+    padding-top: 4rem;
+    color: rgba(39,44,51,.7) !important;
+}
+
+#page-mod-cquiz-view .instructions.row .instructions:first-child {
+    flex-basis: auto;
+    font-size: 14.625px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: .5rem;
+}
+
+#page-mod-cquiz-view .instructions.col.flex {
+    padding-top: 4rem;
+}
+
+#page-mod-cquiz-view .instructions .instructions.col.flex > div {
+    width: 32%;
+    float: left;
+    padding: 1rem;
+    margin: 7px;
+    border-radius: .5rem;
+    box-shadow: 0 3px 3px -2px rgba(39, 44, 51, .1), 0 3px 4px 0 rgba(39, 44, 51, .04), 0 1px 8px 0 rgba(39, 44, 51, .02);
+    background-color: white;
+    border: 1px solid #dfe2e6;
+    min-height: 164px;
+}
+
+#page-mod-cquiz-view .instructions .instructions.col.flex > div strong {
+    font-weight: bolder;
+    text-shadow: none;
+    font-size: 1.2rem;
+    color: #272c33;
+}
+
+#page-mod-cquiz-view .instructions .instructions.col.flex > div span {
+    font-weight: 500;
+    text-shadow: none;
+    color: rgba(39, 44, 51, .5) !important;
+    border: none;
+    font-size: 15px;
+}
+
+#page-mod-cquiz-view .course-header,
+#page-mod-cquiz-attempt .course-header,
+#page-mod-cquiz-review .course-header {
+    display: none;
+}
+
+#page-mod-cquiz-attempt #question-header div:first-child div:nth-child(2) {
+  display: none !important;
+}
+
+#page-mod-cquiz-attempt #question-header div:first-child div:nth-child(3) {
+    margin-bottom: 2rem !important;
+}
+
+#page-mod-cquiz-attempt #question-header p,
+#page-mod-cquiz-review .content p {
+    font-size: 1rem !important;
+}
+
+#page-mod-cquiz-attempt #question-header b {
+    font-weight: bold;
+}
+
+#page-mod-cquiz-attempt #question-header ol {
+    font-size: .95rem;
+}
+
+#page-mod-cquiz-attempt .btn {
+    border: 1px solid #868e96 !important;
+} 
+
+#page-mod-cquiz-attempt .btn .material-icons {
+    align-self: center;
+}
+
+#page-mod-cquiz-attempt .btn:last-child {
+    border: 1px solid rgb(112, 0, 196) !important;
+    color: rgb(112,0,196) !important;
+    border-image: none !important;
+}
+
+#page-mod-cquiz-attempt .btn:last-child:hover {
+    background-color: rgb(112, 0, 196) !important;
+    border: 1px solid rgb(112,0,196) !important;
+    color: white !important;
+    text-shadow: none;
+}
+
+#page-mod-cquiz-attempt form {
+    background-color: rgb(245, 247, 250);
+}
+
+#page-mod-cquiz-attempt form .outcome {
+    display: none;
+}
+
+#page-mod-cquiz-attempt form > div > .row {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#page-mod-cquiz-attempt form > div > .row > .row {
+  padding: 0;
+}
+
+#page-mod-cquiz-attempt form .que {
+    margin: 0;
+}
+
+#page-mod-cquiz-attempt form .que .info,
+#page-mod-cquiz-attempt form .que .qtext,
+#page-mod-cquiz-attempt form .que .prompt,
+#page-mod-cquiz-attempt form .que label span {
+    display: none;
+}
+
+#page-mod-cquiz-attempt form .que .content {
+    margin: 0;
+}
+
+#page-mod-cquiz-attempt form .que .formulation {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#page-mod-cquiz-attempt form .que.cmultichoice .answer div {
+  padding-bottom: 1rem;
+}
+
+#page-mod-cquiz-attempt form .que label {
+    font-weight: bold;
+}
+
+#page-mod-cquiz-review .que.multichoice .answer div input,
+#page-mod-cquiz-review .que.cmultichoice .answer div input {
+    min-height: 0 !important;
+}
+
+#page-mod-cquiz-review .que.cmultichoice .answer div .icon {
+    text-indent: 0;   
+}
+
+#page-mod-cquiz-attempt form .que input {
+    accent-color: #00747B !important;
+    min-height: 0 !important;
+}
+
+#page-mod-cquiz-attempt form .submitbtns {
+    max-width: 100%;
+}
+
+#page-mod-cquiz-attempt form .submitbtns .time-tracker {
+    background-color: #FAF5FF !important;
+}
+
+#page-mod-cquiz-attempt form .submitbtns .progress {
+  margin-bottom: 0;
+}
+
+#page-mod-cquiz-attempt form .submitbtns .time-tracker i {
+    color: #AF78FF !important;
+}
+
+#page-mod-cquiz-attempt form .submitbtns #cquiz-timer p {
+    margin-bottom: .5rem;
+}
+
+#page-mod-cquiz-attempt form .submitbtns .border-left-danger {
+    border: 1px solid #d9534f !important;
+    background-color: rgba(217, 83, 79, .05);
+    border-radius: .5rem !important;
+}
+
+#page-mod-cquiz-attempt form .submitbtns .border-left-primary {
+    border: 1px solid #e4a93c !important;
+    background-color: rgba(228, 169, 60, .05);
+    border-radius: .5rem !important;
+}
+
+#page-mod-cquiz-review .animated-gradient {
+    background: linear-gradient(270deg, #001d19, #00737b, #067083, #012a26);
+    background-size: auto;
+    background-size: 200% 200%;
+    animation: gradientAnimation 16s ease infinite;
+}
+
+#page-mod-cquiz-review .reviewheader p {
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .25rem 1rem;
+    border-radius: 100px;
+    background-color: #CDFEFD !important;
+    margin-top: 0;
+    display: inline-block;
+    font-weight: 600;
+    white-space: nowrap;
+    user-select: none;
+    max-width: 616px;
+    line-height: 1.556;
+    color: #1B6766 !important;
+    font-size: .9140625rem;
+}
+
+#page-mod-cquiz-review .reviewheader h1 {
+    padding-top: 2rem !important;
+    padding-bottom: .5rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0;
+    color: #fff !important;
+    line-height: 1.0 !important;
+    font-size: 3.000rem;
+    font-family: 'Typo-Round-regular', sans-serif;
+    font-weight: lighter;
+}
+
+#page-mod-cquiz-review #resultspane {
+    background-color: rgb(245, 247, 250);
+}
+
+#page-mod-cquiz-review #preresults .submitbtns {
+    margin-top: 0px !important;
+    margin-left: 1rem !important;
+}
+
+#page-mod-cquiz-review #preresults .submitbtns a {
+    color: white !important;
+    background-color: #00747B;
+    border-color: #00747B;
+}
+
+#page-mod-cquiz-review #results .question .page-num-container h4 {
+    margin-bottom: 0 !important;
+    margin-top: 0;
+    line-height: 1.0;
+    font-size: 1.414rem;
+    font-family: 'Typo-Round-regular', sans-serif;
+    font-weight: lighter;
+    box-sizing: border-box;
+}
+
+#page-mod-cquiz-review #results .question .page-num-container .page-num {
+    margin-right: .75rem;
+    flex-shrink: 0;
+    border-radius: 100%;
+    border: 2px solid #e9edf2;
+    background-color: #CDFEFD !important;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-family: Open-Sans\ 2, Helvetica Neue, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.414rem;
+    line-height: 1.414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B6766 !important;
+    box-sizing: border-box;
+}
+
+#page-mod-cquiz-review #results .que .info,
+#page-mod-cquiz-review #results .content .prompt,
+#page-mod-cquiz-review #results .content .comment {
+    display: none;
+}
+
+#page-mod-cquiz-review #results .que .content {
+    margin-left: 0;
+}
+
+#page-mod-cquiz-review #results .content .formulation {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+#page-mod-cquiz-review #results .content .ablock {
+    padding-left: 2rem;
+}
+
+#page-mod-cquiz-review #results .content .correct input[checked="checked"] {
+    accent-color: green;
+}
+
+#page-mod-cquiz-review #results .content .answer .correct,
+#page-mod-cquiz-review #results .content .answer .incorrect {
+    background-color: transparent;
+}
+
+#page-mod-cquiz-review #results .correct .content .outcome {
+    padding-left: 2rem;
+    background-color: rgba(119, 193, 58, .05);
+    box-shadow: 0 3px 3px -2px rgba(39, 44, 51, .1), 0 3px 4px 0 rgba(39, 44, 51, .04), 0 1px 8px 0 rgba(39, 44, 51, .02);
+    border-radius: .5rem;
+    margin-left: 2.4rem;
+}
+
+#page-mod-cquiz-review #results .incorrect .content .outcome {
+    padding-left: 2rem;
+    background-color: rgba(237, 11, 76, .05);;
+    box-shadow: 0 3px 3px -2px rgba(39, 44, 51, .1), 0 3px 4px 0 rgba(39, 44, 51, .04), 0 1px 8px 0 rgba(39, 44, 51, .02);
+    border-radius: .5rem;
+    margin-left: 2.4rem;
+}
+
+#page-mod-cquiz-review #results .content .feedback div {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none;
+    border: none;
+    background-color: transparent !important;
+}
+
+#page-mod-cquiz-review #results .content .specificfeedback {
+    font-weight: bold;
+}
+
+#page-mod-cquiz-review #results .content .history {
+    padding-left: 2rem;
+}
+
+#page-mod-cquiz-review #results .content .generaltable,
+#page-mod-cquiz-view #page-content .generaltable
+{
+    background-color: #00747B;
+}
+
+#page-mod-cquiz-view #page-content .generaltable {
+    color: white;
+}
+
+#page-mod-cquiz-review #results .content .feedback {
+    color: black;
+}
+
+#page-mod-cquiz-review #results .content .feedback strong {
+    font-weight: 700;
+}
+
+#page-mod-cquiz-review #results #summary strong:nth-child(2) {
+    font-weight: bold;
+    color: rgb(39, 44, 51);
+}

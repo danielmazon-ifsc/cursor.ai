@@ -1,0 +1,27 @@
+2025040301:
+    - Button to ter editing on is now only visible if the user has course
+        editing capability
+    - Runtime error avoided in case of empty section
+
+2025040102:
+    - SQL literals updated to become PostgreSQL compatible
+
+2025040101:
+    - Moodle required version updated to 2017051500
+
+2025032701:
+    - Adapted to work in Moodle 4.1    
+
+2025032201:
+    - Adapted to be installable in Moodle 4.1
+
+2025032101:
+    - Previous set of buttons in the header replaced by a course section
+        (section 0)
+    - Method print_header_section added to print the special section above
+
+2025030701:
+    - Number of new videos is no longer hard-coded
+
+2025030601:
+    - First version

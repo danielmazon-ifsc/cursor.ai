@@ -1,0 +1,791 @@
+/* Estilos gerais */
+
+#page-course-view-specialization .navbar.fixed-top,
+#page-course-view-specialization #page-footer {
+    display: none;
+}
+
+#page-course-view-specialization #page {
+    background-color: rgb(1, 19, 23);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#page-course-view-specialization #topofscroll,
+#page-course-view-specialization #region-main {
+    background-color: transparent !important;
+    color: rgba(255,255,255,.5) !important;
+}
+
+#page-course-view-specialization .secondary-navigation {
+    display: none;
+}
+
+#page-course-view-specialization #topofscroll {
+    max-width: unset !important;
+    padding: 0;
+    margin: 0;
+}
+
+[role="main"] {
+  padding: 0 !important;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #011317;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+/* Course specific CSS BEGIN */
+
+.areaeixo1 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo1 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo1]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo1 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.areaeixo2 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo2 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo2]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo2 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.areaeixo3 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo3 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo3]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo3 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.areaeixo4 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo4 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo4]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo4 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.areaeixo5 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo5 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo5]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo5 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+.areaeixo6 {
+    background: #01646a;  
+    background: -webkit-linear-gradient(to left, #011317, #011317);  
+    width: 100%;
+    height:100vh;
+}
+
+.containereixo6 {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 810px;
+    background: url([[pix:format_specialization|background-eixo6]]) no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .containereixo6 {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+/* Course specific CSS END */
+
+@keyframes pulseGlow {
+    0% {
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(1.00);
+    }
+    50% {
+        background: rgba(255, 255, 255, 0.1);
+        transform: scale(1.03);
+    }
+    100% {
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(1.00);
+    }
+}
+
+/* Course specific CSS BEGIN */
+
+#course-1-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-1-window-2 {
+    top: 55.44%;
+    left: 31.1%;
+    width: 11.32%;
+    height: 14.32%;
+}
+
+#course-1-window-3 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%;
+    height: 23.32%;
+}
+
+#course-1-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%;
+    height: 35.32%;
+}
+
+#course-2-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-2-window-2 {
+    top: 55.99%;
+    left: 11.2%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-2-window-3 {
+    top: 55.99%;
+    left: 33.9%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-2-window-4 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%; /* 110px / 1440px */
+    height: 23.32%; /* 278px / 810px */
+}
+
+#course-2-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%; /* 110px / 1440px */
+    height: 35.32%; /* 278px / 810px */
+}
+
+#course-3-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-3-window-2 {
+    top: 55.99%;
+    left: 31.2%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-3-window-3 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%; /* 110px / 1440px */
+    height: 23.32%; /* 278px / 810px */
+}
+
+#course-3-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%; /* 110px / 1440px */
+    height: 35.32%; /* 278px / 810px */
+}
+
+#course-4-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-4-window-2 {
+    top: 55.99%;
+    left: 11.2%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-4-window-3 {
+    top: 55.99%;
+    left: 33.9%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-4-window-4 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%; /* 110px / 1440px */
+    height: 23.32%; /* 278px / 810px */
+}
+
+#course-4-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%; /* 110px / 1440px */
+    height: 35.32%; /* 278px / 810px */
+}
+
+#course-5-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-5-window-2 {
+    top: 55.99%;
+    left: 11.2%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-5-window-3 {
+    top: 55.99%;
+    left: 33.9%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-5-window-4 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%; /* 110px / 1440px */
+    height: 23.32%; /* 278px / 810px */
+}
+
+#course-5-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%; /* 110px / 1440px */
+    height: 35.32%; /* 278px / 810px */
+}
+
+#course-6-window-1 {
+  top:56.44%; /* 36px / 810px */
+  left: 0.1%; /* 53px / 1440px */
+  width: 11.32%; /* 110px / 1440px */
+  height: 14.32%; /* 278px / 810px */
+}
+
+#course-6-window-2 {
+    top: 55.99%;
+    left: 11.2%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-6-window-3 {
+    top: 55.99%;
+    left: 33.9%;
+    width: 11.32%; /* 110px / 1440px */
+    height: 14.32%; /* 278px / 810px */
+}
+
+#course-6-window-4 {
+    top: 26.5%;
+    left: 41.3%;
+    width: 20.0%; /* 110px / 1440px */
+    height: 23.32%; /* 278px / 810px */
+}
+
+#course-6-saladeconferencias {
+    top: 26.5%;
+    left: 64.3%;
+    width: 34.0%; /* 110px / 1440px */
+    height: 35.32%; /* 278px / 810px */
+}
+
+/* Course specific CSS END */
+
+.custom-tooltip {
+    position: fixed;
+    display: none;
+    background-color: white;
+    color: rgba(116, 0, 183);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rounded-custom {
+    border-radius: 12px; /* Ajuste este valor para mais ou menos arredondamento */
+} 
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 90%;
+}
+
+#page-course-view-specialization #block-region-side-post {
+    display: none;
+}
+
+#page-course-view-specialization #region-main {
+    width: 100%;
+}
+
+#page-course-view-specialization .helptooltip {
+    display: none;
+}
+
+#page-course-view-specialization .urlselect,
+#page-course-view-specialization .section-cm-edit-actions,
+#page-course-view-specialization .section_action_menu {
+    margin-left: 0 !important;
+    float: right;
+    background: white !important;
+    color: black;
+}
+
+#page-course-view-specialization .urlselect {
+    float: left;
+    border: 1px solid black;
+}
+
+#page-course-view-specialization .section_action_menu a,
+#page-course-view-specialization .section-cm-edit-actions a {
+    color: black !important;
+}
+
+#page-course-view-specialization .course-module-name,
+#page-course-view-specialization .section-name {
+    background: white;
+    color: black;
+    max-width: 5rem;
+    display: inline flow-root;
+    padding-left: 1rem;
+}
+
+#page-course-view-specialization .icon.spacer {
+    display: none;
+}
+
+#page-course-view-specialization .section-item {
+    border: 1px solid black;
+    background: white;
+}
+
+#page-course-view-specialization #block-region-side-post,
+#page-course-view-specialization .course-header {
+    display: none;
+}
+
+#page-course-view-specialization #region-main {
+    width: 100%;
+}
+
+#page-course-view-specialization .btn-primary {
+    background-color: #00747B !important;
+    border-color: #00747B !important;
+    background-image: none;
+    color: white !important;
+}
+
+#page-course-view-specialization .btn-primary:hover {
+    background-color: #003538 !important;
+    border-color: #003538 !important;
+}
+
+#page-course-view-specialization .btn-outline-white {
+    background-color: transparent !important;
+    background-image: none;
+}
+
+#page-course-view-specialization .btn-outline-white:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #00747B !important;
+}
+
+#page-course-view-specialization .btn.disabled {
+    opacity: 0.25;
+    background-color: gray !important;
+    cursor: not-allowed !important;
+}
+
+#page-course-view-specialization #section-modal h3,
+#page-course-view-specialization #section-modal p {
+    color: #303840;
+}
+
+#page-course-view-specialization [role="main"] .page-content {
+    padding-bottom: 7rem;
+}
+
+#page-course-view-specialization #specialization-summary {
+    color: inherit !important;
+}
+
+/* Course specific CSS BEGIN */
+
+#page-course-view-specialization #course-eixo1 {
+    background-color: rgb(214, 252, 255);
+    color: rgb(14, 66, 66) !important;
+}
+
+#page-course-view-specialization #course-eixo1 #specialization-title h1
+{
+    color: inherit !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo1 .btn.btn-clear:hover {
+    background-color: rgb(14, 66, 66) !important;
+}
+
+#page-course-view-specialization #course-eixo2 {
+    background-color: rgb(1, 19, 23);
+    color: rgb(205, 254, 253) !important;
+}
+
+#page-course-view-specialization #course-eixo2 #specialization-title h1 {
+    color: rgb(245, 254, 255) !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo2 .btn.btn-clear:hover {
+    background-color: #CDFEFD !important;
+    color: rgb(1, 19, 23) !important;
+}
+
+#page-course-view-specialization #course-eixo3 {
+    background-color: #140121;
+    color: rgb(202, 172, 255) !important;
+}
+
+#page-course-view-specialization #course-eixo3 #specialization-title h1 {
+    color: rgb(232, 221, 255) !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo3 .btn.btn-clear:hover {
+    background-color: rgb(202, 172, 255) !important;
+    color: #140121 !important;    
+}
+
+#page-course-view-specialization #course-eixo4 {
+    background-color: rgb(8, 19, 13);
+    color: rgb(206, 253, 223) !important;
+}
+
+#page-course-view-specialization #course-eixo4 #specialization-title h1 {
+    color: rgb(206, 253, 223) !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo4 .btn.btn-clear:hover {
+    background-color: #fff !important;
+    color: #00747B !important;    
+}
+
+#page-course-view-specialization #course-eixo5 {
+    background-color: rgb(35, 10, 0);
+    color: rgb(254, 231, 228) !important;
+}
+
+#page-course-view-specialization #course-eixo5 #specialization-title h1 {
+    color: rgb(254, 231, 228) !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo5 .btn.btn-clear:hover {
+    background-color: rgb(254, 231, 228) !important;
+    color: rgb(212, 74, 15) !important;    
+}
+
+#page-course-view-specialization #course-eixo6 {
+    background-color: rgb(26, 0, 2);
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+#page-course-view-specialization #course-eixo6 #specialization-title h1 {
+    color: rgb(255, 255, 255) !important;
+}
+
+[dir] #page-course-view-specialization #course-eixo6 .btn.btn-clear:hover {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(247,51,55) !important
+}
+
+/* Course specific CSS END */
+
+/* Profile-card Course specific CSS BEGIN */
+
+#course-eixo1 #profileCard span.chip:first-child,
+#course-eixo2 #profileCard span.chip:first-child {
+    color: rgb(27, 103, 102);
+    background-color: rgb(245, 254, 255);
+}
+
+#course-eixo1 #profileCard #numbers i,
+#course-eixo1 #profileCard #progress i,
+#course-eixo1 span.page-color,
+#course-eixo2 #profileCard #numbers i,
+#course-eixo2 #profileCard #progress i,
+#course-eixo2 span.page-color {
+    color: rgb(69, 225, 223) !important;
+}
+
+#course-eixo1 #profileCard .progress div,
+#course-eixo2 #profileCard .progress div{
+    background-color: rgb(55, 182, 181) !important;
+}
+
+#course-eixo3 #profileCard span.chip:first-child {
+    color: rgb(68, 0, 122);
+    background-color: rgb(232, 221, 255);
+}
+
+#course-eixo3 #profileCard #numbers i,
+#course-eixo3 #profileCard #progress i,
+#course-eixo3 span.page-color {
+    color: rgb(175, 120, 255) !important;
+}
+
+#course-eixo3 #profileCard .progress div {
+    background-color: rgb(153, 48, 255) !important;
+}
+
+#course-eixo4 #profileCard span.chip:first-child {
+    color: rgb(18, 65, 41);
+    background-color: rgb(206, 253, 223);
+}
+
+#course-eixo4 #profileCard #numbers i,
+#course-eixo4 #profileCard #progress i,
+#course-eixo4 span.page-color {
+    color: rgb(66, 183, 122) !important;
+}
+
+#course-eixo4 #profileCard .progress div {
+    background-color: rgb(49, 142, 93) !important;
+}
+
+#course-eixo5 #profileCard span.chip:first-child {
+    color: rgb(98, 29, 3);
+    background-color: rgb(254, 231, 228);
+}
+
+#course-eixo5 #profileCard #numbers i,
+#course-eixo5 #profileCard #progress i,
+#course-eixo5 span.page-color {
+    color: #FD7352 !important;;
+}
+
+#course-eixo5 #profileCard .progress div {
+    background-color: rgb(212, 74, 15) !important;
+}
+
+
+#course-eixo6 #profileCard span.chip:first-child {
+    color: rgb(161, 22, 26);
+    background-color: rgb(253, 214, 215);
+}
+
+#course-eixo6 #profileCard #numbers i,
+#course-eixo6 #profileCard #progress i,
+#course-eixo6 span.page-color {
+    color: rgb(249, 102, 106) !important;;
+}
+
+#course-eixo6 #profileCard .progress div {
+    background-color: rgb(247, 51, 55) !important;
+}
+
+/* Profile-card Course specific CSS END */
+
+
+/* Estilos para o botão de toggle e transições do card */
+
+#toggleProfileCard {
+    transition: all 0.3s ease;
+    padding: 8px !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-height: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+    border: none;
+}
+
+#toggleProfileCard:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#toggleProfileCard i {
+    transition: all 0.3s ease;
+    font-size: 15px;
+    color: white !important;
+    margin-left: 9px;
+}
+
+#toggleProfileCard:hover i {
+    color: #ffffff;
+}
+
+#page-course-view-specialization .section-modchooser-link {
+    border-radius: unset !important;
+}
+
+#page-course-view-specialization .section-modchooser span {
+    font-size: x-small;
+}
+
+#page-course-view-specialization .debuggingmessage {
+    display: none;
+}
